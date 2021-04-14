@@ -1,7 +1,9 @@
 #include <stdio.h>
 
 int main(){
-    printf("Hello world ;)"); //esto es un printf jajaja
-    printf("Esto va a molar mucho...");
+    int d;
+    printf("Hello world ;)");
+    scanf("%d", &d);
+    printf("un numero entero: %d", d);
     return 0;
 }
