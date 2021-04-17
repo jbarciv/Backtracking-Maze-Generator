@@ -8,6 +8,7 @@
 // 2010.04.02 / Abe Pralle - Converted to C++
 //=============================================================================
 #include <stdlib.h>
+#include <time.h>
 #include <iostream>
 using namespace std;
 //----CONSTANTS-------------------------------------------------------
