@@ -40,7 +40,7 @@ void MakeMaze (char **grid, int w, int h){ //la altura h y la anchura w pueden a
                 case IZQUIERDA: x -= 1; break;
             }
 
-            if(isPossible(x,y)) break;
+            if(isPossible(x,y,w,h)) break;
             else if (i == 3){
                 switch (dirs[3]){
                     case ARRIBA: y += 1; break;
@@ -48,10 +48,10 @@ void MakeMaze (char **grid, int w, int h){ //la altura h y la anchura w pueden a
                     case DERECHA: x -= 1; break;
                     case IZQUIERDA: x += 1; break;
                 }
-                nearestPossible(x,y);
+                nearestPossible(x,y,w,h);
             }            
         }
         grid [x][y] = ' ';
         i = 0;
-    }while(isNextPossible || nearestPossible(x,y));
+    }while(isNextPossible(x,y,w,h) || nearestPossible(x,y));
 }
