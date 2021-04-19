@@ -6,6 +6,33 @@
 #define ABAJO 2
 #define IZQUIERDA 3
 
+bool comprobacion (int x, int y, int direccion, char **grid){
+    switch (direccion){
+        case ARRIBA: y -= 1; break;
+        case ABAJO: y += 1; break;
+        case DERECHA: x += 1; break;
+        case IZQUIERDA: x -= 1; break;
+    }
+    if (grid [x][y] == '#' || grid [x][y] == '$') return 1;
+
+    return 0;
+}
+
+int esPosible (int x, int y, int w, int h, char ** grid){
+    
+    int i=0;
+    int j=0;
+    if (!x || x == w || !y || y == h) return 0;
+
+    for (i=0;i<4;i++){
+        j += comprobacion(x,y,i,grid);
+    }
+
+    if (j == 3) return 1;
+
+    return 0;
+}
+
 void MakeMaze (char **grid, int w, int h){ //la altura h y la anchura w pueden asociarse a una clase...
 
     int i,r, temp;
@@ -40,7 +67,7 @@ void MakeMaze (char **grid, int w, int h){ //la altura h y la anchura w pueden a
                 case IZQUIERDA: x -= 1; break;
             }
 
-            if(isPossible(x,y,w,h)) break;
+            if(esPosible(x,y,w,h, grid)) break;
             else if (i == 3){
                 switch (dirs[3]){
                     case ARRIBA: y += 1; break;
