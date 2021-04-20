@@ -101,9 +101,9 @@ void MakeMaze (char **grid){
                 case IZQUIERDA: x -= 1; break;
             }
 
-            if(esPosible(x,y,grid)) break;
+            if(esPosible(x,y,grid)) grid [x][y] = ' ';
         }
-        grid [x][y] = ' ';
+        
         i = 0;
     }while(isNextPossible(x,y,grid));
 }
