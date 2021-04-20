@@ -18,11 +18,11 @@ bool comprobacion (int x, int y, int direccion, char **grid){
     return 0;
 }
 
-int esPosible (int x, int y, int w, int h, char ** grid){
+bool esPosible (int x, int y, char ** grid){
     
     int i=0;
     int j=0;
-    if (!x || x == w || !y || y == h) return 0;
+    if (grid[x][y] = '$') return 0;
 
     for (i=0;i<4;i++){
         j += comprobacion(x,y,i,grid);
@@ -33,7 +33,27 @@ int esPosible (int x, int y, int w, int h, char ** grid){
     return 0;
 }
 
-void MakeMaze (char **grid, int w, int h){ //la altura h y la anchura w pueden asociarse a una clase...
+bool isNextPossible (int x, int y, char **grid){
+
+    int i=0;
+    int j=0;
+
+    for (i=0;i<4;i++){
+        switch (i){
+            case ARRIBA: y -= 1; break;
+            case ABAJO: y += 1; break;
+            case DERECHA: x += 1; break;
+            case IZQUIERDA: x -= 1; break;
+        }
+
+        if(grid[x][y] == '#'){
+            if(esPosible(x, y, grid)) return 1;
+        }
+    }
+
+}
+
+void MakeMaze (char **grid){ //la altura h y la anchura w pueden asociarse a una clase...
 
     int i,r, temp;
     int x, y;
@@ -67,18 +87,9 @@ void MakeMaze (char **grid, int w, int h){ //la altura h y la anchura w pueden a
                 case IZQUIERDA: x -= 1; break;
             }
 
-            if(esPosible(x,y,w,h, grid)) break;
-            else if (i == 3){
-                switch (dirs[3]){
-                    case ARRIBA: y += 1; break;
-                    case ABAJO: y -= 1; break;
-                    case DERECHA: x -= 1; break;
-                    case IZQUIERDA: x += 1; break;
-                }
-                nearestPossible(x,y,w,h);
-            }            
+            if(esPosible(x,y,grid)) break;
         }
         grid [x][y] = ' ';
         i = 0;
-    }while(isNextPossible(x,y,w,h) || nearestPossible(x,y));
+    }while(isNextPossible(x,y,grid));
 }
