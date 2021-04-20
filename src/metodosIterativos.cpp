@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-#define ARRIBA 0
-#define DERECHA 1
-#define ABAJO 2
-#define IZQUIERDA 3
+#include "laberinto.hpp"
 
 bool comprobacion (int x, int y, int direccion, char **grid){
     switch (direccion){
@@ -53,7 +47,27 @@ bool isNextPossible (int x, int y, char **grid){
 
 }
 
-void MakeMaze (char **grid){ //la altura h y la anchura w pueden asociarse a una clase...
+void SetGrid(char **grid, int filas, int columnas){
+    // Rellenamos la malla con carácter '#'.
+    unsigned int i,j;
+    for (i=0; i<filas; ++i){
+        for(j=0; j<columnas; ++j){
+            if (!i && j==1) grid[i][j]=' '; //Casillas de entrada y salida. (falta la de salida)
+             else grid[i][j]='#';
+        }
+    }
+}
+
+void PrintGrid(char **grid, int filas, int columnas){
+ // Muestra el laberinto final en la consola.
+    for (unsigned int i=0; i<filas; ++i) {
+        for (unsigned int j=0; j<columnas; ++j)
+            printf("%c",grid[i][j]);
+        printf("\n");
+    }
+}
+
+void MakeMaze (char **grid){
 
     int i,r, temp;
     int x, y;
