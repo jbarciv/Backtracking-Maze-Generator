@@ -31,7 +31,6 @@ bool isNextPossible (int x, int y, char **grid){
 
     int i=0;
     // int j=0; no se utiliza verdad?
-
     for (i=0;i<4;i++){
         switch (i){
             case ARRIBA: y -= 1; break;
@@ -39,15 +38,29 @@ bool isNextPossible (int x, int y, char **grid){
             case DERECHA: x += 1; break;
             case IZQUIERDA: x -= 1; break;
         }
-
         if(grid[x][y] == '#'){
             if(esPosible(x, y, grid)) return true;
         }
     }
-    //creo que aquí es necesario un return...
     return false;
 
 }
+// 
+//  012345678910 
+// 0############ 
+// 1# #    ##### 
+// 2#   ## ##### 
+// 3#   #    ###
+// 4############ 
+// 5 
+// 6########### 
+// 7######## ### 
+// 8########## #
+// podemos quedar... algún día antes del próximo lunes
+// peus de 16:00 a 18:00... y para entonces avanzamos en...
+// - el iterativo hecho...
+// - yo quiero darle una pensada al iterativo (y lo que tenga lo intento deciroslo antes del sábado...)
+// - del sábado al lunes comenzaré también a redactar... vale pues el lunes a full! sisi doy fe. yo eso lo he tocado... os lo enseño...
 
 void SetGrid(char **grid, int filas, int columnas){
     // Rellenamos la malla con carácter '#'.
@@ -71,7 +84,6 @@ void PrintGrid(char **grid, int filas, int columnas){
 }
 
 void MakeMaze (char **grid){ // podríamos dejarle el mismo nombre que en el otro (chema)
-
     int i,r, temp;
     int x, y;
 
@@ -91,14 +103,11 @@ void MakeMaze (char **grid){ // podríamos dejarle el mismo nombre que en el otr
             r = rand()%4;
             temp = dirs[r];
             dirs[r] = dirs[i];
-            // dirs [i] = dirs [r]; creo que está mal...pues temp no lo estás utilizando
             dirs[i] = temp;
         }
 
-        for(i=0;i<4;i++) printf("%d,",dirs[i]);
-        printf("\n")
-
-        i=0; //no entiendo muy bien que hace...
+        for(i=0;i<4;i++) printf("%d,",dirs[i]); // esto lo he puesto yo antes para que imprimiera el vector yes
+        printf("\n");
 
         for (i=0;i<4;i++){
             switch (dirs[i]){
@@ -111,6 +120,5 @@ void MakeMaze (char **grid){ // podríamos dejarle el mismo nombre que en el otr
             if(esPosible(x,y,grid)) grid [x][y] = ' ';
         }
         
-        i = 0;
-    }while(isNextPossible(x,y,grid));
+    } while(isNextPossible(x,y,grid));
 }
