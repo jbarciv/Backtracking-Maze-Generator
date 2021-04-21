@@ -1,7 +1,7 @@
 #include "laberinto.hpp"
 
 int main(){
-    int i;// chema: he quitado el unsigned
+    int i;
     int filas=0;
     int columnas=0;
 
@@ -11,7 +11,7 @@ int main(){
     printf("Introduzca dimensiones\n Filas: ");
     scanf("%d", &filas);
     printf(" Columnas: ");
-    scanf("%d", &columnas); // he puesto %d... por ser enteros (chema)
+    scanf("%d", &columnas); 
 
     columnas+=2;   // (chema): creo que no tiene por qué hacerse...
     filas+=2; // Añadimos un marco que serán los bordes del laberinto

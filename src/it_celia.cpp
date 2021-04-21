@@ -33,7 +33,9 @@ int main(){
     
     srand(time(0));
     SetGrid(grid, filas, columnas);
-    PrintGrid(grid, filas, columnas);
+    recorre(1, 1, grid);
+    PrintGrid(grid, filas, columnas); 
+
 
     for (i = 0; i < filas; ++i) {
     	free(grid[i]);
@@ -53,7 +55,7 @@ void SetGrid(char ** grid, int filas, int columnas){
 
 void PrintGrid(char **grid, int filas, int columnas){
  // Muestra el laberinto final en la consola. 
-    for (int i=0; i<filas; ++i) { // de nuevo quito el unsigned
+    for (int i=0; i<filas; ++i) {
         for (int j=0; j<columnas; ++j)
             printf("%c",grid[i][j]);
         printf("\n");
@@ -66,7 +68,7 @@ bool inbounds(int x, int y, char ** grid){
     return true;
 }
 
-int cuantosrodean(int x, int y, char** grid){ //cuenta los # que rodean al punto (x,y)
+int cuantosrodean(int x, int y, char** grid){ //cuenta los '#' que rodean al punto (x,y)
     unsigned int up, down, left, right, i=0;
     up = x-1;
     down = x+1;
@@ -79,26 +81,65 @@ int cuantosrodean(int x, int y, char** grid){ //cuenta los # que rodean al punto
     return i;
 }
 
-bool valida (int x, int y, char** grid){
-    if(grid[x][y] == ' ') return false;
-    // por completar
+bool valida (int x, int y, int dirs, char** grid){ //comprueba si la casilla a la que vamos y la siguiente son validas
+
+    if(grid[x][y] == ' ' || !inbounds(x,y, grid)) return false;
+
+    int dx, dy;
+    switch (dirs){
+        case ARRIBA: dx = -1; break;
+        case ABAJO: dx = 1; break;
+        case DERECHA: dy = 1; break;
+        case IZQUIERDA: dy = -1; break;
+        }
+    
+    int x2 = x + dx;
+    int y2 = y + dy;
+
+    if(grid[x2][y2] == ' ' ) return false;
+
+    return true;
+    
 }
 
 void recorre (int x, int y, char ** grid){
-
-    grid[x][y]=' ';
-
+    int j, x2, y2;
+    
     int dirs[4];
     dirs[0] = ARRIBA;
     dirs[1] = DERECHA;
     dirs[2] = ABAJO;
     dirs[3] = IZQUIERDA;
 
-    for (int i=0; i<4; ++i){
-        int r = rand()%4;   // Se elige una componente al azar.
-        int temp = dirs[r]; 
-        dirs[r] = dirs[i];  // Se intercambia por la componente i-ésima.
-        dirs[i] = temp;
-    }
-    // por completar
+    grid[x][y]=' ';
+    
+    do{
+        for(j=0; j<4; j++){
+            int r = rand()%4;
+            int temp = dirs[r];
+            dirs[r] = dirs[j];
+            dirs[j] = temp;
+        }
+
+       for(j=0; j<4; j++) printf("%d,",dirs[j]);
+       printf("\n");
+
+        for (j=0; j<4; j++){
+            switch (dirs[j]){
+                case ARRIBA: x -= 1; break;
+                case ABAJO: x += 1; break;
+                case DERECHA: y += 1; break;
+                case IZQUIERDA: y -= 1; break;
+            }
+
+            if(valida(x, y, dirs[j], grid)) {
+                grid [x][y] = ' ';
+                printf("\t %d",x);
+                printf("\t %d",y);
+                printf("\n %d casillas pintadas \n", ++j);
+            }
+        }
+        
+    }while (cuantosrodean(x,y,grid)==3 && inbounds(x,y, grid));
 }
+    

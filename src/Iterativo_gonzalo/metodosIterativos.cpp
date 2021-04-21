@@ -34,7 +34,6 @@ bool esPosible (int x, int y, char ** grid){
 bool isNextPossible (int x, int y, char **grid){
 
     int i=0;
-    // int j=0; no se utiliza verdad?
     if (x>0 && y>0 && x<sizeof(*grid) && y<sizeof(grid)){
         for (i=0;i<4;i++){
             switch (i){
