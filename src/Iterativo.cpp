@@ -1,11 +1,11 @@
 #include "laberinto.hpp"
 
 int main(){
-    unsigned int i;
+    int i;// chema: he quitado el unsigned
     int filas=0;
     int columnas=0;
 
-    printf("Iterativoo");
+    printf("Iterativo");
 
     // Se pide al usuario el tamaño del laberinto.
     printf("Introduzca dimensiones\n Filas: ");
