@@ -9,11 +9,11 @@ int main(){
 
     // Se pide al usuario el tamaño del laberinto.
     printf("Introduzca dimensiones\n Filas: ");
-    scanf("%u", &filas);
+    scanf("%d", &filas);
     printf(" Columnas: ");
-    scanf("%u", &columnas);
+    scanf("%d", &columnas); // he puesto %d... por ser enteros (chema)
 
-    columnas+=2;   
+    columnas+=2;   // (chema): creo que no tiene por qué hacerse...
     filas+=2; // Añadimos un marco que serán los bordes del laberinto
 
     char **grid = NULL;
