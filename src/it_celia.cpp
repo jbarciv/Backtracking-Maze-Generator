@@ -33,6 +33,7 @@ int main(){
     
     srand(time(0));
     SetGrid(grid, filas, columnas);
+    PrintGrid(grid, filas, columnas);
 
     for (i = 0; i < filas; ++i) {
     	free(grid[i]);
@@ -47,6 +48,15 @@ void SetGrid(char ** grid, int filas, int columnas){
     for (i=0; i<filas; ++i){
         for(j=0; j<columnas; ++j)
             grid[i][j]='#';
+    }
+}
+
+void PrintGrid(char **grid, int filas, int columnas){
+ // Muestra el laberinto final en la consola. 
+    for (int i=0; i<filas; ++i) { // de nuevo quito el unsigned
+        for (int j=0; j<columnas; ++j)
+            printf("%c",grid[i][j]);
+        printf("\n");
     }
 }
 
