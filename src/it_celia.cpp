@@ -83,10 +83,10 @@ int cuantosrodean(int x, int y, char** grid){ //cuenta los '#' que rodean al pun
 
 bool valida (int x, int y, int dirs, char** grid){ //comprueba si la casilla a la que vamos y la siguiente son validas
     // No quiero tocar por si jodo algo, te dejo a continuación una condicion a ver si te vale:
-    //if(x<=1 || y<=1 || x>=(sizeof(char*)-1) || y>=(sizeof(char)-1))
+    //
     if(grid[x][y] == ' ' || !inbounds(x,y, grid)) return false;
 
-    if(!x || !y || x<sizeof(*grid) || y< sizeof(grid)){
+    if(x>1 || y>1 || x<(sizeof(char*)-1) || y<(sizeof(char)-1)){
     int dx, dy;
     switch (dirs){
         case ARRIBA: dx = -1; break;
@@ -102,6 +102,7 @@ bool valida (int x, int y, int dirs, char** grid){ //comprueba si la casilla a l
 
     return true;
     }
+    return true;
 }
 
 void recorre (int x, int y, char ** grid){
