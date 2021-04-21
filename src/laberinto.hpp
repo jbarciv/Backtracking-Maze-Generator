@@ -13,3 +13,7 @@ bool isNextPossible(int, int, char**);
 void SetGrid(char**, int, int);
 void PrintGrid(char **, int, int);
 void MakeMaze (char **);
+
+// funciones celia:
+bool inbounds(char **);
+void recorre (int, int, char**);

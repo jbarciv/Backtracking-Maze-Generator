@@ -32,7 +32,7 @@ int main(){
   	}
     
     srand(time(0));
-    SetGrid(filas, columnas, grid);
+    SetGrid(grid, filas, columnas);
 
     for (i = 0; i < filas; ++i) {
     	free(grid[i]);
@@ -42,7 +42,7 @@ int main(){
 }
 
 // FUNCIONES:
-void SetGrid(int filas, int columnas, char ** grid){
+void SetGrid(char ** grid, int filas, int columnas){
     unsigned i,j;
     for (i=0; i<filas; ++i){
         for(j=0; j<columnas; ++j)
@@ -56,4 +56,39 @@ bool inbounds(int x, int y, char ** grid){
     return true;
 }
 
-void
+int cuantosrodean(int x, int y, char** grid){ //cuenta los # que rodean al punto (x,y)
+    unsigned int up, down, left, right, i=0;
+    up = x-1;
+    down = x+1;
+    left = y-1;
+    right = y+1;
+    if (grid[up][y] =='#') i++;
+    if (grid[down][y] =='#') i++;
+    if (grid[x][left] =='#') i++;
+    if (grid[x][right] =='#') i++;
+    return i;
+}
+
+bool valida (int x, int y, char** grid){
+    if(grid[x][y] == ' ') return false;
+    // por completar
+}
+
+void recorre (int x, int y, char ** grid){
+
+    grid[x][y]=' ';
+
+    int dirs[4];
+    dirs[0] = ARRIBA;
+    dirs[1] = DERECHA;
+    dirs[2] = ABAJO;
+    dirs[3] = IZQUIERDA;
+
+    for (int i=0; i<4; ++i){
+        int r = rand()%4;   // Se elige una componente al azar.
+        int temp = dirs[r]; 
+        dirs[r] = dirs[i];  // Se intercambia por la componente i-ésima.
+        dirs[i] = temp;
+    }
+    // por completar
+}
