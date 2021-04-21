@@ -1,24 +1,22 @@
 #include "laberinto.hpp"
-
-
-int comprobacion (int x, int y, int direccion, char **grid){
-    switch (direccion){ 
+// creo que si pones bool tienes que retornar true o false (no 0 o 1...eso sería para enteros)
+bool comprobacion (int x, int y, int direccion, char **grid){
+    switch (direccion){ // ¿dónde se declara dirección?
         case ARRIBA: y -= 1; break;
         case ABAJO: y += 1; break;
         case DERECHA: x += 1; break;
         case IZQUIERDA: x -= 1; break;
     }
-    if (grid [x][y] == '#') return 1;
+    if (grid [x][y] == '#') return true;
 
-    return 0;
+    return false;
 }
 
 bool esPosible (int x, int y, char ** grid){
     
     int i=0;
-    int j=0;
-    if (!x || !y || x == sizeof(*grid) || y==sizeof(grid)) return false;
-    if (grid [x][y] == ' ') return false;
+    int j=0;                             // he puesto ' ' pues lo del '$' no lo entiendo...
+    if (!x || !y || x == sizeof(*grid) || y==sizeof(grid)) return false; // ¿es una asignación o comparación?
     
     else{                                    
         for (i=0;i<4;i++){
@@ -49,7 +47,7 @@ bool isNextPossible (int x, int y, char **grid){
             }
         }
     }
-    printf("No es posible la siguiente \n");
+    //creo que aquí es necesario un return...
     return false;
 
 }
@@ -77,9 +75,8 @@ void PrintGrid(char **grid, int filas, int columnas){
 
 void MakeMaze (char **grid){ // podríamos dejarle el mismo nombre que en el otro (chema)
 
-    int i,r, temp, j=0;
-    int x=1;
-    int y=1;
+    int i,r, temp;
+    int x, y;
 
     int dirs[4];
     dirs[0] = ARRIBA;
@@ -89,17 +86,22 @@ void MakeMaze (char **grid){ // podríamos dejarle el mismo nombre que en el otr
 
     grid [1][1] = ' ';
 
+    x=1;
+    y=1;
 
     do{
         for(i=0;i<4;i++){
             r = rand()%4;
             temp = dirs[r];
             dirs[r] = dirs[i];
+            // dirs [i] = dirs [r]; creo que está mal...pues temp no lo estás utilizando
             dirs[i] = temp;
         }
 
         for(i=0;i<4;i++) printf("%d,",dirs[i]);
         printf("\n");
+
+        i=0; //no entiendo muy bien que hace...
 
         for (i=0;i<4;i++){
             switch (dirs[i]){
@@ -109,14 +111,9 @@ void MakeMaze (char **grid){ // podríamos dejarle el mismo nombre que en el otr
                 case IZQUIERDA: x -= 1; break;
             }
 
-            if(esPosible(x,y,grid)) {
-                grid [x][y] = ' ';
-                printf("\t %d",x);
-                printf("\t %d",y);
-                printf("\n %d casillas pintadas \n", ++j);
-                break;
-            }
+            if(esPosible(x,y,grid)) grid [x][y] = ' ';
         }
         
+        i = 0;
     }while(isNextPossible(x,y,grid));
 }

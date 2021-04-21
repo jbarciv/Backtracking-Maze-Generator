@@ -33,11 +33,11 @@ int main(){
     }
 
     srand(time(0)); // Generador de numero aleatorio.
-    printf("he llegado hasta Srand\n");
+    printf("he llegado hasta aquí\n");
     SetGrid(grid, filas, columnas);
-    printf("he hecho la grid\n");
+    printf("he llegado hasta aquí\n");
     MakeMaze(grid);
-    printf("he hecho el laberinto\n"); 
+    printf("he llegado hasta aquí\n"); 
     PrintGrid(grid,filas,columnas);
 
     // Se libera memoria para cada fila.

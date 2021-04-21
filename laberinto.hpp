@@ -7,7 +7,7 @@
 #define ABAJO 2
 #define IZQUIERDA 3
 
-int comprobacion (int, int, int, char**);
+bool comprobacion (int, int, int, char**);
 bool esPosible (int, int, char**);
 bool isNextPossible(int, int, char**);
 void SetGrid(char**, int, int);
