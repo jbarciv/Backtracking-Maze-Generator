@@ -85,6 +85,7 @@ bool valida (int x, int y, int dirs, char** grid){ //comprueba si la casilla a l
 
     if(grid[x][y] == ' ' || !inbounds(x,y, grid)) return false;
 
+    if(!x || !y || x<sizeof(*grid) || y< sizeof(grid)){
     int dx, dy;
     switch (dirs){
         case ARRIBA: dx = -1; break;
@@ -99,11 +100,11 @@ bool valida (int x, int y, int dirs, char** grid){ //comprueba si la casilla a l
     if(grid[x2][y2] == ' ' ) return false;
 
     return true;
-    
+    }
 }
 
 void recorre (int x, int y, char ** grid){
-    int j, x2, y2;
+    int n=0, j, x2, y2;
     
     int dirs[4];
     dirs[0] = ARRIBA;
@@ -136,7 +137,7 @@ void recorre (int x, int y, char ** grid){
                 grid [x][y] = ' ';
                 printf("\t %d",x);
                 printf("\t %d",y);
-                printf("\n %d casillas pintadas \n", ++j);
+                printf("\n %d casillas pintadas \n", ++n);
             }
         }
         
