@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-using namespace std;
-
 //----CONSTANTES--------------------------------------------------------
 #define ARRIBA 0
 #define DERECHA 1
@@ -99,7 +97,8 @@ void Visit(unsigned int x, unsigned int y, char **grid){
     }
     // Recorre cada dirección e intenta visitarla.
     for (int i=0; i<4; ++i){
-        // dx,dy are offsets from current location. Set them based
+        // dx,dy 
+        //are offsets from current location. Set them based
         // on the next direction I wish to try.
         int dx=0, dy=0;
         switch (dirs[i]){
@@ -108,17 +107,16 @@ void Visit(unsigned int x, unsigned int y, char **grid){
             case DERECHA: dy = 1; break;
             case IZQUIERDA: dy = -1; break;
         }
-        // Find the (x,y) coordinates of the grid cell 2 spots
-        // away in the given direction.
+        // (x2,y2) será la posición que se encuantra dos carillas mas allá de la nuestra.
         unsigned int x2 = x + (dx*2);
         unsigned int y2 = y + (dy*2);
         // printf("antes(%u,%u)\n",x,y); //quizás queda más elegante dy<<1 que es lo mismo
         if (IsInBounds(x2,y2)){
             if (grid[x2][y2] == '#'){
-                // (x2,y2) has not been visited yet... knock down the
-                // wall between my current position and that position
+                //si (x2,y2) no ha sido visitada todavía, quitamos los '#' entre 
+                //nuestra posición actual y (x2,y2).
                 grid[x2-dx][y2-dy] = ' ';
-                // Recursively Visit (x2,y2)
+                // Visitamos (x2,y2) recursivamente.
                 Visit(x2,y2,grid);
             }
         }
