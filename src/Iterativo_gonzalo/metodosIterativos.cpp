@@ -1,16 +1,16 @@
 #include "laberinto.hpp"
 
 
-int comprobacion (int x, int y, int direccion, char **grid){
+bool comprobacion (int x, int y, int direccion, char **grid){
     switch (direccion){ 
-        case ARRIBA: y -= 1; break;
-        case ABAJO: y += 1; break;
-        case DERECHA: x += 1; break;
-        case IZQUIERDA: x -= 1; break;
+        case ARRIBA: x -= 1; break;
+        case ABAJO: x += 1; break;
+        case DERECHA: y += 1; break;
+        case IZQUIERDA: y -= 1; break;
     }
-    if (grid [x][y] == '#') return 1;
+    if (grid [x][y] == '#') return true;
 
-    return 0;
+    return false;
 }
 
 bool esPosible (int x, int y, char ** grid){
@@ -38,14 +38,24 @@ bool isNextPossible (int x, int y, char **grid){
     if (x>0 && y>0 && x<sizeof(*grid) && y<sizeof(grid)){
         for (i=0;i<4;i++){
             switch (i){
-                case ARRIBA: y -= 1; break;
-                case ABAJO: y += 1; break;
-                case DERECHA: x += 1; break;
-                case IZQUIERDA: x -= 1; break;
+                case ARRIBA: x -= 1; break;
+                case ABAJO: x += 1; break;
+                case DERECHA: y += 1; break;
+                case IZQUIERDA: y -= 1; break;
             }
 
             if(grid[x][y] == '#'){
                 if(esPosible(x, y, grid)) return true;
+                printf("\n --- %d, %d \t", x, y);
+            }
+
+            else {
+                switch (i){
+                    case ARRIBA: x += 1; break;
+                    case ABAJO: x -= 1; break;
+                    case DERECHA: y -= 1; break;
+                    case IZQUIERDA: y += 1; break;
+                }
             }
         }
     }
@@ -103,10 +113,10 @@ void MakeMaze (char **grid){ // podríamos dejarle el mismo nombre que en el otr
 
         for (i=0;i<4;i++){
             switch (dirs[i]){
-                case ARRIBA: y -= 1; break;
-                case ABAJO: y += 1; break;
-                case DERECHA: x += 1; break;
-                case IZQUIERDA: x -= 1; break;
+                case ARRIBA: x -= 1; break;
+                case ABAJO: x += 1; break;
+                case DERECHA: y += 1; break;
+                case IZQUIERDA: y -= 1; break;
             }
 
             if(esPosible(x,y,grid)) {
@@ -115,6 +125,12 @@ void MakeMaze (char **grid){ // podríamos dejarle el mismo nombre que en el otr
                 printf("\t %d",y);
                 printf("\n %d casillas pintadas \n", ++j);
                 break;
+            }
+            switch (dirs[i]){
+                case ARRIBA: x += 1; break;
+                case ABAJO: x -= 1; break;
+                case DERECHA: y -= 1; break;
+                case IZQUIERDA: y += 1; break;
             }
         }
         
