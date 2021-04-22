@@ -1,4 +1,4 @@
-#include "EncabezadoPruebas.hpp"
+#include "LaberintoHeader.hpp"
 
 unsigned int nfilas;
 unsigned int ncol;
