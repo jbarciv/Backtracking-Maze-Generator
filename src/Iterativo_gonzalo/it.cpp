@@ -140,6 +140,7 @@ void MakeMaze (char **grid){ // podríamos dejarle el mismo nombre que en el otr
     int i,r, temp, j=0;
     int x=1;
     int y=1;
+    int ys=0, xs=0;
 
     int dirs[4];
     dirs[0] = ARRIBA;
@@ -147,7 +148,7 @@ void MakeMaze (char **grid){ // podríamos dejarle el mismo nombre que en el otr
     dirs[2] = ABAJO;
     dirs[3] = IZQUIERDA; 
 
-    grid [1][1] = ' ';
+    grid [x][y] = ' ';
 
 
     do{
@@ -163,26 +164,28 @@ void MakeMaze (char **grid){ // podríamos dejarle el mismo nombre que en el otr
 
         for (i=0;i<4;i++){
             switch (dirs[i]){
-                case ARRIBA: x -= 1; break;
-                case ABAJO: x += 1; break;
-                case DERECHA: y += 1; break;
-                case IZQUIERDA: y -= 1; break;
+                case ARRIBA: xs= x-1; break;
+                case ABAJO: xs=x+1; break;
+                case DERECHA: ys=y+1; break;
+                case IZQUIERDA: ys=y-1; break;
             }
 
-            if(esPosible(x,y,grid)) {
-                grid [x][y] = ' ';
-                printf("\t %d",x);
-                printf("\t %d",y);
+            if(esPosible(xs,ys,grid)) {
+                grid [xs][ys] = ' ';
+                printf("\t %d",xs);
+                printf("\t %d",ys);
                 printf("\n %d casillas pintadas \n", ++j);
+                x=xs;
+                y=ys;
+
                 break;
             }
-            switch (dirs[i]){
-                case ARRIBA: x += 1; break;
-                case ABAJO: x -= 1; break;
-                case DERECHA: y -= 1; break;
-                case IZQUIERDA: y += 1; break;
+            //  switch (dirs[i]){
+            //  case ARRIBA: x += 1; break;
+            //  case ABAJO: x -= 1; break;
+            //  case DERECHA: y -= 1; break;
+            //  case IZQUIERDA: y += 1; break;
             }
-        }
+        }while(isNextPossible(x,y,grid));
         
-    }while(isNextPossible(x,y,grid));
-}
+    }
