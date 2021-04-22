@@ -62,7 +62,7 @@ void PrintGrid(char **grid, int filas, int columnas){
     }
 }
 
-bool inbounds(int x, int y, char ** grid){
+bool inbounds(int x, int y){
     if (x < 1 || x >= (filas-1)) return false;
     if (y < 1 || y >= (columnas-1)) return false;
     return true;
@@ -81,30 +81,21 @@ int cuantosrodean(int x, int y, char** grid){ //cuenta los '#' que rodean al pun
     return i;
 }
 
+int bordes(int x, int y){ // para que valida no de segmentation fault en los bordes
+    if (x==1) return 1;
+        else if (y==1) return 2;
+            else if (x==(filas-2)) return 3;
+                else if (y==(columnas-2)) return 4;
+    }
+
 bool valida (int x, int y, int dirs, char** grid){ //comprueba si la casilla a la que vamos y la siguiente son validas
-    // No quiero tocar por si jodo algo, te dejo a continuación una condicion a ver si te vale:
-    //if(x>=1 || y>=1 || x<=(sizeof(char*)-1) || y<=(sizeof(char)-1))
-    if(grid[x][y] == ' ' || !inbounds(x,y, grid)) return false;
-
-    int dx, dy;
-    switch (dirs){
-        case ARRIBA: dx = -1; break;
-        case ABAJO: dx = 1; break;
-        case DERECHA: dy = 1; break;
-        case IZQUIERDA: dy = -1; break;
-        }
-    
-    int x2 = x + dx;
-    int y2 = y + dy;
-
-    if(grid[x2][y2] == ' ' ) return false;
-
+    if(grid[x][y] == ' ' || !inbounds(x,y)) return false;
+ //trocito bordes quitado
     return true;
-    
 }
 
 void recorre (int x, int y, char ** grid){
-    int j, x2, y2;
+    int n=0, j, xs, ys;
     
     int dirs[4];
     dirs[0] = ARRIBA;
@@ -127,20 +118,22 @@ void recorre (int x, int y, char ** grid){
 
         for (j=0; j<4; j++){
             switch (dirs[j]){
-                case ARRIBA: x -= 1; break;
-                case ABAJO: x += 1; break;
-                case DERECHA: y += 1; break;
-                case IZQUIERDA: y -= 1; break;
+                case ARRIBA: xs= x-1; break;
+                case ABAJO: xs=x+1; break;
+                case DERECHA: ys=y+1; break;
+                case IZQUIERDA: ys=y-1; break;
             }
 
-            if(valida(x, y, dirs[j], grid)) {
-                grid [x][y] = ' ';
-                printf("\t %d",x);
-                printf("\t %d",y);
-                printf("\n %d casillas pintadas \n", ++j);
+            if(valida(xs, ys, dirs[j], grid)) {
+                grid [xs][ys] = ' ';
+                printf("\t %d",xs);
+                printf("\t %d",ys);
+                printf("\n %d casillas pintadas \n", ++n);
+                x=xs;
+                y=ys;
             }
         }
         
-    }while (cuantosrodean(x,y,grid)==3 && inbounds(x,y, grid));
+    }while (cuantosrodean(x,y,grid)==3 && inbounds(x,y));
 }
     

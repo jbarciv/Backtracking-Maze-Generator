@@ -15,7 +15,7 @@ void PrintGrid(char **, int, int);
 void MakeMaze (char **);
 
 // funciones celia:
-bool inbounds(char **);
+bool inbounds(int, int);
 void recorre (char**, int, int);
 int cuantosrodean(char**, int, int);
 bool valida(int, int, char**);
