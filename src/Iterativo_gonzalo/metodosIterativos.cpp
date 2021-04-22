@@ -17,7 +17,7 @@ bool esPosible (int x, int y, char ** grid){
     
     int i=0;
     int j=0;
-    if (!x || !y || x == sizeof(*grid) || y==sizeof(grid)) return false;
+    if (!x || !y || x == 10 || y==10) return false;
     if (grid [x][y] == ' ') return false;
     
     else{                                    
@@ -44,8 +44,9 @@ bool isNextPossible (int x, int y, char **grid){
             }
 
             if(grid[x][y] == '#'){
-                if(esPosible(x, y, grid)) return true;
                 printf("\n --- %d, %d \t", x, y);
+                if(esPosible(x, y, grid)) return true;
+                
             }
 
             else {

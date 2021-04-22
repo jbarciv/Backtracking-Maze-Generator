@@ -83,7 +83,7 @@ int cuantosrodean(int x, int y, char** grid){ //cuenta los '#' que rodean al pun
 
 bool valida (int x, int y, int dirs, char** grid){ //comprueba si la casilla a la que vamos y la siguiente son validas
     // No quiero tocar por si jodo algo, te dejo a continuación una condicion a ver si te vale:
-    //if(x<=1 || y<=1 || x>=(sizeof(char*)-1) || y>=(sizeof(char)-1))
+    //if(x>=1 || y>=1 || x<=(sizeof(char*)-1) || y<=(sizeof(char)-1))
     if(grid[x][y] == ' ' || !inbounds(x,y, grid)) return false;
 
     int dx, dy;
