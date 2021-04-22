@@ -2,7 +2,7 @@
 
 bool esPosible2(unsigned int*,unsigned int*,int, char**);
 bool control (unsigned int, unsigned int, char**);
-bool comprobacion2 (int, int, int, char**);
+bool comprobacion2 (int, int, int, char**, int);
 
 void SetGrid(char **grid, int filas, int columnas){
     // Rellenamos la malla con carácter '#'.
@@ -34,7 +34,7 @@ bool control (unsigned int fila, unsigned int col, char** grid){
     return false;
 }
 
-bool comprobacion2(int fila, int col, int direccion, char** grid){
+bool comprobacion2(int fila, int col, int direccion, char** grid, int *j){
     switch (direccion){
         case ARRIBA: fila -= 1; break;
         case ABAJO: fila += 1; break;
@@ -42,7 +42,10 @@ bool comprobacion2(int fila, int col, int direccion, char** grid){
         case IZQUIERDA: col -= 1; break;
     }
 
-    if(grid [fila][col] == '#') return true;
+    if(grid [fila][col] == '#'){
+        *j++;
+        return true;
+    }
 
     return false;
 }
@@ -75,7 +78,7 @@ bool esPosible2(unsigned int* fila, unsigned int* col, int direccion, char** gri
         
         for (i=0;i<4;i++){
             
-            j+=comprobacion2(*fila,*col, i, grid);
+            comprobacion2(*fila,*col, i, grid, &j);
 
             printf("\t %d", j);
             
