@@ -1,84 +1,17 @@
-#include <stdio.h>
-#include <cstdlib>
-#include <ctime>
-#include <iostream>
+//======================================================================
+// Maze_Recursivo.cpp 
+//
+// Visit function to walk along the grid
+//
+//======================================================================
 
 
-
-using namespace std;
-//----CONSTANTES--------------------------------------------------------
-#define ARRIBA 0
-#define DERECHA 1
-#define ABAJO 2
-#define IZQUIERDA 3
+#include "Maze_Recursivo.hpp"
 //----VARIABLES GLOBALES------------------------------------------------
-int columnas,filas;
-double k=0;
-//----PROTOTIPO DE FUNCIONES--------------------------------------------
-void Arreglar_2D();
-void SetGrid(char **);
-int IsInBounds( int , int );
-int Visit(int , int , char **);
-void PrintGrid(char **);
-//----FUNCIONES--------------------------------------------------------
-int main(){
-   int i;
-   // Se pide al usuario el tamaño del laberinto.
-    printf("Introduzca dimensiones\n Filas: ");
-    scanf("%d", &filas);
-    printf(" Columnas: ");
-    scanf("%d", &columnas);
+extern int columnas,filas;
+extern double k;
 
-    Arreglar_2D();
-    
-    char **grid = NULL;
-    // Se reserva memoria para el vector de vectores dinámicos (del tamaño de "filas").
-  	grid = (char **) malloc (filas * sizeof(char *)); 
-	if (grid == NULL) {
-  		printf("No se pudo reservar memoria\n");
-		return -1;
-  	}
-    // Se reserva memoria para cada fila (del tamaño de "columnas").
-  	for (i = 0; i < filas; ++i) {
-    	grid[i] = (char *) malloc (columnas * sizeof(char));
-    	if (grid[i] == NULL) {
-  			printf("No se pudo reservar memoria\n");
-			return -1;
-  		}
-  	}
-    
-    
-    printf("todo perfecto! antes de SetGrid\n");
-    SetGrid(grid);
-    printf("todo perfecto! despues de SetGrid\n");
-    Visit(1,1,grid); // Función recursiva.
-    PrintGrid(grid);
-    printf("¡Hemos salido de Visit!\n");
-    printf("Nº iteraciones= %f\n", k);
-    
-    // Se libera memoria para cada fila.
-    for (i = 0; i < filas; ++i) {
-    	free(grid[i]);
-    }
-  	free(grid); //Se libera memoria para el vector de vectores ("primera columna").
-    printf("todo perfecto!\n");
-    return 0;
-}
-
-void Arreglar_2D(){
-    (filas%2)?filas:filas+=1;
-    (columnas%2)?columnas:columnas+=1;
-}
-
-void SetGrid(char **grid){
-    // Rellenamos la malla con carácter '#' y creamos un doble cascarón de vacíos ' '.
-    int i,j;
-    for (i=0; i<filas; ++i){
-        for(j=0; j<columnas; ++j)
-            grid[i][j]='#';
-    }
-}
-
+//----FUNCIONES QUE RECORREN LA GRID------------------------------------
 int IsInBounds(int x, int y){
  // Devuelve "true" si x2 e y2 estan dentro de los límites.
  if (x < 1 || x > (filas-2)) return false;
@@ -87,17 +20,16 @@ int IsInBounds(int x, int y){
 }
 
 int Visit(int x, int y, char **grid){
-    // Comenzando en la casilla dada, visita recursivamente cada dirección en orden aleatorio.
+    // Comenzando en la casilla dada, visita recursivamente cada
+    // direccion en orden aleatorio
+
     // Se establece la primera ubicación como vacía.
     
     k++;
     grid[x][y]= ' ';
     // Crea un vector local con las 4 direcciones y cambia aleatoriamente su orden.
-    int dirs[4];
-    dirs[0] = ARRIBA;
-    dirs[1] = DERECHA;
-    dirs[2] = ABAJO;
-    dirs[3] = IZQUIERDA;
+    int dirs[4] = {ARRIBA, DERECHA, ABAJO, IZQUIERDA};
+
     for (int i=0; i<4; ++i){
         int r = rand()%4;   // Se elige una componente al azar.
         int temp = dirs[r]; 
@@ -131,20 +63,4 @@ int Visit(int x, int y, char **grid){
         }
     }
     return k;
-}   
-
-void PrintGrid(char **grid){
- // Muestra el laberinto final en la consola.
-    for (int i=0; i<filas; i++) {
-        for (int j=0; j<columnas; j++)
-            if (grid[i][j]=='#'){
-                cout << "\u2B1C";
-            }
-            else {
-                cout << "  ";
-            }
-            // printf("%c",grid[i][j]);
-        printf("\n");
-    }
-    printf("filas= %d, columnas=%d", filas, columnas);
-}// si para hacer pruebas con numero to grandes..
+}

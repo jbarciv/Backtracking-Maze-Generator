@@ -1,13 +1,13 @@
 //======================================================================
 // mainMaze_Iterativo.cpp
 //
-// C implementation of an iterative maze generation program
+// C implementation of an iterative maze generation algorithm
 //
 // History:
 // 2021.04.19
-// Celia Ramos, Josep Maria Barberá, Gonzalo Quiros - created
+// Celia Ramos, Josep Maria Barberá, Gonzalo Quirós - created
 // 2021.04.21
-// Celia Ramos, Josep Maria Barberá, Gonzalo Quiros - First version
+// Celia Ramos, Josep Maria Barberá, Gonzalo Quirós - First version
 // 2021.04.22
 // Josep Maria Barberá - Pile implementation
 // 2021.04.23 - Final version
@@ -24,11 +24,8 @@ long int k=0;
 int main(){
     int i=0;
     
-   // Se pide al usuario el tamaño del laberinto.
-    printf("Introduzca dimensiones\n Filas: ");
-    scanf("%d", &filas);
-    printf(" Columnas: ");
-    scanf("%d", &columnas);
+    // Se pide al usuario el tamaño del laberinto.
+    pedir();
     
     Arreglar_2D();
     
@@ -47,16 +44,27 @@ int main(){
     }
     
     srand(time(0));
+
+    // Hacemos la matriz
     SetGrid(grid);
+
+    // Hacemos la pila
     Nodo *pila = NULL;
     agregarPila(pila,1,1,0,false,vect);
-    Visit(1,1,grid,pila); // Función recursiva.
+
+    //Empieza la iteracion
+    Visit(1,1,grid,pila);
+
+    //Mostramos por pantalla
     PrintGrid(grid);
     
     // Se libera memoria para cada fila.
     for (i = 0; i < filas; ++i) {
     	free(grid[i]);
     }
-  	free(grid); //Se libera memoria para el vector de vectores ("primera columna").
+
+  	//Se libera memoria para el vector de vectores ("primera columna")
+    free(grid);
+
     return 0;
 }

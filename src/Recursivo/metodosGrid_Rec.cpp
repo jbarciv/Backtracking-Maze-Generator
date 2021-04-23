@@ -1,15 +1,25 @@
-//----------------------------------------------------------------------
-// Maze_Iterativo.cpp
+//======================================================================
+// metodosGrid_Rec.cpp
 //
 // General methods for grid implementation
 //
-//----------------------------------------------------------------------
+//======================================================================
 
-#include "Maze_Iterativo.hpp"
+#include "Maze_Recursivo.hpp"
 
 //----VARIABLES GLOBALES------------------------------------------------
 extern int columnas,filas;
-extern long int k;
+
+//----PEDIMOS LAS DIMENSIONES AL USUARIO--------------------------------
+void pedir(){
+    // Se pide al usuario el tamaño del laberinto.
+
+    printf("Introduzca dimensiones\n Filas: ");
+    scanf("%d", &filas);
+
+    printf(" Columnas: ");
+    scanf("%d", &columnas);
+}
 
 //----FUNCIONES PARA CONSTRUIR LA GRID----------------------------------
 void Arreglar_2D(){
@@ -50,6 +60,5 @@ void PrintGrid(char **grid){
             
         printf("\n");
     }
-    printf("num. de iteraciones= %ld", k);
     // printf("filas= %d, columnas=%d", filas, columnas);
 }
