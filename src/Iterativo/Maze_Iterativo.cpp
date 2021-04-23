@@ -1,22 +1,17 @@
+//----------------------------------------------------------------------
+// Maze_Iterativo.cpp
+//
+// Pile implementation and Visit function
+//
+//----------------------------------------------------------------------
+
 #include "Maze_Iterativo.hpp"
 
-
-
 //----VARIABLES GLOBALES------------------------------------------------
-extern int columnas,filas, vect[4]={0,0,0,0};
-extern long int k=0;
+extern int columnas,filas, vect[4];
+extern long int k;
 
-
-
-
-//----FUNCIONES--------------------------------------------------------
-void Arreglar_2D(){
-    (filas%2)?filas:filas+=1;
-    (columnas%2)?columnas:columnas+=1;
-}
-
-
-
+//----FUNCIONES DE LA PILA----------------------------------------------
 struct Nodo{
     int x;
     int y;
@@ -50,6 +45,7 @@ void sacarPila(Nodo *&pila,int *pos_x, int *pos_y){
     free (aux);  
 }
 
+//----FUNCIONES QUE RECORREN LA GRID------------------------------------
 int IsInBounds(int x, int y){
     // Devuelve "true" si x2 e y2 estan dentro de los límites.
 
@@ -119,7 +115,3 @@ int Visit(int x, int y, char **grid, Nodo *pila){
     }
     return k;
 }   
-
-
-
-

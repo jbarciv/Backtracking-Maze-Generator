@@ -33,6 +33,18 @@ int main(){
     Arreglar_2D();
     
     char **grid = NULL;
+    // Se reserva memoria para el vector de vectores dinámicos (del tamaño de "filas").
+    grid = (char **) malloc (filas * sizeof(char *)); 
+    if (grid == NULL) {
+        printf("No se pudo reservar memoria\n");
+    }
+    // Se reserva memoria para cada fila (del tamaño de "columnas").
+    for (i = 0; i < filas; ++i) {
+        grid[i] = (char *) malloc (columnas * sizeof(char));
+        if (grid[i] == NULL) {
+            printf("No se pudo reservar memoria\n");
+        }
+    }
     
     srand(time(0));
     SetGrid(grid);

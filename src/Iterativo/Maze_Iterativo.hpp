@@ -1,9 +1,14 @@
+//----------------------------------------------------------------------
+// Maze_Iterativo.hpp
+//
+// Libraries, preprocessor directives and methods prototypes for 
+// mainMaze_Iterativo.cpp, metodosGrid.cpp and Maze_Iterativo.cpp
+//
+//----------------------------------------------------------------------
 #include <stdio.h>
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-
-
 
 using namespace std;
 //----CONSTANTES--------------------------------------------------------
