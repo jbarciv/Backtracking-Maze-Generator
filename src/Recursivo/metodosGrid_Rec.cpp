@@ -60,5 +60,4 @@ void PrintGrid(char **grid){
             
         printf("\n");
     }
-    // printf("filas= %d, columnas=%d", filas, columnas);
 }
