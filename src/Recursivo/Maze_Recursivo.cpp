@@ -24,30 +24,13 @@
 int columnas,filas;
 unsigned long int k=0;
 
+//----FUNCIÓN PRINCIPAL-------------------------------------------------
 int main(){
-
   int i;
+  char **grid = NULL;
+
   // Se pide al usuario el tamaño del laberinto.
   Pedir();
-  // Se ajustan las dimensiones para que sean impares.
-  Arreglar_2D();
-    
-  char **grid = NULL;
-  // Se reserva memoria dinámica (del tamaño de "filas").
-  grid = (char **) malloc (filas * sizeof(char *)); 
-	if (grid == NULL){
-  	printf("No se pudo reservar memoria\n");
-		return -1;
-  }
-
-  // Se reserva memoria dinámica para cada fila (tamaño de "columnas").
-  for (i = 0; i < filas; ++i) {
-    grid[i] = (char *) malloc (columnas * sizeof(char));
-    if (grid[i] == NULL) {
-  	  printf("No se pudo reservar memoria\n");
-			return -1;
-  	}
-  }
 
   // Rellenamos la matriz (de '#')
   SetGrid(grid);
@@ -57,17 +40,9 @@ int main(){
   
   // Mostramos por pantalla el laberinto
   PrintGrid(grid);
-  
-  // Se libera memoria para cada fila.
-  for (i = 0; i < filas; ++i)
-    free(grid[i]);
 
-  //Se libera memoria para el vector de vectores.
-  free(grid);
-
-  printf("%d,", columnas);
-  printf("%d,", filas);
-  printf("%ld\n", k); // Muestra en consola el nº de iteraciones.
-
+  // Se libera memoria.
+  Free(grid);
+   
   return 0;
 }
