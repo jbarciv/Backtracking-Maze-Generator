@@ -27,6 +27,7 @@ unsigned long int k=0;
 //----FUNCIÓN PRINCIPAL-------------------------------------------------
 int main(){
   char **grid = NULL;
+  srand(time(0));
 
   // Se pide al usuario el tamaño del laberinto.
   Pedir();
