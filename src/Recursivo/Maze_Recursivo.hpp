@@ -21,7 +21,7 @@ using namespace std;
 
 //----PROTOTIPOS DE FUNCIONES-------------------------------------------
 void Pedir();
-int SetGrid(char **);
+char **SetGrid(char **);
 int IsInBounds( int , int );
 void Visit(int , int , char **);
 void PrintGrid(char **);

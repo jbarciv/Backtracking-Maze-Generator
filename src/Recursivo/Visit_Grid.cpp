@@ -14,7 +14,7 @@ extern unsigned long int k;
 void Visit(int x, int y, char **grid){
     
     k++; // Contador de iteraciones (número de llamadas a Visit).
-    // Primero borrar lo que haya en la casilla visitada.
+    // Primero borra lo que haya en la casilla visitada.
     grid[x][y]= ' '; 
     // Crea un vector local en las 4 direcciones y lo desordena aleatoriamente
     int dirs[4] = {ARRIBA, DERECHA, ABAJO, IZQUIERDA};
@@ -35,7 +35,7 @@ void Visit(int x, int y, char **grid){
             case DERECHA: dy = 1; break;
             case IZQUIERDA: dy = -1; break;
         }
-        // Se obtiene la posición (x2,y2) dos casillas más adelante 
+        // Se obtiene la posición (x2,y2) dos casillas más adelante, 
         // según la dirección que marcan dx, dy.
         int x2 = x + (dx*2);
         int y2 = y + (dy*2);
@@ -45,7 +45,7 @@ void Visit(int x, int y, char **grid){
             if (grid[x2][y2] == '#'){
                 // Se quita la "pared entre la posición actual y la nueva.
                 grid[x2-dx][y2-dy] = ' ';
-                Visit(x2,y2,grid); // Recursively Visit (x2,y2)
+                Visit(x2,y2,grid); // Se visita recursivamente (x2,y2)
             }
         }
     }

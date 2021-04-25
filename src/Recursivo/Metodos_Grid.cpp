@@ -23,21 +23,20 @@ void Pedir(){
 }
 
 //----INICIALIZAMOS LA MATRIZ RESERVANDO MEMORIA Y RELLENANDO CON'#'-----
-int SetGrid(char **grid){
-    int i,j;
-
+char **SetGrid(char **grid){
+    int i=0,j=0;
     // Se reserva memoria dinámica (del tamaño de "filas").
     grid = (char **) malloc (filas * sizeof(char *)); 
 	    if (grid == NULL){
   	        printf("No se pudo reservar memoria\n");
-		    return -1;
+		    // return -1;
         }
     // Se reserva memoria dinámica para cada fila (tamaño de "columnas").
-    for (int i = 0; i < filas; ++i) {
+    for (i = 0; i < filas; ++i) {
         grid[i] = (char *) malloc (columnas * sizeof(char));
         if (grid[i] == NULL) {
   	        printf("No se pudo reservar memoria\n");
-			return -1;
+			// return -1;
   	    }
     }
     // Se inicializa toda la matriz con '#'.
@@ -45,13 +44,14 @@ int SetGrid(char **grid){
         for(j=0; j<columnas; ++j)
             grid[i][j]='#';
     }
+    return grid;
 }
 
 //----COMPRUEBA SI LA CASILLA A VISITAR ESTÁ DENTRO DE LOS LÍMITES-------
 int IsInBounds(int x, int y){
- if (x < 1 || x > (filas-2)) return false;
- if (y < 1 || y > (columnas-2)) return false;
- return true;
+    if (x < 1 || x > (filas-2)) return false;
+    if (y < 1 || y > (columnas-2)) return false;
+    return true;
 }
 
 //----MUESTRA EN CONSOLA EL LABERINTO Y LOS DATOS DE EJECUCIÓN------------

@@ -26,14 +26,14 @@ unsigned long int k=0;
 
 //----FUNCIÓN PRINCIPAL-------------------------------------------------
 int main(){
-  int i;
   char **grid = NULL;
 
   // Se pide al usuario el tamaño del laberinto.
   Pedir();
 
   // Rellenamos la matriz (de '#')
-  SetGrid(grid);
+  
+  grid = SetGrid(grid);
 
   // Empieza la recursión. Se comienza visitando la posición (1,1).
   Visit(1,1,grid); 
