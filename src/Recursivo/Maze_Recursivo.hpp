@@ -1,11 +1,10 @@
 //======================================================================
 // Maze_Recursivo.hpp
 //
-// Libraries, preprocessor directives and methods prototypes for 
-// mainMaze_Iterativo.cpp, metodosGrid.cpp and Maze_Iterativo.cpp
+// Librerías, directivas del preprocesador y prototipos de funciones 
+// para Maze_Iterativo.cpp, Metodos_Grid.cpp and Visit_Grid.cpp
 //
 //======================================================================
-
 
 #include <stdio.h>
 #include <cstdlib>
@@ -13,6 +12,7 @@
 #include <iostream>
 
 using namespace std;
+
 //----CONSTANTES--------------------------------------------------------
 #define ARRIBA 0
 #define DERECHA 1
@@ -20,9 +20,9 @@ using namespace std;
 #define IZQUIERDA 3
 
 //----PROTOTIPOS DE FUNCIONES-------------------------------------------
-void pedir();
+void Pedir();
 void Arreglar_2D();
 void SetGrid(char **);
 int IsInBounds( int , int );
-int Visit(int , int , char **);
+void Visit(int , int , char **);
 void PrintGrid(char **);

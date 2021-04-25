@@ -1,7 +1,7 @@
 //======================================================================
-// metodosGrid_Rec.cpp
+// Metodos_Grid.cpp
 //
-// General methods for grid implementation
+// Métodos generales para la implementación correcta de la matriz
 //
 //======================================================================
 
@@ -11,53 +11,34 @@
 extern int columnas,filas;
 
 //----PEDIMOS LAS DIMENSIONES AL USUARIO--------------------------------
-void pedir(){
-    // Se pide al usuario el tamaño del laberinto.
-
+void Pedir(){
     printf("Introduzca dimensiones\n Filas: ");
     scanf("%d", &filas);
-
     printf(" Columnas: ");
     scanf("%d", &columnas);
 }
 
-//----FUNCIONES PARA CONSTRUIR LA GRID----------------------------------
-void Arreglar_2D(){
-    (filas%2)?filas:filas+=1;
-    (columnas%2)?columnas:columnas+=1;
-}
-
+//----INICIALIZAMOS LA MATRIZ RELLENANDO CON'#'--------------------------
 void SetGrid(char **grid){
     int i,j;
-
     for (i=0; i<filas; ++i){
         for(j=0; j<columnas; ++j)
             grid[i][j]='#';
     }
 }
 
+//----COMPRUEBA SI LA CASILLA A VISITAR ESTÁ DENTRO DE LOS LÍMITES-------
+int IsInBounds(int x, int y){
+ if (x < 1 || x > (filas-2)) return false;
+ if (y < 1 || y > (columnas-2)) return false;
+ return true;
+}
+
+//----MUESTRA EN CONSOLA EL LABERINTO------------------------------------
 void PrintGrid(char **grid){
- // Muestra el laberinto final en la consola.
     for (int i=0; i<filas; i++) {
         for (int j=0; j<columnas; j++)
-
-            // Si la consola admite unicode, recomendamos descomentar el
-            // siguiente bloque de codigo
-
-            /*
-            if (grid[i][j]=='#'){
-                cout << "\u2B1C";
-            }
-            else {
-                cout << "  ";
-            }
-            */
-
-            // En caso de descomentar el bloque anterior, 
-            // comentar la siguiente linea
-
             printf("%c",grid[i][j]);
-            
         printf("\n");
     }
 }

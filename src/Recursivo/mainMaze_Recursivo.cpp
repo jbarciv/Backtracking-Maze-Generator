@@ -1,17 +1,19 @@
 //======================================================================
-// mainMaze_Recursivo.cpp
+// Maze_Recursivo.cpp
 // 
-// Based on Abe Pralle maze.cpp algorithm created on 2006.03.30
+// Basado en el algoritmo de Abe Pralle  maze.cpp 
+//  - Creación del algoritmo   2006.03.30
+//  - Convertido a C++         2010.04.02
 // 
-// C implemntation of maze make recursive algorithm
+// --> Implementación de un generador dinámico de laberintos en C++ <--
 //
-// History:
+// Historia:
 // 2021.04.15
-// Celia Ramos, Josep Maria Barberá, Gonzalo Quirós - created
+// Celia Ramos, Josep María Barberá, Gonzalo Quirós - Implementación
 // 2021.04.18
-// Celia Ramos, Josep Maria Barberá - First version
+// Celia Ramos, Josep María Barberá - Primera versión 
 // 2021.04.23
-// Gonzalo Quirós - Final version
+// Gonzalo Quirós - Versión final
 //
 //======================================================================
 
@@ -20,51 +22,52 @@
 
 //----VARIABLES GLOBALES------------------------------------------------
 int columnas,filas;
-double k=0;
+unsigned long int k=0;
 
 int main(){
-   int i;
-    // Se pide al usuario el tamaño del laberinto.
-    pedir();
 
-    Arreglar_2D();
+  int i;
+  // Se pide al usuario el tamaño del laberinto.
+  Pedir();
+  // Se ajustan las dimensiones para que sean impares.
+  Arreglar_2D();
     
-    char **grid = NULL;
-    // Se reserva memoria para el vector de vectores dinámicos (del tamaño de "filas").
-  	grid = (char **) malloc (filas * sizeof(char *)); 
-	if (grid == NULL) {
-  		printf("No se pudo reservar memoria\n");
+  char **grid = NULL;
+  // Se reserva memoria dinámica (del tamaño de "filas").
+  grid = (char **) malloc (filas * sizeof(char *)); 
+	if (grid == NULL){
+  	printf("No se pudo reservar memoria\n");
 		return -1;
-  	}
-    // Se reserva memoria para cada fila (del tamaño de "columnas").
-  	for (i = 0; i < filas; ++i) {
-    	grid[i] = (char *) malloc (columnas * sizeof(char));
-    	if (grid[i] == NULL) {
-  			printf("No se pudo reservar memoria\n");
+  }
+
+  // Se reserva memoria dinámica para cada fila (tamaño de "columnas").
+  for (i = 0; i < filas; ++i) {
+    grid[i] = (char *) malloc (columnas * sizeof(char));
+    if (grid[i] == NULL) {
+  	  printf("No se pudo reservar memoria\n");
 			return -1;
-  		}
   	}
-    
-    // Hacemos la matriz
-    SetGrid(grid);
+  }
 
-    // Empieza la recursion
-    Visit(1,1,grid); 
-    
-    // Mostramos por pantalla
-    PrintGrid(grid);
+  // Rellenamos la matriz (de '#')
+  SetGrid(grid);
 
-    printf("Nº iteraciones= %f\n", k);
-    
-    // Se libera memoria para cada fila.
-    for (i = 0; i < filas; ++i) {
-    	free(grid[i]);
-    }
+  // Empieza la recursión. Se comienza visitando la posición (1,1).
+  Visit(1,1,grid); 
+  
+  // Mostramos por pantalla el laberinto
+  PrintGrid(grid);
+  
+  // Se libera memoria para cada fila.
+  for (i = 0; i < filas; ++i)
+    free(grid[i]);
 
-    //Se libera memoria para el vector de vectores ("primera columna")
-  	free(grid);
+  //Se libera memoria para el vector de vectores.
+  free(grid);
 
-    printf("todo perfecto!\n");
-    
-    return 0;
+  printf("%d,", columnas);
+  printf("%d,", filas);
+  printf("%ld\n", k); // Muestra en consola el nº de iteraciones.
+
+  return 0;
 }
