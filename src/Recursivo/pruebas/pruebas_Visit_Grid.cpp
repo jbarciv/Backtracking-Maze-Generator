@@ -1,11 +1,11 @@
 //======================================================================
-// Visit_Grid.cpp 
+// pruebas_Visit_Grid.cpp 
 //
-// Función Visit para recorrer/construir el laberinto
+// Visit function to walk along the grid
 //
 //======================================================================
 
-#include "Maze_Recursivo.hpp"
+#include "pruebas_Maze_Recursivo.hpp"
 
 //----VARIABLES GLOBALES------------------------------------------------
 extern unsigned long int k;
