@@ -1,5 +1,5 @@
 //======================================================================
-// pruebas_Maze_Recursivo.cpp 
+// Maze_Recursivo.cpp
 // 
 // Basado en el algoritmo de Abe Pralle  maze.cpp 
 //  - Creación del algoritmo   2006.03.30
@@ -39,7 +39,10 @@ int main(){
   Visit(1,1,grid); 
   
   // Mostramos por pantalla el laberinto
-  PrintGrid(grid);
+  // PrintGrid(grid);
+  printf("%d ", columnas);
+  printf("%d ", filas);
+  printf("%ld\n", k); // Muestra el nº de iteraciones.
 
   // Se libera memoria.
   Free(grid);

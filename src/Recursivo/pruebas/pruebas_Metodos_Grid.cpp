@@ -1,5 +1,5 @@
 //======================================================================
-// pruebas_Metodos_Grid.cpp
+// Metodos_Grid.cpp
 //
 // Métodos generales para la implementación correcta de la matriz
 //
@@ -13,9 +13,9 @@ extern unsigned long int k;
 
 //----PEDIMOS LAS DIMENSIONES AL USUARIO--------------------------------
 void Pedir(){
-    printf("Introduzca dimensiones\n Filas: ");
+    // printf("Introduzca dimensiones\n Filas: ");
     scanf("%d", &filas);
-    printf(" Columnas: ");
+    // printf(" Columnas: ");
     scanf("%d", &columnas);
     // Se ajustan las dimensiones para que sean impares siempre.
     (filas%2)?filas:filas+=1;
@@ -55,16 +55,13 @@ int IsInBounds(int x, int y){
 }
 
 //----MUESTRA EN CONSOLA EL LABERINTO Y LOS DATOS DE EJECUCIÓN------------
-void PrintGrid(char **grid){
-    for (int i=0; i<filas; i++) {
-        for (int j=0; j<columnas; j++)
-            printf("%c",grid[i][j]);
-        printf("\n");
-    }
-    printf("%d ", columnas);
-    printf("%d ", filas);
-    printf("%ld\n", k); // Muestra el nº de iteraciones.
-}
+// void PrintGrid(char **grid){
+//     for (int i=0; i<filas; i++) {
+//         for (int j=0; j<columnas; j++)
+//             printf("%c",grid[i][j]);
+//         printf("\n");
+//     }
+// }
 
 //----LIBERA TODA LA MEMORIA RESERVADA------------------------------------
 void Free(char **grid){

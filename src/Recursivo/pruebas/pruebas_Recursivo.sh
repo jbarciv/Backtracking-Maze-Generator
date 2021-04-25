@@ -31,7 +31,7 @@ step=50
 
 while [ $initial -le $final ]
     do 
-        echo $initial $initial | $mypath/Maze_Recursivo >> $file
+        echo $initial $initial | $mypath/pruebas_Maze_Recursivo >> $file
         initial=$(( $initial + $step ))
     done
 

@@ -1,7 +1,7 @@
 //======================================================================
-// pruebas_Visit_Grid.cpp 
+// Visit_Grid.cpp 
 //
-// Visit function to walk along the grid
+// Función Visit para recorrer/construir el laberinto
 //
 //======================================================================
 
