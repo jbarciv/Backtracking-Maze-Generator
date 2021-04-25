@@ -61,8 +61,8 @@ void PrintGrid(char **grid){
             printf("%c",grid[i][j]);
         printf("\n");
     }
-    printf("%d,", columnas);
-    printf("%d,", filas);
+    printf("%d ", columnas);
+    printf("%d ", filas);
     printf("%ld\n", k); // Muestra el nº de iteraciones.
 }
 
