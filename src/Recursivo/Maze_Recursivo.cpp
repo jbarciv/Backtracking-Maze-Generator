@@ -27,13 +27,12 @@ unsigned long int k=0;
 //----FUNCIÓN PRINCIPAL-------------------------------------------------
 int main(){
   char **grid = NULL;
-  srand(time(0));
+  srand(time(0));     // Semilla aleatoria para la función rand().
 
   // Se pide al usuario el tamaño del laberinto.
   Pedir();
 
   // Rellenamos la matriz (de '#')
-  
   grid = SetGrid(grid);
 
   // Empieza la recursión. Se comienza visitando la posición (1,1).
