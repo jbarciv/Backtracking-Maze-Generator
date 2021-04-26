@@ -43,6 +43,9 @@ int SetGrid(char **grid){
         for(j=0; j<columnas; ++j)
             grid[i][j]='#';
     }
+    // Se dibujan una entrada y una salida al laberinto.
+    grid[0][1]=' '; 
+    grid[filas-1][columnas-2]=' '; 
     return 0;
 }
 
