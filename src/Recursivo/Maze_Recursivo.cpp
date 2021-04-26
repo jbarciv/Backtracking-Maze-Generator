@@ -33,7 +33,8 @@ int main(){
   Pedir();
 
   // Rellenamos la matriz (de '#')
-  grid = SetGrid(grid);
+  grid = (char **) malloc (filas * sizeof(char *)); 
+  SetGrid(grid);
 
   // Empieza la recursión. Se comienza visitando la posición (1,1).
   Visit(1,1,grid); 

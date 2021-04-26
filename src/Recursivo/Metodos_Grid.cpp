@@ -23,20 +23,19 @@ void Pedir(){
 }
 
 //----INICIALIZAMOS LA MATRIZ RESERVANDO MEMORIA Y RELLENANDO CON'#'-----
-char **SetGrid(char **grid){
+int SetGrid(char **grid){
     int i=0,j=0;
     // Se reserva memoria dinámica (del tamaño de "filas").
-    grid = (char **) malloc (filas * sizeof(char *)); 
-	    if (grid == NULL){
-  	        printf("No se pudo reservar memoria\n");
-		    // return -1;
-        }
+	if (grid == NULL){
+  	    printf("No se pudo reservar memoria\n");
+	    return -1;
+    }
     // Se reserva memoria dinámica para cada fila (tamaño de "columnas").
     for (i = 0; i < filas; ++i) {
         grid[i] = (char *) malloc (columnas * sizeof(char));
         if (grid[i] == NULL) {
   	        printf("No se pudo reservar memoria\n");
-			// return -1;
+			return -1;
   	    }
     }
     // Se inicializa toda la matriz con '#'.
@@ -44,7 +43,7 @@ char **SetGrid(char **grid){
         for(j=0; j<columnas; ++j)
             grid[i][j]='#';
     }
-    return grid;
+    return 0;
 }
 
 //----COMPRUEBA SI LA CASILLA A VISITAR ESTÁ DENTRO DE LOS LÍMITES-------
