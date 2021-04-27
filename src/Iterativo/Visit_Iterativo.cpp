@@ -1,5 +1,5 @@
 //======================================================================
-// Visit_Grid.cpp 
+// Visit_Iterativo.cpp 
 //
 // Función Visit para recorrer/construir el laberinto de forma ITERATIVA
 //
@@ -24,7 +24,7 @@ int Visit(int x, int y, char **grid, Nodo *pila){
                 continue;
             }
         }else{  
-            grid[x][y]=' ';
+            grid[x][y] = ' ';
             // Crea un vector local con las 4 direcciones 
             //y cambia aleatoriamente su orden.
             int dirs[4] = {ARRIBA, DERECHA, ABAJO, IZQUIERDA};
