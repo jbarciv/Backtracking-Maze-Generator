@@ -17,12 +17,22 @@ using namespace std;
 #define ABAJO 2
 #define IZQUIERDA 3
 
+//----DEFINICIÓN DE TIPOS ----------------------------------------------
+struct Nodo{
+    int x;
+    int y;
+    int iter;
+    bool estado;
+    int v[4];
+    Nodo *siguiente;
+};
+
 //----PROTOTIPOS DE FUNCIONES ITERATIVAS--------------------------------
-void pedir();
-void Arreglar_2D();
-void SetGrid(char **);
-void agregarPila(struct Nodo *&, int,  int, int, bool, int *);
-void sacarPila(struct Nodo *&, int *, int *);
+int Pedir(int ,char **);
+int SetGrid(char **);
+void AgregarPila(struct Nodo *&, int,  int, int, bool, int *);
+void SacarPila(struct Nodo *&, int *, int *);
 int IsInBounds( int , int );
 int Visit(int , int , char **,struct Nodo *);
-void PrintGrid(char **);
+void PrintGrid(char **,int ,char **);
+void Free(char **);

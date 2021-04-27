@@ -1,11 +1,11 @@
 //======================================================================
-// Metodos_Grid.cpp
+// metodosGrid_Iter.cpp
 //
-// Funciones llamadas en main y en Visit
+// General methods for grid implementation
 //
 //======================================================================
 
-#include "Maze_Recursivo.hpp"
+#include "Maze_Iterativo.hpp"
 
 //----VARIABLES GLOBALES------------------------------------------------
 extern int columnas,filas;
@@ -14,7 +14,7 @@ extern bool pruebas;
 
 //----PEDIMOS LAS DIMENSIONES AL USUARIO--------------------------------
 int Pedir(int argc, char **argv){
-    // Se comprueba el numero de argumentos pasados en la ejecución.
+// Se comprueba numero de argumentos pasados en la llamada al programa.
     switch (argc) {
         case 1: 
             printf("Introduzca dimensiones\n Filas: ");
@@ -70,6 +70,31 @@ int SetGrid(char **grid){
     return 0;
 }
 
+//----FUNCIONES DE LA PILA----------------------------------------------
+void AgregarPila(Nodo *&pila, int pos_x, int pos_y,int i, bool estate,
+                 int dir[]){
+
+    Nodo *nuevo_nodo = (Nodo*)malloc(sizeof(Nodo));
+
+    nuevo_nodo -> x = pos_x;
+    nuevo_nodo -> y = pos_y;
+    nuevo_nodo -> iter = i;
+    nuevo_nodo -> estado = estate;
+
+    for(int j=0; j<4; j++) nuevo_nodo -> v[j] = dir[j];
+
+    nuevo_nodo -> siguiente = pila;
+    pila = nuevo_nodo;
+}
+
+void SacarPila(Nodo *&pila,int *pos_x, int *pos_y){
+    Nodo *aux = pila;
+    *pos_x = aux -> x;
+    *pos_y = aux -> y;
+    pila = aux -> siguiente;
+    free (aux);  
+}
+
 //----COMPRUEBA SI LA CASILLA A VISITAR ESTÁ DENTRO DE LOS LÍMITES-------
 int IsInBounds(int x, int y){
     if (x < 1 || x > (filas-2)) return false;
@@ -90,7 +115,6 @@ void PrintGrid(char **grid,int argc, char **argv){
         printf("%d ", columnas);
         printf("%ld\n", k); // Muestra el nº de iteraciones.
     }
-
 }
 
 //----LIBERA TODA LA MEMORIA RESERVADA------------------------------------

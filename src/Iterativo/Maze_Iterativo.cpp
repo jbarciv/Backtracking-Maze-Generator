@@ -20,52 +20,33 @@
 
 //----VARIABLES GLOBALES------------------------------------------------
 int columnas,filas, vect[4]={0,0,0,0};
-long int k=0;
+unsigned long int k=0;
+bool pruebas = false;
 
-int main(){
-    int i=0;
-    
-    // Se pide al usuario el tamaño del laberinto.
-    pedir();
-    
-    Arreglar_2D();
-    
+int main(int argc, char **argv){
     char **grid = NULL;
-    // Se reserva memoria para el vector de vectores dinámicos (del tamaño de "filas").
-    grid = (char **) malloc (filas * sizeof(char *)); 
-    if (grid == NULL) {
-        printf("No se pudo reservar memoria\n");
-    }
-    // Se reserva memoria para cada fila (del tamaño de "columnas").
-    for (i = 0; i < filas; ++i) {
-        grid[i] = (char *) malloc (columnas * sizeof(char));
-        if (grid[i] == NULL) {
-            printf("No se pudo reservar memoria\n");
-        }
-    }
-    
-    srand(time(0));
+    srand(time(0));    // Semilla aleatoria para la función rand().
 
-    // Hacemos la matriz
+    // Se pide al usuario el tamaño del laberinto.
+    Pedir(argc,argv);
+    
+    
+    // Se crea la matriz y se inicializa (llena de '#').
+    grid = (char **) malloc (filas * sizeof(char *)); 
     SetGrid(grid);
 
-    // Hacemos la pila
+    // Se crea la pila y se agrega el primer nodo.
     Nodo *pila = NULL;
-    agregarPila(pila,1,1,0,false,vect);
+    AgregarPila(pila, 1, 1, 0, false, vect);
 
-    //Empieza la iteracion
-    Visit(1,1,grid,pila);
+    //Empieza la iteracion. Se comienza visitando la posición (1,1).
+    Visit(1, 1, grid, pila);
 
-    //Mostramos por pantalla
-    PrintGrid(grid);
-    
-    // Se libera memoria para cada fila.
-    for (i = 0; i < filas; ++i) {
-    	free(grid[i]);
-    }
+    // Mostramos por pantalla el laberinto
+    PrintGrid(grid, argc, argv);
 
-  	//Se libera memoria para el vector de vectores ("primera columna")
-    free(grid);
+    // Se libera memoria.
+    Free(grid);
 
     return 0;
 }

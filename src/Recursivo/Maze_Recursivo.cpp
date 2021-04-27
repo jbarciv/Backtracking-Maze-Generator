@@ -32,17 +32,17 @@ int main(int argc, char **argv){
   srand(time(0));    // Semilla aleatoria para la función rand().
 
   // Se pide al usuario el tamaño del laberinto.
-  Pedir(argc,argv);
+  Pedir(argc, argv);
 
-  // Rellenamos la matriz (de '#')
+  // Se crea la matriz y se inicializa (llena de '#')
   grid = (char **) malloc (filas * sizeof(char *)); 
   SetGrid(grid);
 
   // Empieza la recursión. Se comienza visitando la posición (1,1).
-  Visit(1,1,grid); 
+  Visit(1, 1, grid); 
   
   // Mostramos por pantalla el laberinto
-  PrintGrid(grid,argc,argv);
+  PrintGrid(grid, argc, argv);
 
   // Se libera memoria.
   Free(grid);

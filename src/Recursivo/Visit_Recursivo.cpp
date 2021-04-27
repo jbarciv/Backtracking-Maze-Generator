@@ -10,7 +10,7 @@
 //----VARIABLES GLOBALES------------------------------------------------
 extern unsigned long int k;
 
-//----FUNCIONES RECURSIVA: VISIT------------------------------------
+//----FUNCIONES RECURSIVA: VISIT----------------------------------------
 void Visit(int x, int y, char **grid){
     
     k++; // Contador de iteraciones (número de llamadas a Visit).
