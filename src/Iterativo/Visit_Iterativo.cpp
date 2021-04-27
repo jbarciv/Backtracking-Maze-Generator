@@ -1,7 +1,7 @@
 //======================================================================
-// Maze_Iterativo.cpp
+// Visit_Grid.cpp 
 //
-// Pile implementation and Visit function
+// Función Visit para recorrer/construir el laberinto de forma ITERATIVA
 //
 //======================================================================
 

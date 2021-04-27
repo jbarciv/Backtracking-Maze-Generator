@@ -1,7 +1,7 @@
 //======================================================================
-// Visit_Grid.cpp 
+// Visit_Recursivo.cpp 
 //
-// Función Visit para recorrer/construir el laberinto
+// Función Visit para recorrer/construir el laberinto de forma RECURSIVA
 //
 //======================================================================
 

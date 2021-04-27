@@ -1,5 +1,5 @@
 //======================================================================
-// Metodos_Grid.cpp
+// Metodos_Recursivo.cpp
 //
 // Funciones llamadas en main y en Visit
 //

@@ -1,10 +1,9 @@
-//======================================================================
-// metodosGrid_Iter.cpp
+///======================================================================
+// Metodos_Iterativo.cpp
 //
-// General methods for grid implementation
+// Funciones llamadas en main y en Visit
 //
 //======================================================================
-
 #include "Maze_Iterativo.hpp"
 
 //----VARIABLES GLOBALES------------------------------------------------

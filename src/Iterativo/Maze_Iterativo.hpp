@@ -1,8 +1,8 @@
 //======================================================================
 // Maze_Iterativo.hpp
 //
-// Libraries, preprocessor directives and methods prototypes for 
-// mainMaze_Iterativo.cpp, metodosGrid.cpp and Maze_Iterativo.cpp
+// Librerías, directivas del preprocesador y prototipos de funciones 
+// para Maze_Iterativo.cpp, Metodos_Iterativo.cpp y Visit_Iterativo.cpp
 //
 //======================================================================
 #include <stdio.h>

@@ -2,7 +2,7 @@
 // Maze_Recursivo.hpp
 //
 // Librerías, directivas del preprocesador y prototipos de funciones 
-// para Maze_Iterativo.cpp, Metodos_Grid.cpp y Visit_Grid.cpp
+// para Maze_Recursivo.cpp, Metodos_Recursivo.cpp y Visit_Recursivo.cpp
 //
 //======================================================================
 
