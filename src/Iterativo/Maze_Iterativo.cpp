@@ -109,8 +109,8 @@ int Visit(int x, int y, char **grid, Nodo *pila){
                     break;
                 }
             }
-            if(i==3) pila->iter=4;
         }
+        pila->iter = i;
         k++;
     }
     return k;

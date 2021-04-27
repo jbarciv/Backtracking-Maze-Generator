@@ -43,7 +43,7 @@ void Visit(int x, int y, char **grid){
         if (IsInBounds(x2,y2)){
             // Se comprueba además que no se haya visitado antes.
             if (grid[x2][y2] == '#'){
-                // Se quita la "pared entre la posición actual y la nueva.
+                // Se quita la "pared" entre la posición actual y la nueva.
                 grid[x2-dx][y2-dy] = ' ';
                 Visit(x2,y2,grid); // Se visita recursivamente (x2,y2)
             }

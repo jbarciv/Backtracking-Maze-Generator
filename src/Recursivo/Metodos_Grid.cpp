@@ -10,16 +10,36 @@
 //----VARIABLES GLOBALES------------------------------------------------
 extern int columnas,filas;
 extern unsigned long int k;
+extern bool pruebas;
 
 //----PEDIMOS LAS DIMENSIONES AL USUARIO--------------------------------
-void Pedir(){
-    printf("Introduzca dimensiones\n Filas: ");
-    scanf("%d", &filas);
-    printf(" Columnas: ");
-    scanf("%d", &columnas);
+int Pedir(int argc, char **argv){
+
+    switch (argc) {
+        case 1: 
+            printf("Introduzca dimensiones\n Filas: ");
+            scanf("%d", &filas);
+            printf(" Columnas: ");
+            scanf("%d", &columnas);
+            break;
+        case 2:
+            printf("Número de argumentos erroneo.\n");
+            exit(1);
+        case 3:
+            filas = atoi(argv[1]);
+            columnas = atoi(argv[2]);
+            break;
+        case 4:
+            filas = atoi(argv[1]);
+            columnas = atoi(argv[2]);
+            pruebas = true;
+            break;
+    }
+
     // Se ajustan las dimensiones para que sean impares siempre.
     (filas%2)?filas:filas+=1;
     (columnas%2)?columnas:columnas+=1;
+    return 0;
 }
 
 //----INICIALIZAMOS LA MATRIZ RESERVANDO MEMORIA Y RELLENANDO CON'#'-----
@@ -54,15 +74,19 @@ int IsInBounds(int x, int y){
 }
 
 //----MUESTRA EN CONSOLA EL LABERINTO Y LOS DATOS DE EJECUCIÓN------------
-void PrintGrid(char **grid){
-    for (int i=0; i<filas; i++) {
-        for (int j=0; j<columnas; j++)
-            printf("%c",grid[i][j]);
-        printf("\n");
+void PrintGrid(char **grid,int argc, char **argv){
+    if (!pruebas){
+        for (int i=0; i<filas; i++) {
+            for (int j=0; j<columnas; j++)
+                printf("%c",grid[i][j]);
+            printf("\n");
+        }
+    } else{
+        printf("%d ", filas);
+        printf("%d ", columnas);
+        printf("%ld\n", k); // Muestra el nº de iteraciones.
     }
-    printf("%d ", columnas);
-    printf("%d ", filas);
-    printf("%ld\n", k); // Muestra el nº de iteraciones.
+
 }
 
 //----LIBERA TODA LA MEMORIA RESERVADA------------------------------------

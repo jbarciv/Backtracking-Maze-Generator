@@ -27,11 +27,11 @@ echo "filas columnas iteraciones" > $file
 
 initial=20
 final=1000
-step=50
+step=25
 
 while [ $initial -le $final ]
     do 
-        echo $initial $initial | $mypath/pruebas_Maze_Recursivo >> $file
+        echo $initial $initial | $mypath/pruebas_Maze_Recursivo.exe >> $file
         initial=$(( $initial + $step ))
     done
 

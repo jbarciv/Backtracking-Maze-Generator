@@ -20,9 +20,9 @@ using namespace std;
 #define IZQUIERDA 3
 
 //----PROTOTIPOS DE FUNCIONES-------------------------------------------
-void Pedir();
+int Pedir(int ,char **);
 int SetGrid(char **);
 int IsInBounds( int , int );
 void Visit(int , int , char **);
-void PrintGrid(char **);
+void PrintGrid(char **,int ,char **);
 void Free(char **);

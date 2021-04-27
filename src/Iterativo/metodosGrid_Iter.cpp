@@ -45,19 +45,19 @@ void PrintGrid(char **grid){
             // Si la consola admite unicode, recomendamos descomentar el
             // siguiente bloque de codigo
 
-            /*
+            
             if (grid[i][j]=='#'){
                 cout << "\u2B1C";
             }
             else {
                 cout << "  ";
             }
-            */
+            
 
             // En caso de descomentar el bloque anterior, 
             // comentar la siguiente linea
 
-            printf("%c",grid[i][j]);
+            // printf("%c",grid[i][j]);
             
         printf("\n");
     }
