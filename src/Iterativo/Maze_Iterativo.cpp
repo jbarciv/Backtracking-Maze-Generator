@@ -1,16 +1,17 @@
 //======================================================================
-// mainMaze_Iterativo.cpp
+// Maze_Iterativo.cpp
 //
-// C implementation of an iterative maze generation algorithm
+// --> Implementación de un generador dinámico de laberintos <--
+//           en C++ mediante un algoritmo ITERATIVO 
 //
-// History:
+// Historia:
 // 2021.04.19
-// Celia Ramos, Josep Maria Barberá, Gonzalo Quirós - created
+// Celia Ramos, Josep Maria Barberá, Gonzalo Quirós - Creación
 // 2021.04.21
-// Celia Ramos, Josep Maria Barberá, Gonzalo Quirós - First version
+// Celia Ramos, Josep Maria Barberá, Gonzalo Quirós - Primera versión
 // 2021.04.22
-// Josep Maria Barberá - Pile implementation
-// 2021.04.23 - Final version
+// Josep Maria Barberá - Implementación mediante pila
+// 2021.04.23 - Versión final
 //======================================================================
 
 

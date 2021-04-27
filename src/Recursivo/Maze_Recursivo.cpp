@@ -5,7 +5,8 @@
 //  - Creación del algoritmo   2006.03.30
 //  - Convertido a C++         2010.04.02
 // 
-// --> Implementación de un generador dinámico de laberintos en C++ <--
+// --> Implementación de un generador dinámico de laberintos <--
+//           en C++ mediante un algoritmo RECURSIVO 
 //
 // Historia:
 // 2021.04.15
