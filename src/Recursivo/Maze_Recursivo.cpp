@@ -28,7 +28,7 @@ bool pruebas = false;
 //----FUNCIÓN PRINCIPAL-------------------------------------------------
 int main(int argc, char **argv){
   char **grid = NULL;
-  srand(time(0));     // Semilla aleatoria para la función rand().
+  srand(time(0));    // Semilla aleatoria para la función rand().
 
   // Se pide al usuario el tamaño del laberinto.
   Pedir(argc,argv);
@@ -38,7 +38,6 @@ int main(int argc, char **argv){
   SetGrid(grid);
 
   // Empieza la recursión. Se comienza visitando la posición (1,1).
-
   Visit(1,1,grid); 
   
   // Mostramos por pantalla el laberinto

@@ -1,7 +1,7 @@
 //======================================================================
 // Metodos_Grid.cpp
 //
-// Métodos generales para la implementación correcta de la matriz
+// Funciones llamadas en main y en Visit
 //
 //======================================================================
 
@@ -14,7 +14,7 @@ extern bool pruebas;
 
 //----PEDIMOS LAS DIMENSIONES AL USUARIO--------------------------------
 int Pedir(int argc, char **argv){
-
+    // Se comprueba el numero de argumentos pasados en la ejecución.
     switch (argc) {
         case 1: 
             printf("Introduzca dimensiones\n Filas: ");
@@ -63,9 +63,10 @@ int SetGrid(char **grid){
         for(j=0; j<columnas; ++j)
             grid[i][j]='#';
     }
-    // Se dibujan una entrada y una salida al laberinto.
-    grid[0][1]=' '; 
-    grid[filas-1][columnas-2]=' '; 
+    // Se establece la entrada y la salida del laberinto.
+    grid[0][1] = ' '; 
+    grid[filas-1][columnas-2] = ' ';
+
     return 0;
 }
 
@@ -76,9 +77,9 @@ int IsInBounds(int x, int y){
     return true;
 }
 
-//----MUESTRA EN CONSOLA EL LABERINTO Y LOS DATOS DE EJECUCIÓN------------
+//----MUESTRA EN CONSOLA EL LABERINTO O LOS DATOS DE EJECUCIÓN-----------
 void PrintGrid(char **grid,int argc, char **argv){
-    if (!pruebas){
+    if (!pruebas){ // se comprueba si se está ejecutando una prueba o no.
         for (int i=0; i<filas; i++) {
             for (int j=0; j<columnas; j++)
                 printf("%c",grid[i][j]);
