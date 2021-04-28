@@ -39,15 +39,14 @@ int main(int argc, char **argv){
     // Se crea la pila y se agrega el primer nodo.
     Nodo *pila = NULL;
     AgregarPila(pila, 1, 1, 0, false, vect);
-    t0=clock();
+    
     // Empieza la iteracion. Se comienza visitando la posición (1,1).
+    t0=clock();
     Visit(1, 1, grid, pila);
     t1=clock();
-    tiempo = (double(t1-t0)/CLOCKS_PER_SEC);
-    printf("tiempo: %2.4f\n", tiempo);
 
     // Mostramos por pantalla el laberinto
-    PrintGrid(grid, argc, argv);
+    PrintGrid(grid, argc, argv, t0, t1);
 
     // Se libera memoria.
     Free(grid);

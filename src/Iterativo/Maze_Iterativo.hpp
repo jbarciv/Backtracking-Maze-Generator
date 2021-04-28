@@ -34,5 +34,5 @@ void AgregarPila(struct Nodo *&, int,  int, int, bool, short int *);
 void SacarPila(struct Nodo *&, int *, int *);
 int IsInBounds( int , int );
 int Visit(int , int , char **,struct Nodo *);
-void PrintGrid(char **,int ,char **);
+void PrintGrid(char **,int ,char **, unsigned int, unsigned int);
 void Free(char **);
