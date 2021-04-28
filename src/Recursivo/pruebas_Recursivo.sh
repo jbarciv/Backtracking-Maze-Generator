@@ -25,15 +25,19 @@ file="output_recursive.txt"
 touch $file
 
 # Write column names
-echo "filas columnas iteraciones" > $file
+echo "repeticiones filas area tiempo iteraciones" > $file
 
 initial=20
-final=10000
-step=50
+final=100
+step=5
 
 while [ $initial -le $final ]
     do 
-        $mypath/Maze_Recursivo $initial $initial 1 >> $file
+        for i in {1. .5}
+        do
+            $i $mypath/Maze_Recursivo $initial $initial 1 >> $file
+            
+        done
         initial=$(( $initial + $step ))
     done
 
