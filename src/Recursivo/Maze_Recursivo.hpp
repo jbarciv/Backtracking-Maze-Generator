@@ -24,5 +24,5 @@ int Pedir(int ,char **);
 int SetGrid(char **);
 int IsInBounds( int , int );
 void Visit(int , int , char **);
-void PrintGrid(char **,int ,char **);
+void PrintGrid(char **,int ,char **, unsigned int, unsigned int);
 void Free(char **);
