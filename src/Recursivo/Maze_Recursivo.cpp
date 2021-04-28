@@ -24,6 +24,8 @@
 int columnas,filas;
 unsigned long int k=0;
 bool pruebas = false;
+unsigned int t0, t1;
+double tiempo;
 
 //----FUNCIÓN PRINCIPAL-------------------------------------------------
 int main(int argc, char **argv){
@@ -37,8 +39,12 @@ int main(int argc, char **argv){
   grid = (char **) malloc (filas * sizeof(char *)); 
   SetGrid(grid);
 
+  t0=clock();
   // Empieza la recursión. Se comienza visitando la posición (1,1).
   Visit(1, 1, grid); 
+  t1=clock();
+  tiempo = (double(t1-t0)/CLOCKS_PER_SEC);
+  printf("tiempo: %2.4f\n", tiempo);
   
   // Mostramos por pantalla el laberinto
   PrintGrid(grid, argc, argv);

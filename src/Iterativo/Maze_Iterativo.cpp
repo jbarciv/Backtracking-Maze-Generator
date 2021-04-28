@@ -24,6 +24,9 @@ bool pruebas = false;
 int main(int argc, char **argv){
     short int vect[4]={0,0,0,0};
     char **grid = NULL;
+    unsigned int t0, t1;
+    double tiempo;
+
     srand(time(0));    // Semilla aleatoria para la función rand().
 
     // Se pide al usuario el tamaño del laberinto.
@@ -36,9 +39,12 @@ int main(int argc, char **argv){
     // Se crea la pila y se agrega el primer nodo.
     Nodo *pila = NULL;
     AgregarPila(pila, 1, 1, 0, false, vect);
-
+    t0=clock();
     // Empieza la iteracion. Se comienza visitando la posición (1,1).
     Visit(1, 1, grid, pila);
+    t1=clock();
+    tiempo = (double(t1-t0)/CLOCKS_PER_SEC);
+    printf("tiempo: %2.4f\n", tiempo);
 
     // Mostramos por pantalla el laberinto
     PrintGrid(grid, argc, argv);
