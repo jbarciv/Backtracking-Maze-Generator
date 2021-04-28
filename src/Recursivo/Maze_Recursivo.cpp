@@ -41,6 +41,7 @@ int main(int argc, char **argv){
 
   
   // Empieza la recursión. Se comienza visitando la posición (1,1).
+  // Se toma además el tiempo al entrar y salir de la función.
   t0=clock();
   Visit(1, 1, grid); 
   t1=clock();
