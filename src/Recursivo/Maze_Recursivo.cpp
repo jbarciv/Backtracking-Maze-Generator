@@ -29,7 +29,6 @@ bool pruebas = false;
 int main(int argc, char **argv){
   char **grid = NULL;
   unsigned int t0, t1;
-  double tiempo;
   srand(time(0));    // Semilla aleatoria para la función rand().
 
   // Se pide al usuario el tamaño del laberinto.
@@ -42,9 +41,9 @@ int main(int argc, char **argv){
   
   // Empieza la recursión. Se comienza visitando la posición (1,1).
   // Se toma además el tiempo al entrar y salir de la función.
-  t0=clock();
+  t0 = clock();
   Visit(1, 1, grid); 
-  t1=clock();
+  t1 = clock();
     
   // Mostramos por pantalla el laberinto
   PrintGrid(grid, argc, argv, t0, t1);

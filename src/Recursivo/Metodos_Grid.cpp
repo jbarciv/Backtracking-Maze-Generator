@@ -71,7 +71,8 @@ int SetGrid(char **grid){
 }
 
 //----MUESTRA EN CONSOLA EL LABERINTO O LOS DATOS DE EJECUCIÓN-----------
-void PrintGrid(char **grid,int argc, char **argv, int t0, int t1){
+void PrintGrid(char **grid,int argc, char **argv, unsigned int t0, 
+               unsigned int t1){
     double tiempo;
     tiempo = (double(t1-t0)/CLOCKS_PER_SEC);
     if (!pruebas){ // Se comprueba si se está ejecutando una prueba o no.
@@ -81,9 +82,9 @@ void PrintGrid(char **grid,int argc, char **argv, int t0, int t1){
             printf("\n");
         }
     } else{
-        printf("%d", filas);
+        printf("%d ", filas);
         printf("%d ", filas*columnas);
-        printf("%2.4f\n", tiempo);
+        printf("%2.4f ", tiempo);
         printf("%ld\n", k); // Muestra el nº de iteraciones.
     }
 }
