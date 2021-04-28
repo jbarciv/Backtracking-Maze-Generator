@@ -14,22 +14,20 @@
 // 2021.04.23 - Versión final
 //======================================================================
 
-
 #include "Maze_Iterativo.hpp"
 
-
 //----VARIABLES GLOBALES------------------------------------------------
-int columnas,filas, vect[4]={0,0,0,0};
+int columnas,filas;
 unsigned long int k=0;
 bool pruebas = false;
 
 int main(int argc, char **argv){
+    short int vect[4]={0,0,0,0};
     char **grid = NULL;
     srand(time(0));    // Semilla aleatoria para la función rand().
 
     // Se pide al usuario el tamaño del laberinto.
     Pedir(argc,argv);
-    
     
     // Se crea la matriz y se inicializa (llena de '#').
     grid = (char **) malloc (filas * sizeof(char *)); 
@@ -39,7 +37,7 @@ int main(int argc, char **argv){
     Nodo *pila = NULL;
     AgregarPila(pila, 1, 1, 0, false, vect);
 
-    //Empieza la iteracion. Se comienza visitando la posición (1,1).
+    // Empieza la iteracion. Se comienza visitando la posición (1,1).
     Visit(1, 1, grid, pila);
 
     // Mostramos por pantalla el laberinto

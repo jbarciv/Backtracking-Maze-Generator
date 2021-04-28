@@ -23,14 +23,14 @@ struct Nodo{
     int y;
     int iter;
     bool estado;
-    int v[4];
+    short int v[4];
     Nodo *siguiente;
 };
 
 //----PROTOTIPOS DE FUNCIONES ITERATIVAS--------------------------------
 int Pedir(int ,char **);
 int SetGrid(char **);
-void AgregarPila(struct Nodo *&, int,  int, int, bool, int *);
+void AgregarPila(struct Nodo *&, int,  int, int, bool, short int *);
 void SacarPila(struct Nodo *&, int *, int *);
 int IsInBounds( int , int );
 int Visit(int , int , char **,struct Nodo *);

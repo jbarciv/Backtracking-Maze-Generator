@@ -25,9 +25,9 @@ int Pedir(int argc, char **argv){
             printf("Número de argumentos erroneo.\n");
             exit(1);
         case 3:
-            filas = atoi(argv[1]);
-            columnas = atoi(argv[2]);
-            break;
+            filas = atoi(argv[1]);    // Conversión de tipo char a int.
+            columnas = atoi(argv[2]); // mediante función "atoi", de la
+            break;                    // librería <cstdlib>.
         case 4:
             filas = atoi(argv[1]);
             columnas = atoi(argv[2]);
@@ -70,26 +70,28 @@ int SetGrid(char **grid){
 }
 
 //----FUNCIONES DE LA PILA----------------------------------------------
+// Para agregar elementos a la pila.
 void AgregarPila(Nodo *&pila, int pos_x, int pos_y,int i, bool estate,
-                 int dir[]){
-
+                 short int dir[]){
+    // Se reserva memoria para el nuevo nodo.
     Nodo *nuevo_nodo = (Nodo*)malloc(sizeof(Nodo));
-
-    nuevo_nodo -> x = pos_x;
+    // Se asignan los campos recibidos por la función al nuevo nodo.
+    nuevo_nodo -> x = pos_x; 
     nuevo_nodo -> y = pos_y;
     nuevo_nodo -> iter = i;
     nuevo_nodo -> estado = estate;
-
     for(int j=0; j<4; j++) nuevo_nodo -> v[j] = dir[j];
-
+    // Se establece el nuevo nodo como el primero.
     nuevo_nodo -> siguiente = pila;
     pila = nuevo_nodo;
 }
-
+// Para sacar elementos a la pila.
 void SacarPila(Nodo *&pila,int *pos_x, int *pos_y){
+    // Se crea un nodo auxiliar y se guardan datos del nodo a eliminar.
     Nodo *aux = pila;
     *pos_x = aux -> x;
     *pos_y = aux -> y;
+    // Se establece el anterior nodo como el primero y se libera memoria.
     pila = aux -> siguiente;
     free (aux);  
 }
@@ -103,7 +105,7 @@ int IsInBounds(int x, int y){
 
 //----MUESTRA EN CONSOLA EL LABERINTO O LOS DATOS DE EJECUCIÓN-----------
 void PrintGrid(char **grid,int argc, char **argv){
-    if (!pruebas){ // se comprueba si se está ejecutando una prueba o no.
+    if (!pruebas){ // Se comprueba si se está ejecutando una prueba o no.
         for (int i=0; i<filas; i++) {
             for (int j=0; j<columnas; j++)
                 printf("%c",grid[i][j]);

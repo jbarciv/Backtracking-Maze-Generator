@@ -26,9 +26,9 @@ int Pedir(int argc, char **argv){
             printf("Número de argumentos erroneo.\n");
             exit(1);
         case 3:
-            filas = atoi(argv[1]);
-            columnas = atoi(argv[2]);
-            break;
+            filas = atoi(argv[1]);    // Conversión de tipo char a int.
+            columnas = atoi(argv[2]); // mediante función "atoi", de la
+            break;                    // librería <cstdlib>.
         case 4:
             filas = atoi(argv[1]);
             columnas = atoi(argv[2]);
@@ -79,7 +79,7 @@ int IsInBounds(int x, int y){
 
 //----MUESTRA EN CONSOLA EL LABERINTO O LOS DATOS DE EJECUCIÓN-----------
 void PrintGrid(char **grid,int argc, char **argv){
-    if (!pruebas){ // se comprueba si se está ejecutando una prueba o no.
+    if (!pruebas){ // Se comprueba si se está ejecutando una prueba o no.
         for (int i=0; i<filas; i++) {
             for (int j=0; j<columnas; j++)
                 printf("%c",grid[i][j]);
