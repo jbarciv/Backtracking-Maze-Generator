@@ -5,7 +5,7 @@
 //
 //======================================================================
 
-#include "Maze_Iterativo.hpp"
+#include "Maze_Recursivo.hpp"
 
 //----VARIABLES GLOBALES------------------------------------------------
 extern int columnas,filas;
