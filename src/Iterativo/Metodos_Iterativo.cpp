@@ -6,43 +6,6 @@
 //======================================================================
 #include "Maze_Iterativo.hpp"
 
-//----VARIABLES GLOBALES------------------------------------------------
-extern int columnas,filas;
-extern unsigned long int k;
-extern bool pruebas;
-
-//----PEDIMOS LAS DIMENSIONES AL USUARIO--------------------------------
-int Pedir(int argc, char **argv){
-// Se comprueba numero de argumentos pasados en la llamada al programa.
-    switch (argc) {
-        case 1: 
-            printf("Introduzca dimensiones\n Filas: ");
-            scanf("%d", &filas);
-            printf(" Columnas: ");
-            scanf("%d", &columnas);
-            break;
-        case 2:
-            printf("Número de argumentos erroneo.\n");
-            exit(1);
-        case 3:
-            filas = atoi(argv[1]);    // Conversión de tipo char a int.
-            columnas = atoi(argv[2]); // mediante función "atoi", de la
-            break;                    // librería <cstdlib>.
-        case 4:
-            filas = atoi(argv[1]);
-            columnas = atoi(argv[2]);
-            pruebas = true;
-            break;
-    }
-
-    // Se ajustan las dimensiones para que sean impares siempre.
-    (filas%2)?filas:filas+=1;
-    (columnas%2)?columnas:columnas+=1;
-    return 0;
-}
-
-
-
 //----FUNCIONES DE LA PILA----------------------------------------------
 // Para agregar elementos a la pila.
 void AgregarPila(Nodo *&pila, int pos_x, int pos_y,int i, bool estate,
@@ -69,11 +32,3 @@ void SacarPila(Nodo *&pila,int *pos_x, int *pos_y){
     pila = aux -> siguiente;
     free (aux);  
 }
-
-//----COMPRUEBA SI LA CASILLA A VISITAR ESTÁ DENTRO DE LOS LÍMITES-------
-int IsInBounds(int x, int y){
-    if (x < 1 || x > (filas-2)) return false;
-    if (y < 1 || y > (columnas-2)) return false;
-    return true;
-}
-
