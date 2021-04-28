@@ -28,17 +28,20 @@ touch $file
 echo "repeticiones filas area tiempo iteraciones" > $file
 
 initial=20
-final=100
-step=5
+final=1000
+step=50
+contador=0
 
 while [ $initial -le $final ]
     do 
-        for i in {1. .5}
+        while [ $contador -le 5 ]
         do
-            $i $mypath/Maze_Recursivo $initial $initial 1 >> $file
-            
+            echo -n $contador\ >> $file
+            $mypath/Maze_Recursivo $initial $initial 1 >> $file
+            contador=$(($contador+1))
         done
         initial=$(( $initial + $step ))
+        contador=$(($contador-5))
     done
 
 ENDTIMELOOP=$(date +%s%3N) #time in milliseconds
