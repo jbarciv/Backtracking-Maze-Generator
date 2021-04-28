@@ -37,7 +37,7 @@ while [ $initial -le $final ]
         while [ $contador -le 5 ]
         do
             echo -n $contador\ >> $file
-            $mypath/Maze_Recursivo $initial $initial 1 >> $file
+            $mypath/Maze_Iterativo $initial $initial 1 >> $file
             contador=$(($contador+1))
         done
         initial=$(( $initial + $step ))
