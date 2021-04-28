@@ -48,7 +48,6 @@ ENDTIMELOOP=$(date +%s%3N) #time in milliseconds
 echo "The for loop takes $(($ENDTIMELOOP - $STARTTIMELOOP)) milliseconds to complete..."
 
 
-
 ENDTIMESCRIPT=$(date +%s) #time in seconds
 
 echo "---------------------"
