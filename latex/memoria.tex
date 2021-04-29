@@ -233,7 +233,7 @@ El abordaje iterativo de este problema no es tan sencillo. Esto es debido, al he
 	\item La tercera persona del equipo ejercería una labor de control y apoyo. Trabajando con las otras dos personas en limpieza del código e implementación de funciones auxiliares. Asimismo, controlaba el desarrollo de las dos vías con el fin de descartar la que menos conveniera para centrar todos los esfuerzos en la más prometedora.
 \end{itemize}
 
-Finalmente, la opción elegida fue la pila.  
+Finalmente, la opción elegida ha sido la pila.  
 
 En la primera versión solo almacenaba la situación de las casillas ya ocupadas por la rama. Posteriormente se incluyó una funcionalidad extra en el código: cuando el programa se viera obligado a retroceder por la rama que acababa de construir, comprobaría cada dirección de la casilla en la que estuviera para decidir si era posible continuar en alguna otra dirección, pero de forma que se incuría en algunas ineficiencias, pues se comprobaban direcciones que ya se habían comprobado antes, cuando la rama había pasado por allí por primera vez (o por segunda, o por tercera). Se almacenó entonces en la pila el vector de direcciones aleatorizado, así como por qué iteración iba la comprobación del vector. De esta forma es posible finalizar el laberinto asegurando que todas las direcciones han sido comprobadas y todas en un orden aleatorio.
 
@@ -242,7 +242,7 @@ Se incluye a continuación el diagrama de flujo utilizado para la programación 
 \begin{figure}[H]
 	\hspace{-4.3cm}
 	\includegraphics[scale=1.05]{fotos/diagrama.pdf}
-	\caption{asdasdfasdfads}
+	\caption{Diagrama de flujo para la función \textsf{Visit()} en el algoritmo iterativo}
 	\label{diagrama}
 \end{figure}
 
@@ -286,13 +286,16 @@ for (int i=0; i<filas; i++) {
 }
 \end{lstlisting}
 
-En las figuras \ref{unicode} y \ref{ascii} puede verse la commparación entre la salida por consola mediante el símbolo \textsc{unicode} utilizado en el código anterior y el \textsc{ascii} \#.
+En las figuras \ref{unicode} y \ref{ascii} puede verse la comparación entre la salida por consola mediante el símbolo \textsc{unicode} utilizado en el código anterior y el símbolo \textsc{ascii} \#.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.4]{fotos/unicode.png}
 	\caption{Salida por consola del programa con carácteres \textsc{unicode}}
 	\label{unicode}
+\end{figure}
+
+\begin{figure}
 	\centering
 	\includegraphics[scale=0.4]{fotos/asci.png}
 	\caption{Salida por consola del programa con carácteres \textsc{ascii}}
@@ -301,11 +304,21 @@ En las figuras \ref{unicode} y \ref{ascii} puede verse la commparación entre la
 
 Por motivos de portabilida se ha preferido no incluirlo directamente en el código final. Pero puede ser implementado fácilmente gracias el código anterior.
 
-
-\clearpage
+% \clearpage
 \section{Experimentación}
+\subsection{Toma de medidas}
+Para poder estudiar y comparar la ejecución de ambos códigos y algoritmos, ha sido necesaria una fase de toma de datos. Los datos buscados corresponden a las diversas métricas empleadas, estas son: número de iteraciones, velocidad de ejecución y uso de memoria. Para la experimentación, esto es ejecutar el código en diferentes condiciones, se ha elaborado un fichero \textit{shell script} que permite ejecutar cada programa repetidas veces y genera un archivo de salida en el que vuelca los datos de cada ejecución. Más tarde este fichero es convertido a una tabla de datos con formato \textit{.cdv} y dichos datos se han analizado mediante \textsc{Rstudio}. 
+\vspace{0.3cm}
+Más concretamente, el shell script empieza ejecutando el programa con un valor inicial de $20$ tanto para filas y columnas. Y va sumando 50 unidades a filas y columnas con cada ejecución hasta llegar a $10000$, realizando cada ejecución $5$ veces para poder conseguir una media de los tiempos de ejecución. En cada ejecución, escribe en el fichero \textit{output.csv} (o \textit{output.txt} como se prefiera): un número del $1$ al $5$ correspondiente con la ejecución en curso, el tamaño de las filas y columnas, el área del laberinto (filas*columnas), el tiempo empleado en la ejecución de la función \textsf{Visit()} y el número de iteraciones realizadas por dicha función. 
 
-\clearpage
+Se ha observado que en el caso del recursivo el número de iteraciones es siempre el mismo, ya que al ser constantes las dimensiones del laberinto la función \textsf{Visit()} es llamada el mismo número de veces en cada ejecución con los mismos datos. Pero las 5 ejecuciones nos sirven para obtener la media del tiempo.  
+
+En el caso del iterativo, tanto el tiempo como el número de iteraciones es ligeramente diferente en cada ejecución dada la aleatoriedad del recorrido de la pila y, por tanto, cada vez se ‘atasca’ en un sitio distinto y recorre un camino distinto.\\
+
+ \# \# revisar!!!!!\\
+
+A la hora de realizar pruebas, disponemos de 3 sistemas operativos diferentes: dos UNIX, ambos con diferentes procesadores, y un Windows. Y nuestra intención es extraer datos de la ejecución de los programas en cada uno de los tres. Además, nos aporta una manera de comprobar experimentalmente la portabilidad de nuestro proyecto.  
+
 \section{Análisis}
 
 \clearpage
