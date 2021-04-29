@@ -1,35 +1,28 @@
 \documentclass[12pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[english, spanish]{babel}
+\usepackage{url}
 \usepackage{graphicx}
 
-\usepackage[utf8]{inputenc}
-\usepackage[english, spanish]{babel}
-
+\usepackage{natbib}
+\usepackage{csquotes}
 \usepackage{wrapfig}
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{url}
 
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 \usepackage{diagbox}
 \providecommand{\abs}[1]{\lvert#1\rvert}
 \newcommand{\grad}{^{\circ}}
-
-
 \usepackage[makeroom]{cancel}
 \usepackage{enumitem}
 \usepackage{float}	
 \usepackage{setspace}
-
-
-
 \usepackage{subfigure}
-
-
 \usepackage[export]{adjustbox}
-
 \usepackage{booktabs}
 \usepackage{bigstrut}
 \usepackage{multirow}
@@ -39,16 +32,11 @@
 \usepackage{sectsty}
 \usepackage{titlesec}
 \usepackage{verbatim}
-\usepackage{natbib}
-
-
 
 \usepackage{lscape}
 \usepackage{tabu}
-
 \usepackage{array}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
-
 \usepackage{xcolor}
 \definecolor{dark}{rgb}{0.10,0.2,0.3}
 \definecolor{seablue}{rgb}{0.10,0.2,0.45}
@@ -64,8 +52,54 @@ filecolor=dark,%
 linkcolor=bluegreen,%
 urlcolor=purpure}
 
+%%%%% FOR CODE IN LATEX %%%%
+\usepackage{listings}
 
- 
+\usepackage{listing}
+\usepackage[]{minted}
+\usepackage{keyval}
+\usepackage{kvoptions}
+\usepackage{fancyvrb}
+\usepackage{fvextra}	
+\usepackage{upquote}
+\usepackage{float}
+\usepackage{ifthen}
+\usepackage{calc}
+\usepackage{ifplatform}
+\usepackage{etoolbox}
+\usepackage{pdftexcmds}
+\usepackage{xstring}
+\usepackage{lineno}
+\usepackage{framed}
+
+\usemintedstyle{borland}
+
+\definecolor{codegreen}{rgb}{0,0.5,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{white},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+
+%%%%%%%%
 \usepackage[left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
 
 % \titleformat{\section}
@@ -83,14 +117,13 @@ urlcolor=purpure}
   {\normalfont\itshape\large\bfseries\color{dark}}
   {\thesubsection}{1em}{}
 
-% \captionsetup[table]{name=Tabla}
+
 
 \setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{5}
 
 \providecommand{\abs}[1]{\lvert#1\rvert}
 \providecommand{\norm}[1]{\lVert#1\rVert}
-
 
 \begin{document}
 %------Portada--------------%
@@ -173,21 +206,19 @@ Inicialmente, se pensó en realizar un experimento con esencia matemática, esto
 
 Como segunda posibilidad se valoró la implementación de \textit{juegos de estrategia} como el tres en raya, cuatro en raya, etc. Pero se dedujo que en un tablero acotado como en el tres en raya las iteraciones iban a ser siempre las mismas y al mismo tiempo no tenía sentido diseñar un tablero más grande pues el problema se iba a concentrar en un espacio reducido.
 
-Finalmente se encontró otros algoritmos que diseñaban laberintos a partir de una malla rellena por carácteres. De entre los distintos métodos que abordaban el problema, se eligió aquel que consistía en visitar una por una las casillas, comprobando si eran válidas e ir abriéndose camino hasta rellenar toda la malla con pasillos. Esta metodología es conocida como \textit{recursive backtracker}\cite{wiki}. El cual es una versión aleatoriazada del algoritmo \textit{depht first-first search}. En la siguiente ilustración (ver \textsc{Fig.}~\ref{back_tracker}) puede verse un ejemplo del algoritmo implementado.
+Finalmente se encontró otros algoritmos que diseñaban laberintos a partir de una malla rellena por carácteres. De entre los distintos métodos que abordaban el problema, se eligió aquel que consistía en visitar una por una las casillas, comprobando si eran válidas e ir abriéndose camino hasta rellenar toda la malla con pasillos. Esta metodología es conocida como \textit{recursive backtracker}\cite{wiki}. El cual es una versión aleatoriazada del algoritmo \textit{depht first-first search}. En la siguiente ilustración (ver \textsc{Fig.}~\ref{back_tracker_label}) puede verse un ejemplo del algoritmo implementado.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{fotos/back_tracker.png}
 	\caption{Ejemplo de un algoritmo recursive backtracker \cite{back_tracker}}
-	\label{back_tracker}
+	\label{back_tracker_label}
 \end{figure}
-
-
 
 \subsection{Programación del algoritmo}
 \subsubsection{Recursivo}
 
-Desde el punto de vista recursivo, esta forma de contruir un laberinto no presenta grandes problemas. El algoritmo crea una rama del laberinto hasta que le es imposible seguir porque, por ejemplo, el extremo ha quedado ``encerrado'' entre el muro exterior (el cual marca el límite y evita que el programa se salga de la memoria reservada para el laberinto evitando que el S.O. interrumpa la ejecución) y la propia rama. La naturaleza de la recursividad hace que, una vez llegado a ese punto, al no haber posibilidad de movimiento, resuelva por fin esa llamada a la función recursiva y devuelva el resultado a las casillas anteriores que aún estaban pendientes de resolución.  Esto continúa hasta que encuentra una casilla desde la que puede continuar camino, entonces abrirá desde ahí una nueva subrama del laberinto que continuará hasta que quede ``encerrada'' de nuevo y empiece a resolver hacia las casillas anteriores. Puede verse un ejemplo de dicha iteración en la figura \ref{back_tracker}. Finalmente, cuando ya no hay más casillas posibles por las que continuar, se volverá hacia atrás todas las casillas hasta llegar a la primera, en nuestro casi siempre la posición $(1,1)$. Este proceso asegura que el laberinto discurra por todas las casillas que sean posibles y que nunca quede encajonado" (como ya hemos dicho, la propia naturaleza de la recursividad lo garantiza).
+Desde el punto de vista recursivo, esta forma de contruir un laberinto no presenta grandes problemas. El algoritmo crea una rama del laberinto hasta que le es imposible seguir porque, por ejemplo, el extremo ha quedado ``encerrado'' entre el muro exterior (el cual marca el límite y evita que el programa se salga de la memoria reservada para el laberinto evitando que el S.O. interrumpa la ejecución) y la propia rama. La naturaleza de la recursividad hace que, una vez llegado a ese punto, al no haber posibilidad de movimiento, resuelva por fin esa llamada a la función recursiva y devuelva el resultado a las casillas anteriores que aún estaban pendientes de resolución.  Esto continúa hasta que encuentra una casilla desde la que puede continuar camino, entonces abrirá desde ahí una nueva subrama del laberinto que continuará hasta que quede ``encerrada'' de nuevo y empiece a resolver hacia las casillas anteriores. Puede verse un ejemplo de dicha iteración en la figura \ref{back_tracker_label}. Finalmente, cuando ya no hay más casillas posibles por las que continuar, se volverá hacia atrás todas las casillas hasta llegar a la primera, en nuestro casi siempre la posición $(1,1)$. Este proceso asegura que el laberinto discurra por todas las casillas que sean posibles y que nunca quede encajonado" (como ya hemos dicho, la propia naturaleza de la recursividad lo garantiza).
 
 \subsubsection{Iterativo}
 
@@ -204,9 +235,57 @@ En la primera versión solo almacenaba la situación de las casillas ya ocupadas
 
 \subsubsection{Comentarios al código}
 
-Teniendo nuestros dos algoritmos finalizados, solo quedaba arreglar pequeños detalles como que el número de filas como de columnas debía ser impar. Ya que, por la manera de recorrer la malla de nuestros algoritmos, comprobando y avanzando de una en una sus casillas, si el número de estas fuese par, dejaría unos bordes izquierdo e inferior de dobles ‘\#’.  Este ‘arreglo’ se podía implementar de muchas maneras, una de ellas con una macro. Sin embargo, pensamos que era más sencillo incorporarla con dos líneas al final de nuestra función Pedir, que suman uno al número de filas o columnas en el caso de que sean pares. 
+Una vez implementados ambos algoritmos, surgen algunos detalles a ajustar.
 
-Por motivos estéticos, también decidimos buscar algún carácter en unicode para que las casillas no vaciadas de nuestros laberintos se asemejaran más a paredes y poder visualizar el dibujo más fácilmente. Encontramos el (insertar carácter) e implementando las siguientes líneas de código (que se encuentran comentadas en los ficheros correspondientes (nombreficheros/funciondonde estan) se puede apreciar que el laberinto queda mucho más intuitivo y agradable a la vista.  
+Lo primero a corregir fue un ``doble borde'' que aparecía en las paredes derecha e inferior del laberinto. Dichas paredes extras eran debidas a que en la iteración aleatoria por el laberinto la última columna y fila no ``caían dentro'' de los movimientos del programa. Esto a su vez, era debido a que se comenzaba en la casilla $(1,1)$ y que las dimensiones fueran pares o impares. Si por ejemplo, las dimensiones fueran $6x6$, al comenzar en la posición $(1,1)$, y suponiendo que los dos primero movimientos son hacia la derecha, la siguiente casilla a la que moverse sería la $(1,3)$ que sería válida, pero en el siguiente movimiento la nueva casilla estudiada sería la $(1,5)$ que forma parte del borde exterior y no forma parte de los límites o casillas válidas. Por lo tanto, la solución elegida ha sido forzar a que las dimensiones sean siempre impares. Esto no supone demasiado problema, pues el usuario puede pedir dimensiones pares y es el programa quien modifica estas para que sean impares. En concreto las siguientes lineas de código:
+
+\lstset{style=mystyle}
+%también se puede poner [firstnumber=39]
+\begin{lstlisting}[language=C++, title=Ajuste de dimensiones dentro de la función \textsf{Pedir()}, frame=single, numbers=none]
+	// Se ajustan las dimensiones para que sean impares siempre.
+    (filas%2) ? filas : filas+=1;
+    (columnas%2) ? columnas : columnas+=1;
+\end{lstlisting}
+
+de forma que es un cambio transparente para el usuario. Por otro lado, el cambio no es perceptible para dimensiones mayores de $10x10$, lo que es la mayoría de los casos.
+
+Las líneas de código anterior fueron planteadas en su inicio como la \textsc{macro} siguiente: 
+
+\lstset{style=mystyle}
+%también se puede poner [firstnumber=39]
+\begin{lstlisting}[language=C++, title=Ajuste de dimensiones dentro de la función \textsf{Pedir()}, frame=single, numbers=none]
+	#define Arreglar_2D(x,y) (((x%2) ? x : x+=1),((y%2) ? y : y+=1))
+\end{lstlisting}
+pero finalmente se decidió no utilizar ya que no respondia totalmente a la función de lo que debe ser una \textsc{macro}.
+
+Por motivos estéticos, también se buscó algún carácter en \textsc{unicode} para que las casillas no vaciadas del laberintos se asemejaran más a paredes y poder visualizar el dibujo más fácilmente. Las siguientes líneas de código muestran la posible variante para la función \textsf{PringGrid()}:
+
+\lstset{style=mystyle}
+%también se puede poner [firstnumber=39]
+\begin{lstlisting}[language=C++, title=Ajuste de dimensiones dentro de la función \textsf{Pedir()}, frame=single, numbers=none]
+for (int i=0; i<filas; i++) {
+    for (int j=0; j<columnas; j++){
+    	if(grid[i][j] == '#')
+				cout << "\u2B1C";
+			else cout << "  ";  // Notese el doble espacio intencionado
+		}
+    cout << endl;
+}
+\end{lstlisting}
+
+En la figura \# puede verse la commparación entre la salida por consola mediante el símbolo \textsc{ascii} \# y el utilizado en el código anterior \textsc{unicode}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{fotos/unicode.png}
+	\caption{Salida por consola del programa con carácteres \textsc{unicode}}
+	\label{unicode}
+	\centering
+	\includegraphics[scale=0.4]{fotos/asci.png}
+	\caption{Salida por consola del programa con carácteres \textsc{ascii}}
+	\label{ascii}
+\end{figure}
+
 \clearpage
 \section{Experimentación}
 
