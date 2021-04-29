@@ -53,4 +53,3 @@ ENDTIMESCRIPT=$(date +%s) #time in seconds
 echo "---------------------"
 echo "This script takes $(($ENDTIMESCRIPT - $STARTTIMESCRIPT)) seconds to complete..."
 exit
-exit
