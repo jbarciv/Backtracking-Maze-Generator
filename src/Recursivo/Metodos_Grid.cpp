@@ -37,8 +37,8 @@ int Pedir(int argc, char **argv){
     }
 
     // Se ajustan las dimensiones para que sean impares siempre.
-    (filas%2)?filas:filas+=1;
-    (columnas%2)?columnas:columnas+=1;
+    (filas%2) ? filas : filas+=1;
+    (columnas%2) ? columnas : columnas+=1;
     return 0;
 }
 
@@ -75,12 +75,14 @@ void PrintGrid(char **grid,int argc, char **argv, unsigned int t0,
                unsigned int t1){
     double tiempo;
     tiempo = (double(t1-t0)/CLOCKS_PER_SEC);
+    printf("\n");
     if (!pruebas){ // Se comprueba si se está ejecutando una prueba o no.
         for (int i=0; i<filas; i++) {
             for (int j=0; j<columnas; j++)
                 printf("%c",grid[i][j]);
             printf("\n");
         }
+        printf("\n");
     } else{
         printf("Filas: %d \n", filas);
         printf("Columnas: %d \n", columnas);
