@@ -74,16 +74,16 @@ int SetGrid(char **grid){
 void PrintGrid(char **grid,int argc, char **argv, double tiempo){
 
     if (!pruebas){ // Se comprueba si se está ejecutando una prueba o no.
-        printf("Filas: %d \nColumnas: %d \nArea: %d \n", 
-            filas, columnas, filas*columnas);
-        printf("Tiempo en generar: %2.4fs\n", tiempo);
-        printf("Iteraciones: %ld\n", k);
-
         for (int i=0; i<filas; i++) {
             for (int j=0; j<columnas; j++)
                 printf("%c",grid[i][j]);
             printf("\n");
         }
+        printf("Filas: %d\t Columnas: %d\t Area: %d", 
+            filas, columnas, filas*columnas);
+        printf("\nTiempo en generar: %2.4fs\t", tiempo);
+        printf("Iteraciones: %ld", k);
+
     } else{
         printf("%d ", filas);
         printf("%d ", filas*columnas);

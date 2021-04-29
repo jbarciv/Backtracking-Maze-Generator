@@ -5,6 +5,7 @@
 // definición de tipos para Maze_Iterativo.cpp, Metodos_Grid.cpp, 
 // Metodos_Pila.cpp y Visit_Iterativo.cpp
 //======================================================================
+
 #include <stdio.h>
 #include <cstdlib>
 #include <ctime>
