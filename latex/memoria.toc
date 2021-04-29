@@ -1,0 +1,6 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Ideación}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Primeras propuestas}{1}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Experimentación}{4}{section.2}%
+\contentsline {section}{\numberline {3}Análisis}{5}{section.3}%
+\contentsline {section}{\numberline {4}Conclusiones}{6}{section.4}%

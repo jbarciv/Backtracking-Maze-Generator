@@ -21,14 +21,14 @@ echo "---------------------" # para imprimir por pantalla
 
 STARTTIMELOOP=$(date +%s%3N) #time in milliseconds
 
-file="output_recursive.txt"
+file="output_recursiveUnix.csv"
 touch $file
 
 # Write column names
 echo "repeticiones filas area tiempo iteraciones" > $file
 
 initial=20
-final=1000
+final=10000
 step=50
 contador=0
 

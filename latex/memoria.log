@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.26)  28 APR 2021 10:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.26)  29 APR 2021 14:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -559,12 +559,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \Hy@SectionHShift=\skip70
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 63.
-
-
-Package hyperref Warning: Option `pdftex' has already been used,
-(hyperref)                setting the option has no effect on input line 63.
-
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
@@ -587,22 +582,22 @@ LaTeX Info: Redefining \% on input line 25.
 )
 \openout1 = `memoria.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count315
@@ -622,15 +617,15 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Redefining \. on input line 89.
-LaTeX Info: Redefining \% on input line 89.
+LaTeX Info: Redefining \. on input line 93.
+LaTeX Info: Redefining \% on input line 93.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box65
-Package hyperref Info: Link coloring ON on input line 89.
+Package hyperref Info: Link coloring ON on input line 93.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -640,9 +635,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count321
 )
-LaTeX Info: Redefining \ref on input line 89.
-LaTeX Info: Redefining \pageref on input line 89.
-LaTeX Info: Redefining \nameref on input line 89.
+LaTeX Info: Redefining \ref on input line 93.
+LaTeX Info: Redefining \pageref on input line 93.
+LaTeX Info: Redefining \nameref on input line 93.
  (/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.out) (/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.out)
 \@outlinefile=\write3
 \openout3 = `memoria.out'.
@@ -682,159 +677,71 @@ LaTeX Info: Redefining \nameref on input line 89.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<fotos/Logo_azul.png, id=4, 414.04688pt x 350.81062pt>
+<fotos/Logo_azul.png, id=24, 414.04688pt x 350.81062pt>
 File: fotos/Logo_azul.png Graphic file (type png)
 <use fotos/Logo_azul.png>
-Package pdftex.def Info: fotos/Logo_azul.png  used on input line 93.
+Package pdftex.def Info: fotos/Logo_azul.png  used on input line 97.
 (pdftex.def)             Requested size: 128.0387pt x 108.48251pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 113.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 117.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 113.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 117.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/Logo_azul.png>]
-<fotos/tension_superficial_1.png, id=18, 865.43324pt x 649.82774pt>
-File: fotos/tension_superficial_1.png Graphic file (type png)
-<use fotos/tension_superficial_1.png>
-Package pdftex.def Info: fotos/tension_superficial_1.png  used on input line 147.
-(pdftex.def)             Requested size: 187.78923pt x 140.99925pt.
-<fotos/esquema_1.pdf, id=19, 450.8845pt x 314.37451pt>
-File: fotos/esquema_1.pdf Graphic file (type pdf)
-<use fotos/esquema_1.pdf>
-Package pdftex.def Info: fotos/esquema_1.pdf  used on input line 153.
-(pdftex.def)             Requested size: 187.78923pt x 130.93309pt.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/Logo_azul.png>] (/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
+\tf@toc=\write4
+\openout4 = `memoria.toc'.
+
+ [1]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.165 
-       [1 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/tension_superficial_1.png> </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/esquema_1.pdf>] [2]
-<fotos/momento_hidro.jpg, id=65, 1644.1425pt x 1239.63126pt>
-File: fotos/momento_hidro.jpg Graphic file (type jpg)
-<use fotos/momento_hidro.jpg>
-Package pdftex.def Info: fotos/momento_hidro.jpg  used on input line 214.
-(pdftex.def)             Requested size: 204.85802pt x 154.44281pt.
+l.173 
+       [1
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+]
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
 
  []
 
-[3 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/momento_hidro.jpg>]
-<fotos/esquema_2.pdf, id=77, 592.2125pt x 324.40196pt>
-File: fotos/esquema_2.pdf Graphic file (type pdf)
-<use fotos/esquema_2.pdf>
-Package pdftex.def Info: fotos/esquema_2.pdf  used on input line 232.
-(pdftex.def)             Requested size: 384.1096pt x 210.41327pt.
-<fotos/grafico_2.png, id=78, 361.788pt x 215.496pt>
-File: fotos/grafico_2.png Graphic file (type png)
-<use fotos/grafico_2.png>
-Package pdftex.def Info: fotos/grafico_2.png  used on input line 275.
-(pdftex.def)             Requested size: 384.1096pt x 228.79294pt.
- [4 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/esquema_2.pdf>] [5 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/grafico_2.png>]
-<fotos/esquema_3.pdf, id=106, 234.80623pt x 272.63857pt>
-File: fotos/esquema_3.pdf Graphic file (type pdf)
-<use fotos/esquema_3.pdf>
-Package pdftex.def Info: fotos/esquema_3.pdf  used on input line 309.
-(pdftex.def)             Requested size: 204.85802pt x 237.87173pt.
- [6 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/esquema_3.pdf>]
-<fotos/aparato_3.jpg, id=137, 1951.29pt x 3655.6575pt>
-File: fotos/aparato_3.jpg Graphic file (type jpg)
-<use fotos/aparato_3.jpg>
-Package pdftex.def Info: fotos/aparato_3.jpg  used on input line 341.
-(pdftex.def)             Requested size: 145.10748pt x 271.81969pt.
- [7 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/aparato_3.jpg>]
-<fotos/grafico_3.png, id=148, 362.007pt x 215.277pt>
-File: fotos/grafico_3.png Graphic file (type png)
-<use fotos/grafico_3.png>
-Package pdftex.def Info: fotos/grafico_3.png  used on input line 381.
-(pdftex.def)             Requested size: 384.1096pt x 228.42245pt.
- [8 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/grafico_3.png>]
-<fotos/aparato_4.jpg, id=158, 3035.34pt x 4047.12pt>
-File: fotos/aparato_4.jpg Graphic file (type jpg)
-<use fotos/aparato_4.jpg>
-Package pdftex.def Info: fotos/aparato_4.jpg  used on input line 403.
-(pdftex.def)             Requested size: 256.07741pt x 341.43787pt.
-<fotos/esquema_4.pdf, id=159, 211.35461pt x 321.34755pt>
-File: fotos/esquema_4.pdf Graphic file (type pdf)
-<use fotos/esquema_4.pdf>
-Package pdftex.def Info: fotos/esquema_4.pdf  used on input line 410.
-(pdftex.def)             Requested size: 170.71393pt x 259.56929pt.
+[2] [3] [4
 
-Overfull \hbox (19.44852pt too wide) in paragraph at lines 401--414
-[][]   [] 
- []
+] [5
 
-<fotos/deflectores.png, id=163, 137.7948pt x 404.712pt>
-File: fotos/deflectores.png Graphic file (type png)
-<use fotos/deflectores.png>
-Package pdftex.def Info: fotos/deflectores.png  used on input line 421.
-(pdftex.def)             Requested size: 179.25157pt x 526.52077pt.
-[9 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/aparato_4.jpg> </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/esquema_4.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 429--429
-\OT1/cmtt/m/n/8 fundamentos-[]de-[]la-[]hidrodinamica / medicion-[]de-[]fuerzas-[]ejercidas-[]por-[]un-[]chorro / 070 . 15008 / hm150-[]08 /
- []
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 202.
+ [6
 
-
-Underfull \hbox (badness 1430) in paragraph at lines 436--437
-\OT1/cmr/m/n/12 si-ble eli-mi-nar el efec-to del mue-lle rea-li-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 436--437
-
- []
-
-[10 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/deflectores.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 462--465
-
- []
-
-[11]
-<fotos/Picture1.png, id=193, 362.007pt x 217.467pt>
-File: fotos/Picture1.png Graphic file (type png)
-<use fotos/Picture1.png>
-Package pdftex.def Info: fotos/Picture1.png  used on input line 507.
-(pdftex.def)             Requested size: 384.1096pt x 230.74617pt.
-<fotos/Picture2.png, id=194, 362.007pt x 217.467pt>
-File: fotos/Picture2.png Graphic file (type png)
-<use fotos/Picture2.png>
-Package pdftex.def Info: fotos/Picture2.png  used on input line 517.
-(pdftex.def)             Requested size: 384.1096pt x 230.74617pt.
- [12 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/Picture1.png>]
-<fotos/Picture3.png, id=203, 362.007pt x 217.248pt>
-File: fotos/Picture3.png Graphic file (type png)
-<use fotos/Picture3.png>
-Package pdftex.def Info: fotos/Picture3.png  used on input line 527.
-(pdftex.def)             Requested size: 384.1096pt x 230.51382pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 539.
- [13 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/Picture2.png> </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/Picture3.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 539.
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 202.
  (/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 539.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 539.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 202.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 202.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 539.
+(rerunfilecheck)             Checksum: 97ED7CCEB455B6327C54F6DC98229C0F;260.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 202.
  ) 
 Here is how much of TeX's memory you used:
- 14431 strings out of 482503
- 222639 string characters out of 5947227
- 635340 words of memory out of 5000000
- 29108 multiletter control sequences out of 15000+600000
- 551640 words of font info for 94 fonts, out of 8000000 for 9000
+ 14227 strings out of 482503
+ 219232 string characters out of 5947227
+ 629599 words of memory out of 5000000
+ 28954 multiletter control sequences out of 15000+600000
+ 543936 words of font info for 66 fonts, out of 8000000 for 9000
  398 hyphenation exceptions out of 8191
- 41i,17n,77p,1227b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on /home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.pdf (14 pages, 8682869 bytes).
+ 41i,6n,42p,1324b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on /home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.pdf (8 pages, 184431 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
- 35 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
