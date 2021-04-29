@@ -1,0 +1,10 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Ideación}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Primeras propuestas}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Programación del algoritmo}{2}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Recursivo}{2}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Iterativo}{3}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Comentarios al código}{3}{subsubsection.1.2.3}%
+\contentsline {section}{\numberline {2}Experimentación}{5}{section.2}%
+\contentsline {section}{\numberline {3}Análisis}{6}{section.3}%
+\contentsline {section}{\numberline {4}Conclusiones}{7}{section.4}%

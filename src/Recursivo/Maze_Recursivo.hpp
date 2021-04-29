@@ -2,7 +2,7 @@
 // Maze_Recursivo.hpp
 //
 // Librerías, directivas del preprocesador y prototipos de funciones 
-// para Maze_Recursivo.cpp, Metodos_Recursivo.cpp y Visit_Recursivo.cpp
+// para Maze_Recursivo.cpp, Metodos_Grid.cpp y Visit_Recursivo.cpp
 //
 //======================================================================
 
@@ -20,7 +20,7 @@
 //----PROTOTIPOS DE FUNCIONES-------------------------------------------
 int Pedir(int ,char **);
 int SetGrid(char **);
+void PrintGrid(char **,int ,char **, double);
 int IsInBounds( int , int );
-void Visit(int , int , char **);
-void PrintGrid(char **,int ,char **, unsigned int, unsigned int);
 void Free(char **);
+void Visit(int , int , char **);

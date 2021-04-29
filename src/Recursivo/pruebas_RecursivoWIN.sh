@@ -21,7 +21,7 @@ echo "---------------------" # para imprimir por pantalla
 
 STARTTIMELOOP=$(date +%s%3N) #time in milliseconds
 
-file="output_recursive.txt"
+file="output_recursiveWIN.csv"
 touch $file
 
 # Write column names
@@ -52,5 +52,4 @@ ENDTIMESCRIPT=$(date +%s) #time in seconds
 
 echo "---------------------"
 echo "This script takes $(($ENDTIMESCRIPT - $STARTTIMESCRIPT)) seconds to complete..."
-exit
 exit

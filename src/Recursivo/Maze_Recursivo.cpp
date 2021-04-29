@@ -29,6 +29,7 @@ bool pruebas = false;
 int main(int argc, char **argv){
   char **grid = NULL;
   unsigned int t0, t1;
+  double tiempo;
   srand(time(0));    // Semilla aleatoria para la función rand().
 
   // Se pide al usuario el tamaño del laberinto.
@@ -43,10 +44,12 @@ int main(int argc, char **argv){
   // Se toma además el tiempo al entrar y salir de la función.
   t0 = clock();
   Visit(1, 1, grid); 
-  t1 = clock();
-    
+  t1=clock(); // t1 y t0 miden el tiempo transcurrido en ticks.
+  tiempo = (double(t1-t0)/CLOCKS_PER_SEC); // Pasamos de ticks a 
+  //segundos.
+
   // Mostramos por pantalla el laberinto
-  PrintGrid(grid, argc, argv, t0, t1);
+  PrintGrid(grid, argc, argv, tiempo);
 
   // Se libera memoria.
   Free(grid);

@@ -21,14 +21,14 @@ echo "---------------------" # para imprimir por pantalla
 
 STARTTIMELOOP=$(date +%s%3N) #time in milliseconds
 
-file="output_recursive.txt"
+file="output_recursiveUNIX.csv"
 touch $file
 
 # Write column names
 echo "repeticiones filas area tiempo iteraciones" > $file
 
 initial=20
-final=1000
+final=10000
 step=50
 contador=0
 
@@ -37,7 +37,7 @@ while [ $initial -le $final ]
         while [ $contador -le 5 ]
         do
             echo -n $contador\ >> $file
-            $mypath/Maze_Recursivo $initial $initial 1 >> $file
+            $mypath/Maze_Recursivo $initial $initial 1\ >> $file
             contador=$(($contador+1))
         done
         initial=$(( $initial + $step ))

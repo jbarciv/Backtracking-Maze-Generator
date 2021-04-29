@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.26)  28 APR 2021 10:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.26)  29 APR 2021 17:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -422,16 +422,22 @@ Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks33
 \verbatim@line=\toks34
 \verbatim@in@stream=\read3
+) (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip69
+\bibsep=\skip70
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count295
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 ) (/usr/share/texlive/texmf-dist/tex/latex/tabu/tabu.sty
 Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed) + intermediate FMi
-\c@taburow=\count295
-\tabu@nbcols=\count296
-\tabu@cnt=\count297
-\tabu@Xcol=\count298
-\tabu@alloc=\count299
-\tabu@nested=\count300
+\c@taburow=\count296
+\tabu@nbcols=\count297
+\tabu@cnt=\count298
+\tabu@Xcol=\count299
+\tabu@alloc=\count300
+\tabu@nested=\count301
 \tabu@target=\dimen273
 \tabu@spreadtarget=\dimen274
 \tabu@naturalX=\dimen275
@@ -447,7 +453,7 @@ Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed) + interm
 \tabu@arstrutbox=\box61
 \tabu@hleads=\box62
 \tabu@vleads=\box63
-\tabu@cellskip=\skip69
+\tabu@cellskip=\skip71
 ) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
  (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -493,8 +499,8 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
 \@linkdim=\dimen282
-\Hy@linkcounter=\count301
-\Hy@pagecounter=\count302
+\Hy@linkcounter=\count302
+\Hy@pagecounter=\count303
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -504,8 +510,8 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count303
-\pdfmajorversion=\count304
+\Hy@SavedSpaceFactor=\count304
+\pdfmajorversion=\count305
 Package hyperref Info: Hyper figures OFF on input line 4547.
 Package hyperref Info: Link nesting OFF on input line 4552.
 Package hyperref Info: Hyper index ON on input line 4555.
@@ -513,7 +519,7 @@ Package hyperref Info: Plain pages OFF on input line 4562.
 Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count305
+\c@Hy@tempcnt=\count306
 LaTeX Info: Redefining \url on input line 5159.
 \XeTeXLinkMargin=\dimen283
  (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
@@ -521,7 +527,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count306
+\Fld@menulength=\count307
 \Field@Width=\dimen284
 \Fld@charsize=\dimen285
 Package hyperref Info: Hyper figures OFF on input line 6430.
@@ -536,9 +542,9 @@ LaTeX Info: Redefining \pageref on input line 6504.
  (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
 Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
-\Hy@abspage=\count307
-\c@Item=\count308
-\c@Hfootnote=\count309
+\Hy@abspage=\count308
+\c@Item=\count309
+\c@Hfootnote=\count310
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -547,8 +553,8 @@ File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
 )
-\Fld@listcount=\count310
-\c@bookmark@seq@number=\count311
+\Fld@listcount=\count311
+\c@bookmark@seq@number=\count312
  (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
  (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -556,22 +562,17 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
-\Hy@SectionHShift=\skip70
+\Hy@SectionHShift=\skip72
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 63.
-
-
-Package hyperref Warning: Option `pdftex' has already been used,
-(hyperref)                setting the option has no effect on input line 63.
-
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package hyperref Info: Option `colorlinks' set `true' on input line 65.
+ (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count312
-\Gm@cntv=\count313
-\c@Gm@tempcnt=\count314
+\Gm@cnth=\count313
+\Gm@cntv=\count314
+\c@Gm@tempcnt=\count315
 \Gm@bindingoffset=\dimen286
 \Gm@wd@mp=\dimen287
 \Gm@odd@mp=\dimen288
@@ -587,34 +588,34 @@ LaTeX Info: Redefining \% on input line 25.
 )
 \openout1 = `memoria.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count315
+\scratchcounter=\count316
 \scratchdimen=\dimen294
 \scratchbox=\box64
-\nofMPsegments=\count316
-\nofMParguments=\count317
+\nofMPsegments=\count317
+\nofMParguments=\count318
 \everyMPshowfont=\toks38
-\MPscratchCnt=\count318
+\MPscratchCnt=\count319
 \MPscratchDim=\dimen295
-\MPnumerator=\count319
-\makeMPintoPDFobject=\count320
+\MPnumerator=\count320
+\makeMPintoPDFobject=\count321
 \everyMPtoPDFconversion=\toks39
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -622,15 +623,15 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Redefining \. on input line 89.
-LaTeX Info: Redefining \% on input line 89.
+LaTeX Info: Redefining \. on input line 95.
+LaTeX Info: Redefining \% on input line 95.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box65
-Package hyperref Info: Link coloring ON on input line 89.
+Package hyperref Info: Link coloring ON on input line 95.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -638,11 +639,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count321
+\c@section@level=\count322
 )
-LaTeX Info: Redefining \ref on input line 89.
-LaTeX Info: Redefining \pageref on input line 89.
-LaTeX Info: Redefining \nameref on input line 89.
+LaTeX Info: Redefining \ref on input line 95.
+LaTeX Info: Redefining \pageref on input line 95.
+LaTeX Info: Redefining \nameref on input line 95.
  (/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.out) (/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.out)
 \@outlinefile=\write3
 \openout3 = `memoria.out'.
@@ -682,159 +683,79 @@ LaTeX Info: Redefining \nameref on input line 89.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<fotos/Logo_azul.png, id=4, 414.04688pt x 350.81062pt>
+<fotos/Logo_azul.png, id=40, 414.04688pt x 350.81062pt>
 File: fotos/Logo_azul.png Graphic file (type png)
 <use fotos/Logo_azul.png>
-Package pdftex.def Info: fotos/Logo_azul.png  used on input line 93.
+Package pdftex.def Info: fotos/Logo_azul.png  used on input line 99.
 (pdftex.def)             Requested size: 128.0387pt x 108.48251pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 113.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 119.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 113.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 119.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/Logo_azul.png>]
-<fotos/tension_superficial_1.png, id=18, 865.43324pt x 649.82774pt>
-File: fotos/tension_superficial_1.png Graphic file (type png)
-<use fotos/tension_superficial_1.png>
-Package pdftex.def Info: fotos/tension_superficial_1.png  used on input line 147.
-(pdftex.def)             Requested size: 187.78923pt x 140.99925pt.
-<fotos/esquema_1.pdf, id=19, 450.8845pt x 314.37451pt>
-File: fotos/esquema_1.pdf Graphic file (type pdf)
-<use fotos/esquema_1.pdf>
-Package pdftex.def Info: fotos/esquema_1.pdf  used on input line 153.
-(pdftex.def)             Requested size: 187.78923pt x 130.93309pt.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/Logo_azul.png>] (/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
+\tf@toc=\write4
+\openout4 = `memoria.toc'.
+
+ [1]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.165 
-       [1 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/tension_superficial_1.png> </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/esquema_1.pdf>] [2]
-<fotos/momento_hidro.jpg, id=65, 1644.1425pt x 1239.63126pt>
-File: fotos/momento_hidro.jpg Graphic file (type jpg)
-<use fotos/momento_hidro.jpg>
-Package pdftex.def Info: fotos/momento_hidro.jpg  used on input line 214.
-(pdftex.def)             Requested size: 204.85802pt x 154.44281pt.
+l.175 
+       [1
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+]
+<fotos/back_tracker.png, id=74, 554.82281pt x 554.82281pt>
+File: fotos/back_tracker.png Graphic file (type png)
+<use fotos/back_tracker.png>
+Package pdftex.def Info: fotos/back_tracker.png  used on input line 180.
+(pdftex.def)             Requested size: 221.92519pt x 221.92519pt.
+ [2 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/back_tracker.png (PNG copy)>] [3] [4] [5
 
+] [6
+
+] [7
+
+] (/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.bbl
+Underfull \hbox (badness 1292) in paragraph at lines 9--15
+[]\OT1/cmr/m/n/12 Wikipedia.  Ma-ze ge-ne-ra-tion al-go-rithm --- Wi-ki-pe-dia, the free ency-clo-
  []
 
-[3 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/momento_hidro.jpg>]
-<fotos/esquema_2.pdf, id=77, 592.2125pt x 324.40196pt>
-File: fotos/esquema_2.pdf Graphic file (type pdf)
-<use fotos/esquema_2.pdf>
-Package pdftex.def Info: fotos/esquema_2.pdf  used on input line 232.
-(pdftex.def)             Requested size: 384.1096pt x 210.41327pt.
-<fotos/grafico_2.png, id=78, 361.788pt x 215.496pt>
-File: fotos/grafico_2.png Graphic file (type png)
-<use fotos/grafico_2.png>
-Package pdftex.def Info: fotos/grafico_2.png  used on input line 275.
-(pdftex.def)             Requested size: 384.1096pt x 228.79294pt.
- [4 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/esquema_2.pdf>] [5 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/grafico_2.png>]
-<fotos/esquema_3.pdf, id=106, 234.80623pt x 272.63857pt>
-File: fotos/esquema_3.pdf Graphic file (type pdf)
-<use fotos/esquema_3.pdf>
-Package pdftex.def Info: fotos/esquema_3.pdf  used on input line 309.
-(pdftex.def)             Requested size: 204.85802pt x 237.87173pt.
- [6 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/esquema_3.pdf>]
-<fotos/aparato_3.jpg, id=137, 1951.29pt x 3655.6575pt>
-File: fotos/aparato_3.jpg Graphic file (type jpg)
-<use fotos/aparato_3.jpg>
-Package pdftex.def Info: fotos/aparato_3.jpg  used on input line 341.
-(pdftex.def)             Requested size: 145.10748pt x 271.81969pt.
- [7 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/aparato_3.jpg>]
-<fotos/grafico_3.png, id=148, 362.007pt x 215.277pt>
-File: fotos/grafico_3.png Graphic file (type png)
-<use fotos/grafico_3.png>
-Package pdftex.def Info: fotos/grafico_3.png  used on input line 381.
-(pdftex.def)             Requested size: 384.1096pt x 228.42245pt.
- [8 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/grafico_3.png>]
-<fotos/aparato_4.jpg, id=158, 3035.34pt x 4047.12pt>
-File: fotos/aparato_4.jpg Graphic file (type jpg)
-<use fotos/aparato_4.jpg>
-Package pdftex.def Info: fotos/aparato_4.jpg  used on input line 403.
-(pdftex.def)             Requested size: 256.07741pt x 341.43787pt.
-<fotos/esquema_4.pdf, id=159, 211.35461pt x 321.34755pt>
-File: fotos/esquema_4.pdf Graphic file (type pdf)
-<use fotos/esquema_4.pdf>
-Package pdftex.def Info: fotos/esquema_4.pdf  used on input line 410.
-(pdftex.def)             Requested size: 170.71393pt x 259.56929pt.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 223.
+ [8
 
-Overfull \hbox (19.44852pt too wide) in paragraph at lines 401--414
-[][]   [] 
- []
-
-<fotos/deflectores.png, id=163, 137.7948pt x 404.712pt>
-File: fotos/deflectores.png Graphic file (type png)
-<use fotos/deflectores.png>
-Package pdftex.def Info: fotos/deflectores.png  used on input line 421.
-(pdftex.def)             Requested size: 179.25157pt x 526.52077pt.
-[9 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/aparato_4.jpg> </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/esquema_4.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 429--429
-\OT1/cmtt/m/n/8 fundamentos-[]de-[]la-[]hidrodinamica / medicion-[]de-[]fuerzas-[]ejercidas-[]por-[]un-[]chorro / 070 . 15008 / hm150-[]08 /
- []
-
-
-Underfull \hbox (badness 1430) in paragraph at lines 436--437
-\OT1/cmr/m/n/12 si-ble eli-mi-nar el efec-to del mue-lle rea-li-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 436--437
-
- []
-
-[10 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/deflectores.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 462--465
-
- []
-
-[11]
-<fotos/Picture1.png, id=193, 362.007pt x 217.467pt>
-File: fotos/Picture1.png Graphic file (type png)
-<use fotos/Picture1.png>
-Package pdftex.def Info: fotos/Picture1.png  used on input line 507.
-(pdftex.def)             Requested size: 384.1096pt x 230.74617pt.
-<fotos/Picture2.png, id=194, 362.007pt x 217.467pt>
-File: fotos/Picture2.png Graphic file (type png)
-<use fotos/Picture2.png>
-Package pdftex.def Info: fotos/Picture2.png  used on input line 517.
-(pdftex.def)             Requested size: 384.1096pt x 230.74617pt.
- [12 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/Picture1.png>]
-<fotos/Picture3.png, id=203, 362.007pt x 217.248pt>
-File: fotos/Picture3.png Graphic file (type png)
-<use fotos/Picture3.png>
-Package pdftex.def Info: fotos/Picture3.png  used on input line 527.
-(pdftex.def)             Requested size: 384.1096pt x 230.51382pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 539.
- [13 </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/Picture2.png> </home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/fotos/Picture3.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 539.
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 223.
  (/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 539.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 539.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 223.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 223.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 539.
+(rerunfilecheck)             Checksum: A457BD9D9A6186A2A9ABB76F374A33FC;557.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 223.
  ) 
 Here is how much of TeX's memory you used:
- 14431 strings out of 482503
- 222639 string characters out of 5947227
- 635340 words of memory out of 5000000
- 29108 multiletter control sequences out of 15000+600000
- 551640 words of font info for 94 fonts, out of 8000000 for 9000
+ 14602 strings out of 482503
+ 223981 string characters out of 5947227
+ 634421 words of memory out of 5000000
+ 29309 multiletter control sequences out of 15000+600000
+ 545059 words of font info for 70 fonts, out of 8000000 for 9000
  398 hyphenation exceptions out of 8191
- 41i,17n,77p,1227b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on /home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.pdf (14 pages, 8682869 bytes).
+ 41i,7n,77p,1489b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on /home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.pdf (10 pages, 231724 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
- 35 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 163 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
+ 22 named destinations out of 1000 (max. 500000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 
