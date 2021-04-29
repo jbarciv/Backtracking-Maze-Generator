@@ -10,7 +10,7 @@
 //----VARIABLES GLOBALES------------------------------------------------
 extern long int k;
 
-//----FUNCIONES ITERATIVA: VISIT----------------------------------------
+//----FUNCIÓN ITERATIVA: VISIT----------------------------------------
 int Visit(int x, int y, char **grid, Nodo *pila){
     short int i=0;
     short int vect[4]={0,0,0,0};

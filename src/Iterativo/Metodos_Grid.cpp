@@ -4,6 +4,7 @@
 // Funciones que definen la matriz del laberinto
 //
 //======================================================================
+
 #include "Maze_Iterativo.hpp"
 
 //----VARIABLES GLOBALES------------------------------------------------
@@ -62,7 +63,7 @@ int SetGrid(char **grid){
         for(j=0; j<columnas; ++j)
             grid[i][j]='#';
     }
-    // Se establece la entrada y la salida del laberinto.
+    // Se establecen la entrada y la salida del laberinto.
     grid[0][1] = ' '; 
     grid[filas-1][columnas-2] = ' ';
 
@@ -70,22 +71,25 @@ int SetGrid(char **grid){
 }
 
 //----MUESTRA EN CONSOLA EL LABERINTO O LOS DATOS DE EJECUCIÓN-----------
-void PrintGrid(char **grid,int argc, char **argv, unsigned int t0, 
-               unsigned int t1){
-    double tiempo;
-    tiempo = (double(t1-t0)/CLOCKS_PER_SEC);
+void PrintGrid(char **grid,int argc, char **argv, double tiempo){
+
     if (!pruebas){ // Se comprueba si se está ejecutando una prueba o no.
+        printf("Filas: %d \nColumnas: %d \nArea: %d \n", 
+            filas, columnas, filas*columnas);
+        printf("Tiempo en generar: %2.4fs\n", tiempo);
+        printf("Iteraciones: %ld\n", k);
+
         for (int i=0; i<filas; i++) {
             for (int j=0; j<columnas; j++)
                 printf("%c",grid[i][j]);
             printf("\n");
         }
     } else{
-        printf("Filas: %d \n ", filas);
-        printf("Columnas: %d \n", columnas);
-        printf("Area: %d \n", filas*columnas);
-        printf("Tiempo en generar: %2.4fs \n", tiempo);
-        printf("Iteraciones: %ld\n", k);
+        printf("%d ", filas);
+        printf("%d ", filas*columnas);
+        printf("%2.4f ", tiempo);
+        printf("%ld", k);
+
     }
 }
 
