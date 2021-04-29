@@ -4,7 +4,7 @@
 \contentsline {subsection}{\numberline {1.2}Programaci\IeC {\'o}n del algoritmo}{2}{subsection.1.2}%
 \contentsline {subsubsection}{\numberline {1.2.1}Recursivo}{2}{subsubsection.1.2.1}%
 \contentsline {subsubsection}{\numberline {1.2.2}Iterativo}{3}{subsubsection.1.2.2}%
-\contentsline {subsubsection}{\numberline {1.2.3}Comentarios al c\IeC {\'o}digo}{3}{subsubsection.1.2.3}%
-\contentsline {section}{\numberline {2}Experimentaci\IeC {\'o}n}{6}{section.2}%
-\contentsline {section}{\numberline {3}An\IeC {\'a}lisis}{7}{section.3}%
-\contentsline {section}{\numberline {4}Conclusiones}{8}{section.4}%
+\contentsline {subsubsection}{\numberline {1.2.3}Comentarios al c\IeC {\'o}digo}{4}{subsubsection.1.2.3}%
+\contentsline {section}{\numberline {2}Experimentaci\IeC {\'o}n}{7}{section.2}%
+\contentsline {section}{\numberline {3}An\IeC {\'a}lisis}{8}{section.3}%
+\contentsline {section}{\numberline {4}Conclusiones}{9}{section.4}%

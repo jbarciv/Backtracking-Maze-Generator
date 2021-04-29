@@ -187,11 +187,13 @@ La elaboración de los dos algoritmos no ha sido simultánea: en primer lugar, s
 \pagenumbering{arabic}
 Los algoritmos recursivos son una potente herramienta para la algoritmia en la programación. En esta memoria se pretende comparar un algoritmo recursivo con otro iterativo. Dicha comparación se realiza mediante el diseño de un experimento el cual pone en evidencia las ventajas y problemáticas que presenta la programación recursiva frente a la iterativa.
 
+\vspace{0.3cm}
+
 La memoria se estructura en cuatro partes que corresponden a las fases seguidas en el experimento.
 La primera fase es la de \textit{Ideación}. Es la parte más importante, pues ella condiciona todas las fases posteriores. En ella se plantean las ideas propuestas y se discute la que finalmente ha sido elegida. Además, incluye la implementación sucesiva de los dos algoritmos mediante programación en C++.
-La segunda fase en la de \textit{Experimentación}. Es aquí donde se exponen y discuten los criterios de comparación utilizados y cómo se han implementado dichas métricas en el código. Por otro lado, se explica la metodología empleada para las pruebas o toma de mediadas.
+La segunda fase es la de \textit{Experimentación}. Es aquí donde se exponen y discuten los criterios de comparación utilizados y cómo se han implementado dichas métricas en el código. Por otro lado, se explica la metodología empleada para las pruebas o toma de mediadas.
 La tercera fase es la de \textit{Análisis}. Esta parte resulta de vital importancia y es en ella en la que se pone de manifiesto de forma gráfica los resultado obtenidos en las fases precedentes. Para la realización del análisis heurístico, se ha procedido con ayuda de la herramienta \textsc{RStudio}, a un análisis gráfico.
-En la cuarta y última fase de \textit{Conclusiones} se recapitula y enuncian los hechos más relevantes del experimento realizado.
+En la cuarta y última fase de \textit{Conclusiones} se recapitula y enuncian las principales conclusiones obtenidas del experimento realizado.
 
 \section{Ideación}
 \subsection{Primeras propuestas}
@@ -205,6 +207,8 @@ Inicialmente, se pensó en realizar un experimento con esencia matemática, esto
 \end{itemize}
 
 Como segunda posibilidad se valoró la implementación de \textit{juegos de estrategia} como el tres en raya, cuatro en raya, etc. Pero se dedujo que en un tablero acotado como en el tres en raya las iteraciones iban a ser siempre las mismas y al mismo tiempo no tenía sentido diseñar un tablero más grande pues el problema se iba a concentrar en un espacio reducido.
+
+\vspace{0.3cm}
 
 Finalmente se encontró otros algoritmos que diseñaban laberintos a partir de una malla rellena por carácteres. De entre los distintos métodos que abordaban el problema, se eligió aquel que consistía en visitar una por una las casillas, comprobando si eran válidas e ir abriéndose camino hasta rellenar toda la malla con pasillos. Esta metodología es conocida como \textit{recursive backtracker}\cite{wiki}. El cual es una versión aleatoriazada del algoritmo \textit{depht first-first search}. En la siguiente ilustración (ver \textsc{Fig.}~\ref{back_tracker_label}) puede verse un ejemplo del algoritmo implementado.
 
@@ -232,6 +236,15 @@ El abordaje iterativo de este problema no es tan sencillo. Esto es debido, al he
 Finalmente, la opción elegida fue la pila.  
 
 En la primera versión solo almacenaba la situación de las casillas ya ocupadas por la rama. Posteriormente se incluyó una funcionalidad extra en el código: cuando el programa se viera obligado a retroceder por la rama que acababa de construir, comprobaría cada dirección de la casilla en la que estuviera para decidir si era posible continuar en alguna otra dirección, pero de forma que se incuría en algunas ineficiencias, pues se comprobaban direcciones que ya se habían comprobado antes, cuando la rama había pasado por allí por primera vez (o por segunda, o por tercera). Se almacenó entonces en la pila el vector de direcciones aleatorizado, así como por qué iteración iba la comprobación del vector. De esta forma es posible finalizar el laberinto asegurando que todas las direcciones han sido comprobadas y todas en un orden aleatorio.
+
+Se incluye a continuación el diagrama de flujo utilizado para la programación de la función \textsf{Visit()} en el caso iterativo:
+
+\begin{figure}[H]
+	\hspace{-4.3cm}
+	\includegraphics[scale=1.05]{fotos/diagrama.pdf}
+	\caption{asdasdfasdfads}
+	\label{diagrama}
+\end{figure}
 
 \subsubsection{Comentarios al código}
 
@@ -273,7 +286,7 @@ for (int i=0; i<filas; i++) {
 }
 \end{lstlisting}
 
-En la figura \# puede verse la commparación entre la salida por consola mediante el símbolo \textsc{ascii} \# y el utilizado en el código anterior \textsc{unicode}.
+En las figuras \ref{unicode} y \ref{ascii} puede verse la commparación entre la salida por consola mediante el símbolo \textsc{unicode} utilizado en el código anterior y el \textsc{ascii} \#.
 
 \begin{figure}[H]
 	\centering
@@ -285,6 +298,9 @@ En la figura \# puede verse la commparación entre la salida por consola mediant
 	\caption{Salida por consola del programa con carácteres \textsc{ascii}}
 	\label{ascii}
 \end{figure}
+
+Por motivos de portabilida se ha preferido no incluirlo directamente en el código final. Pero puede ser implementado fácilmente gracias el código anterior.
+
 
 \clearpage
 \section{Experimentación}
