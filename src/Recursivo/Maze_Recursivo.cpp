@@ -28,7 +28,7 @@ bool pruebas = false;
 //----FUNCIÓN PRINCIPAL-------------------------------------------------
 int main(int argc, char **argv){
   char **grid = NULL;
-  unsigned int t0, t1;
+  double t0, t1, tiempo;
   srand(time(0));    // Semilla aleatoria para la función rand().
 
   // Se pide al usuario el tamaño del laberinto.
