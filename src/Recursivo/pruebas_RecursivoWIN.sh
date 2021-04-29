@@ -11,7 +11,7 @@
 #           el producto de "filas" * "columnas", es decir el área.
 # -----------------------------------------------------------------
 
-/STACK:reserve[1000000,commit]
+/STACK:reserve[10000000]
 
 STARTTIMESCRIPT=$(date +%s) #time in seconds
 

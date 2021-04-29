@@ -28,7 +28,7 @@ touch $file
 echo "repeticiones filas area tiempo iteraciones" > $file
 
 initial=20
-final=1000
+final=10000
 step=50
 contador=0
 
