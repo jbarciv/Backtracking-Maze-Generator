@@ -4,6 +4,7 @@
 // Funciones llamadas en main y en Visit
 //
 //======================================================================
+
 #include "Maze_Iterativo.hpp"
 
 //----FUNCIONES DE LA PILA----------------------------------------------

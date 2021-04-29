@@ -22,7 +22,7 @@ using namespace std;
 //----PROTOTIPOS DE FUNCIONES-------------------------------------------
 int Pedir(int ,char **);
 int SetGrid(char **);
+void PrintGrid(char **,int ,char **, double);
 int IsInBounds( int , int );
-void Visit(int , int , char **);
-void PrintGrid(char **,int ,char **, unsigned int, unsigned int);
 void Free(char **);
+void Visit(int , int , char **);

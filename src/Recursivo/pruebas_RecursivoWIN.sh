@@ -11,7 +11,7 @@
 #           el producto de "filas" * "columnas", es decir el área.
 # -----------------------------------------------------------------
 
-/STACK:reserve[1000000,commit]
+/STACK:reserve[10000000]
 
 STARTTIMESCRIPT=$(date +%s) #time in seconds
 
@@ -30,7 +30,7 @@ echo "repeticiones filas area tiempo iteraciones" > $file
 initial=20
 final=1000
 step=50
-contador=0
+contador=1
 
 while [ $initial -le $final ]
     do 

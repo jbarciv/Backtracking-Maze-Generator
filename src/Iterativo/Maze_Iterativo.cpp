@@ -25,6 +25,7 @@ int main(int argc, char **argv){
     short int vect[4]={0,0,0,0};
     char **grid = NULL;
     unsigned int t0, t1;
+    double tiempo;
 
     srand(time(0));    // Semilla aleatoria para la función rand().
 
@@ -42,10 +43,12 @@ int main(int argc, char **argv){
     // Empieza la iteracion. Se comienza visitando la posición (1,1).
     t0=clock();
     Visit(1, 1, grid, pila);
-    t1=clock();
+    t1=clock(); // t1 y t0 miden el tiempo transcurrido en ticks.
+    tiempo = (double(t1-t0)/CLOCKS_PER_SEC); // Pasamos de ticks a 
+    //segundos.
 
     // Mostramos por pantalla el laberinto
-    PrintGrid(grid, argc, argv, t0, t1);
+    PrintGrid(grid, argc, argv, tiempo);
 
     // Se libera memoria.
     Free(grid);
