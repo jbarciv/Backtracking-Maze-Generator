@@ -1,16 +1,15 @@
 //======================================================================
 // Maze_Iterativo.hpp
 //
-// Librerías, directivas del preprocesador y prototipos de funciones 
-// para Maze_Iterativo.cpp, Metodos_Iterativo.cpp y Visit_Iterativo.cpp
-//
+// Librerías, directivas del preprocesador, prototipos de funciones y
+// definición de tipos para Maze_Iterativo.cpp, Metodos_Grid.cpp, 
+// Metodos_Pila.cpp y Visit_Iterativo.cpp
 //======================================================================
 #include <stdio.h>
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
 
-using namespace std;
 //----CONSTANTES--------------------------------------------------------
 #define ARRIBA 0
 #define DERECHA 1

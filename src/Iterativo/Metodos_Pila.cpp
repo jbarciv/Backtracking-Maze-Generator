@@ -1,5 +1,5 @@
 ///======================================================================
-// Metodos_Iterativo.cpp
+// Metodos_Pila.cpp
 //
 // Funciones llamadas en main y en Visit
 //
