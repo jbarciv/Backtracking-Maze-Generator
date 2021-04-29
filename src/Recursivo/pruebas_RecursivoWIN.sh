@@ -21,7 +21,7 @@ echo "---------------------" # para imprimir por pantalla
 
 STARTTIMELOOP=$(date +%s%3N) #time in milliseconds
 
-file="output_recursive.txt"
+file="output_recursiveWIN.csv"
 touch $file
 
 # Write column names

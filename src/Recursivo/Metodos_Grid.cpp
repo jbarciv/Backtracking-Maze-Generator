@@ -82,10 +82,11 @@ void PrintGrid(char **grid,int argc, char **argv, unsigned int t0,
             printf("\n");
         }
     } else{
-        printf("%d ", filas);
-        printf("%d ", filas*columnas);
-        printf("%2.4f ", tiempo);
-        printf("%ld\n", k); // Muestra el nº de iteraciones.
+        printf("Filas: %d \n", filas);
+        printf("Columnas: %d \n", columnas);
+        printf("Area: %d \n", filas*columnas);
+        printf("Tiempo en generar: %2.4fs\n", tiempo);
+        printf("Iteraciones: %ld\n", k);
     }
 }
 
