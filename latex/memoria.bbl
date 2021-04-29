@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{back_tracker}
+M.~Foltin.
+\newblock {\em Automated maze generation and human interaction}.
+\newblock PhD thesis, Masarykova univerzita, Fakulta informatiky, 2011.
+
+\bibitem{wiki}
+Wikipedia.
+\newblock {Maze generation algorithm} --- {W}ikipedia{,} the free encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=Maze\%20generation\%20algorithm&oldid=1008588880},
+  2021.
+\newblock [Online; accessed 29-April-2021].
+
+\end{thebibliography}

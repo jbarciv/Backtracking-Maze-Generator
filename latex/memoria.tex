@@ -17,6 +17,7 @@
 \providecommand{\abs}[1]{\lvert#1\rvert}
 \newcommand{\grad}{^{\circ}}
 
+
 \usepackage[makeroom]{cancel}
 \usepackage{enumitem}
 \usepackage{float}	
@@ -38,6 +39,7 @@
 \usepackage{sectsty}
 \usepackage{titlesec}
 \usepackage{verbatim}
+\usepackage{natbib}
 
 
 
@@ -171,21 +173,36 @@ Inicialmente, se pensó en realizar un experimento con esencia matemática, esto
 
 Como segunda posibilidad se valoró la implementación de \textit{juegos de estrategia} como el tres en raya, cuatro en raya, etc. Pero se dedujo que en un tablero acotado como en el tres en raya las iteraciones iban a ser siempre las mismas y al mismo tiempo no tenía sentido diseñar un tablero más grande pues el problema se iba a concentrar en un espacio reducido.
 
-Finalmente se encontró otros algoritmos que diseñaban laberintos a partir de una malla rellena por carácteres. De entre los distintos métodos que abordaban el problema, se eligió aquel que consistía en visitar una por una las casillas, comprobando si eran válidas e ir abriéndose camino hasta rellenar toda la malla con pasillos. Esta metodología es conocida como \textit{``recursive backtracker''}. El cual es una versión aleatoriazada del algoritmo \textit{``depht first-first search''}.[aquí va una cita a wikipedia: maze generation algorithm]. \\
+Finalmente se encontró otros algoritmos que diseñaban laberintos a partir de una malla rellena por carácteres. De entre los distintos métodos que abordaban el problema, se eligió aquel que consistía en visitar una por una las casillas, comprobando si eran válidas e ir abriéndose camino hasta rellenar toda la malla con pasillos. Esta metodología es conocida como \textit{recursive backtracker}\cite{wiki}. El cual es una versión aleatoriazada del algoritmo \textit{depht first-first search}. En la siguiente ilustración (ver \textsc{Fig.}~\ref{back_tracker}) puede verse un ejemplo del algoritmo implementado.
 
-Desde el punto de vista recursivo, esta forma de hacer un laberinto no presenta grandes problemas. El algoritmo crea una rama del laberinto hasta que le es imposible seguir adelante porque el extremo se queda encajonado entre el muro exterior (que es impenetrable, y ha de ser así, pues si no el programa se saldría de la memoria reservada para el laberinto y el S.O. lo finalizaría abruptamente) y la propia rama. La propia naturaleza de la recursividad hace que, una vez llegado a ese punto, como no hay posibilidades proseguir camino, resuelva por fin y devuelva el resultado a las casillas anteriores que aún estaban pendientes de resolución. Esto continúa hasta que encuentra una casilla desde la que puede continuar camino, entonces abrirá desde ahí una nueva subrama del laberinto que continuará hasta que quede encajonada de nuevo y empiece a resolver hacia las casillas anteriores. Finalmente, cuando ya no hay más casillas posibles por las que continuar, se resolverán todas las casillas hasta llegar a la primera, la [1][1]. Este proceso asegura que el laberinto discurra por todas las casillas que sean posibles y que nunca quede encajonado (como ya hemos dicho, la propia naturaleza de la recursividad lo garantiza). 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{fotos/back_tracker.png}
+	\caption{Ejemplo de un algoritmo recursive backtracker \cite{back_tracker}}
+	\label{back_tracker}
+\end{figure}
 
-El abordaje iterativo de este problema no es tan sencillo. Crear una rama principal de forma iterativa es tan sencillo como crearla recursivamente. Estableciendo unas condiciones lógicas de control para que la rama no se salga de los bordes y se evite a si misma para no romper el laberinto es suficiente. Pero tarde o temprano, la rama choca consigo misma y no tiene a donde ir. Solucionar este único punto es lo que más esfuerzo ha supuesto en toda la elaboración del presente trabajo. Tras una jornada de reflexión, se llegó a la conclusión de que no había más remedio que crear un nuevo objeto o variable que almacenara los lugares por los que la rama (o subrama) había ya pasado. Fue la última opción que se valoró porque su implementación implicaba alejarse del esquema marcado por el algoritmo recursivo, que ya estaba implementado y funcionaba a la perfección. Para ello el equipo se dividió en dos: 
 
-Una persona intentaría resolver el problema mediante la declaración de una variable dinámica local bidimensional, una matriz con tantas filas como elementos tuviera la matriz sobre la que se hacía el laberinto y con tantas columnas como las dimensiones del laberinto (2, pues el laberinto implementado es bidimensional). 
 
-Otra persona intentaría la implementación de una pila dinámica tipo LIFO, que en un principio solo almacenaría los índices de las casillas por las que la rama o subrama había pasado en orden (más tarde se utilizó la pila también para otros fines). 
+\subsection{Programación del algoritmo}
+\subsubsection{Recursivo}
 
-La tercera persona del equipo ejercería una labor de control y apoyo. Trabajaba con las otras dos personas en limpieza del código e implementación de funciones auxiliares. Asimismo, controlaba el desarrollo de las dos vías con el fin de descartar la que menos convenciera para centrar todos los esfuerzos en la más prometedora.  
+Desde el punto de vista recursivo, esta forma de contruir un laberinto no presenta grandes problemas. El algoritmo crea una rama del laberinto hasta que le es imposible seguir porque, por ejemplo, el extremo ha quedado ``encerrado'' entre el muro exterior (el cual marca el límite y evita que el programa se salga de la memoria reservada para el laberinto evitando que el S.O. interrumpa la ejecución) y la propia rama. La naturaleza de la recursividad hace que, una vez llegado a ese punto, al no haber posibilidad de movimiento, resuelva por fin esa llamada a la función recursiva y devuelva el resultado a las casillas anteriores que aún estaban pendientes de resolución.  Esto continúa hasta que encuentra una casilla desde la que puede continuar camino, entonces abrirá desde ahí una nueva subrama del laberinto que continuará hasta que quede ``encerrada'' de nuevo y empiece a resolver hacia las casillas anteriores. Puede verse un ejemplo de dicha iteración en la figura \ref{back_tracker}. Finalmente, cuando ya no hay más casillas posibles por las que continuar, se volverá hacia atrás todas las casillas hasta llegar a la primera, en nuestro casi siempre la posición $(1,1)$. Este proceso asegura que el laberinto discurra por todas las casillas que sean posibles y que nunca quede encajonado" (como ya hemos dicho, la propia naturaleza de la recursividad lo garantiza).
+
+\subsubsection{Iterativo}
+
+El abordaje iterativo de este problema no es tan sencillo. Esto es debido, al hecho de que crear una rama principal de forma iterativa resulta más complejo que crearla recursivamente. Estableciendo unas condiciones lógicas de control para que la rama no se salga de los bordes y se evite a si misma para no romper el laberinto es suficiente. Pero tarde o temprano, la rama choca consigo misma y no tiene a donde ir. Solucionar este único punto es lo que más esfuerzo supone en la implementación del caso iterativo. La solución más inmedita resulta de crear un nuevo objeto o variable que almacene los lugares por los que la rama (o subrama) ya ha pasado. En esta memoria ha sido la última opción valorada, dado que su implementación significa alejarse del esquema marcado por el algoritmo recursivo. Para ello el equipo se dividió en dos: 
+\begin{itemize}
+	\item Una persona intentaría resolver el problema mediante la declaración de una variable dinámica local bidimensional. Es decir, una matriz con tantas filas como elementos tuviera la matriz sobre la que se hacía el laberinto y con tantas columnas como las dimensiones del laberinto (2 por ser bidimensional). 
+	\item Otra persona intentaría la implementación de una pila dinámica tipo LIFO, que en un principio solo almacenaría los índices de las casillas por las que la rama o subrama había pasado en orden (más tarde se utilizó la pila también para almacenar más datos). 
+	\item La tercera persona del equipo ejercería una labor de control y apoyo. Trabajando con las otras dos personas en limpieza del código e implementación de funciones auxiliares. Asimismo, controlaba el desarrollo de las dos vías con el fin de descartar la que menos conveniera para centrar todos los esfuerzos en la más prometedora.
+\end{itemize}
 
 Finalmente, la opción elegida fue la pila.  
 
-En la primera versión solo almacenaba la situación de las casillas ya ocupadas por la rama. Posteriormente se incluyó una funcionalidad extra en el programa: cuando el programa se viera obligado a retroceder por la rama que acababa de elaborar, comprobaría cada dirección de la casilla en la que estuviera para dirimir si era posible continuar camino, incurriéndose entonces en algunas ineficiencias, pues se comprobaban direcciones que ya se habían comprobado antes, cuando la rama había pasado por allí por primera vez (o por segunda, o por tercera). Se almacenó entonces en la pila el vector de direcciones aleatorizado, así como por qué iteración iba la comprobación del vector. De esta forma es posible finalizar el laberinto asegurando que todas las direcciones han sido comprobadas y todas en un orden aleatorio.  
+En la primera versión solo almacenaba la situación de las casillas ya ocupadas por la rama. Posteriormente se incluyó una funcionalidad extra en el código: cuando el programa se viera obligado a retroceder por la rama que acababa de construir, comprobaría cada dirección de la casilla en la que estuviera para decidir si era posible continuar en alguna otra dirección, pero de forma que se incuría en algunas ineficiencias, pues se comprobaban direcciones que ya se habían comprobado antes, cuando la rama había pasado por allí por primera vez (o por segunda, o por tercera). Se almacenó entonces en la pila el vector de direcciones aleatorizado, así como por qué iteración iba la comprobación del vector. De esta forma es posible finalizar el laberinto asegurando que todas las direcciones han sido comprobadas y todas en un orden aleatorio.
+
+\subsubsection{Comentarios al código}
 
 Teniendo nuestros dos algoritmos finalizados, solo quedaba arreglar pequeños detalles como que el número de filas como de columnas debía ser impar. Ya que, por la manera de recorrer la malla de nuestros algoritmos, comprobando y avanzando de una en una sus casillas, si el número de estas fuese par, dejaría unos bordes izquierdo e inferior de dobles ‘\#’.  Este ‘arreglo’ se podía implementar de muchas maneras, una de ellas con una macro. Sin embargo, pensamos que era más sencillo incorporarla con dos líneas al final de nuestra función Pedir, que suman uno al número de filas o columnas en el caso de que sean pares. 
 
@@ -199,4 +216,9 @@ Por motivos estéticos, también decidimos buscar algún carácter en unicode pa
 \clearpage
 \section{Conclusiones}
 
+\clearpage
+\bibliographystyle{abbrv}
+\bibliography{mybib}
+
 \end{document}
+
