@@ -21,14 +21,14 @@ echo "---------------------" # para imprimir por pantalla
 
 STARTTIMELOOP=$(date +%s%3N) #time in milliseconds
 
-file="output_iterativeWIN.csv"
+file="output_iterativeUNIX.csv"
 touch $file
 
 # Write column names
 echo "repeticiones filas area tiempo iteraciones" > $file
 
 initial=20
-final=1000
+final=10000
 step=50
 contador=0
 
@@ -54,4 +54,4 @@ ENDTIMESCRIPT=$(date +%s) #time in seconds
 echo "---------------------"
 echo "This script takes $(($ENDTIMESCRIPT - $STARTTIMESCRIPT)) seconds to complete..."
 exit
-exit
+

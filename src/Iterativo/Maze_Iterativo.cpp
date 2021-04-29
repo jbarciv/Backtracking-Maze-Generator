@@ -25,7 +25,6 @@ int main(int argc, char **argv){
     short int vect[4]={0,0,0,0};
     char **grid = NULL;
     unsigned int t0, t1;
-    double tiempo;
 
     srand(time(0));    // Semilla aleatoria para la función rand().
 
