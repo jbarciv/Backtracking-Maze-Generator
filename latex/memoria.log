@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.26)  30 APR 2021 19:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.26)  30 APR 2021 19:40
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -960,58 +960,46 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
 
 [6 <./fotos/unicode.png (PNG copy)>] [7 <./fotos/ascii.png>] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
-)
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 347.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 347.
-
-[8
+) [8
 
 ] [9] [10
 
 ]
-<fotos/Iteraciones_vs_filas1.png, id=226, 370.38374pt x 231.86626pt>
-File: fotos/Iteraciones_vs_filas1.png Graphic file (type png)
-<use fotos/Iteraciones_vs_filas1.png>
-Package pdftex.def Info: fotos/Iteraciones_vs_filas1.png  used on input line 416.
+<fotos/Iteraciones_vs_filas.png, id=226, 370.38374pt x 231.86626pt>
+File: fotos/Iteraciones_vs_filas.png Graphic file (type png)
+<use fotos/Iteraciones_vs_filas.png>
+Package pdftex.def Info: fotos/Iteraciones_vs_filas.png  used on input line 415.
 (pdftex.def)             Requested size: 333.34227pt x 208.67769pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<fotos/Iteraciones_vs_numElem1.png, id=228, 370.38374pt x 231.86626pt>
-File: fotos/Iteraciones_vs_numElem1.png Graphic file (type png)
-<use fotos/Iteraciones_vs_numElem1.png>
-Package pdftex.def Info: fotos/Iteraciones_vs_numElem1.png  used on input line 424.
+<fotos/Iteraciones_vs_numElem.png, id=228, 370.38374pt x 231.86626pt>
+File: fotos/Iteraciones_vs_numElem.png Graphic file (type png)
+<use fotos/Iteraciones_vs_numElem.png>
+Package pdftex.def Info: fotos/Iteraciones_vs_numElem.png  used on input line 424.
 (pdftex.def)             Requested size: 333.34227pt x 208.67769pt.
-[11] [12 <./fotos/Iteraciones_vs_filas1.png> <./fotos/Iteraciones_vs_numElem1.png>]
+[11] [12 <./fotos/Iteraciones_vs_filas.png> <./fotos/Iteraciones_vs_numElem.png>]
 <fotos/iterations_rec_vs_pows.pdf, id=263, 273.02pt x 432.61626pt>
 File: fotos/iterations_rec_vs_pows.pdf Graphic file (type pdf)
 <use fotos/iterations_rec_vs_pows.pdf>
 Package pdftex.def Info: fotos/iterations_rec_vs_pows.pdf  used on input line 435.
 (pdftex.def)             Requested size: 245.71573pt x 389.35103pt.
-<fotos/Tiempos_recursivo.png, id=266, 455.45157pt x 231.86626pt>
-File: fotos/Tiempos_recursivo.png Graphic file (type png)
-<use fotos/Tiempos_recursivo.png>
-Package pdftex.def Info: fotos/Tiempos_recursivo.png  used on input line 445.
-(pdftex.def)             Requested size: 409.90262pt x 208.67769pt.
+<fotos/Tiempos_recursivo1.png, id=264, 370.38374pt x 231.86626pt>
+File: fotos/Tiempos_recursivo1.png Graphic file (type png)
+<use fotos/Tiempos_recursivo1.png>
+Package pdftex.def Info: fotos/Tiempos_recursivo1.png  used on input line 442.
+(pdftex.def)             Requested size: 333.34227pt x 208.67769pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<fotos/Tiempos_Iterativo.png, id=267, 455.45157pt x 231.86626pt>
-File: fotos/Tiempos_Iterativo.png Graphic file (type png)
-<use fotos/Tiempos_Iterativo.png>
-Package pdftex.def Info: fotos/Tiempos_Iterativo.png  used on input line 453.
-(pdftex.def)             Requested size: 409.90262pt x 208.67769pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[13 <./fotos/iterations_rec_vs_pows.pdf>] [14 <./fotos/Tiempos_recursivo.png>] [15 <./fotos/Tiempos_Iterativo.png>] [16
+<fotos/Tiempos_Iterativo1.png, id=267, 370.38374pt x 231.86626pt>
+File: fotos/Tiempos_Iterativo1.png Graphic file (type png)
+<use fotos/Tiempos_Iterativo1.png>
+Package pdftex.def Info: fotos/Tiempos_Iterativo1.png  used on input line 454.
+(pdftex.def)             Requested size: 333.34227pt x 208.67769pt.
+[13 <./fotos/iterations_rec_vs_pows.pdf>] [14 <./fotos/Tiempos_recursivo1.png> <./fotos/Tiempos_Iterativo1.png>] [15] [16
 
 ] (./memoria.bbl
 Underfull \hbox (badness 1292) in paragraph at lines 9--15
@@ -1019,30 +1007,30 @@ Underfull \hbox (badness 1292) in paragraph at lines 9--15
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 480.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 482.
  [17
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 480.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 482.
  (./memoria.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 480.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 480.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 482.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 482.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
 (rerunfilecheck)             Checksum: A6DB0110952D69956AECD4F87A61298E;818.
  ) 
 Here is how much of TeX's memory you used:
  20785 strings out of 482503
  329123 string characters out of 5947227
- 1059660 words of memory out of 5000000
+ 1059579 words of memory out of 5000000
  35291 multiletter control sequences out of 15000+600000
  548720 words of font info for 85 fonts, out of 8000000 for 9000
  398 hyphenation exceptions out of 8191
  48i,8n,99p,1493b,2166s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/josep/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on memoria.pdf (20 pages, 508899 bytes).
+Output written on memoria.pdf (20 pages, 507362 bytes).
 PDF statistics:
  394 PDF objects out of 1000 (max. 8388607)
  322 compressed objects within 4 object streams
