@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex memoria"] 1619805035 "memoria.aux" "memoria.bbl" "memoria" 1619805048
+["bibtex memoria"] 1619805340 "memoria.aux" "memoria.bbl" "memoria" 1619805344
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/abbrv.bst" 1292289607 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "memoria.aux" 1619805036 6073 c58720bca6cd4c4ebe2f9c68ae9b435e "pdflatex"
+  "memoria.aux" 1619805343 6099 54a7d383162dd1b107299d605933d5a8 "pdflatex"
   "mybib.bib" 1619714273 486 aaf106652cab9c802194cd1e97424b15 ""
   (generated)
-  "memoria.blg"
   "memoria.bbl"
-["pdflatex"] 1619805035 "/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.tex" "memoria.pdf" "memoria" 1619805048
+  "memoria.blg"
+["pdflatex"] 1619805340 "/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.tex" "memoria.pdf" "memoria" 1619805344
   "/dev/null" 1619789307 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1605011250 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/josep/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1000.600pk" 1619718781 9468 411e35272c2b3fd81ce561908f0ea22b ""
-  "/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.tex" 1619805047 35848 661ca124ce2ce1517ba67a6bea06a8a4 ""
+  "/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.tex" 1619805338 35853 401839a923e15e91be75b66f5fde7d3e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tctt1000.tfm" 1136768653 1536 c5729d01ab121276cf99b309129349a0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -219,14 +219,14 @@
   "fotos/diagrama.pdf" 1619721184 40971 a9b063f99a0403f495eaeb1fe7cebf24 ""
   "fotos/iterations_rec_vs_pows.pdf" 1619543502 19753 c61675da99672a0a3bde5f24a7be3297 ""
   "fotos/unicode.png" 1619719711 64760 89b59c77a168c96a9457bad47e2e8246 ""
-  "memoria.aux" 1619805036 6073 c58720bca6cd4c4ebe2f9c68ae9b435e "pdflatex"
-  "memoria.bbl" 1619805035 491 5ab765de433f0fb3ecff72d2db4a4871 "bibtex memoria"
-  "memoria.out" 1619805036 818 a6db0110952d69956aecd4f87a61298e "pdflatex"
-  "memoria.tex" 1619805047 35848 661ca124ce2ce1517ba67a6bea06a8a4 ""
-  "memoria.toc" 1619805036 1123 6ecb351b2a18421b1bb29e61fe139eee "pdflatex"
+  "memoria.aux" 1619805343 6099 54a7d383162dd1b107299d605933d5a8 "pdflatex"
+  "memoria.bbl" 1619805340 491 5ab765de433f0fb3ecff72d2db4a4871 "bibtex memoria"
+  "memoria.out" 1619805343 818 a6db0110952d69956aecd4f87a61298e "pdflatex"
+  "memoria.tex" 1619805338 35853 401839a923e15e91be75b66f5fde7d3e ""
+  "memoria.toc" 1619805343 1123 6ecb351b2a18421b1bb29e61fe139eee "pdflatex"
   (generated)
-  "memoria.out"
-  "memoria.toc"
-  "memoria.aux"
   "memoria.log"
+  "memoria.out"
+  "memoria.aux"
+  "memoria.toc"
   "memoria.pdf"
