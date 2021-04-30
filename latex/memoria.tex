@@ -187,7 +187,7 @@ La elaboración de los dos algoritmos no ha sido simultánea: en primer lugar, s
 \pagenumbering{arabic}
 Los algoritmos recursivos son una potente herramienta para la algoritmia en la programación. En esta memoria se pretende comparar un algoritmo recursivo con otro iterativo. Dicha comparación se realiza mediante el diseño de un experimento el cual pone en evidencia las ventajas y problemáticas que presenta la programación recursiva frente a la iterativa.
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
 La memoria se estructura en cuatro partes que corresponden a las fases seguidas en el experimento.
 La primera fase es la de \textit{Ideación}. Es la parte más importante, pues ella condiciona todas las fases posteriores. En ella se plantean las ideas propuestas y se discute la que finalmente ha sido elegida. Además, incluye la implementación sucesiva de los dos algoritmos mediante programación en C++.
@@ -208,7 +208,7 @@ Inicialmente, se pensó en realizar un experimento con esencia matemática, esto
 
 Como segunda posibilidad se valoró la implementación de \textit{juegos de estrategia} como el tres en raya, cuatro en raya, etc. Pero se dedujo que en un tablero acotado como en el tres en raya las iteraciones iban a ser siempre las mismas y al mismo tiempo no tenía sentido diseñar un tablero más grande pues el problema se iba a concentrar en un espacio reducido.
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
 Finalmente se encontró otros algoritmos que diseñaban laberintos a partir de una malla rellena por carácteres. De entre los distintos métodos que abordaban el problema, se eligió aquel que consistía en visitar una por una las casillas, comprobando si eran válidas e ir abriéndose camino hasta rellenar toda la malla con pasillos. Esta metodología es conocida como \textit{recursive backtracker}\cite{wiki}. El cual es una versión aleatoriazada del algoritmo \textit{depht first-first search}. En la siguiente ilustración (ver \textsc{Fig.}~\ref{back_tracker_label}) puede verse un ejemplo del algoritmo implementado.
 
@@ -309,7 +309,7 @@ Por motivos de portabilida se ha preferido no incluirlo directamente en el códi
 \subsection{Toma de medidas}
 Para poder estudiar y comparar la ejecución de ambos códigos y algoritmos, ha sido necesaria una fase de toma de medidas. Los datos buscados corresponden a las diversas métricas empleadas, estas son: número de iteraciones, velocidad de ejecución y uso de memoria. Para la experimentación (esto es, ejecutar el código bajo diferentes condiciones), se ha elaborado un fichero \textit{shell script} que permite ejecutar cada programa repetidas veces y genera un archivo de salida en el que vuelca los datos de cada ejecución. Más tarde este fichero es convertido a una tabla de datos con formato \textit{.csv}. Para su estudio y análisis se ha utilizado la herramienta estadística \textsc{RStudio}.
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 Más concretamente, el shell script empieza ejecutando el programa con un valor inicial de $20$ tanto para filas y columnas. Y va sumando 50 unidades a filas y columnas con cada ejecución hasta llegar a $10000$, realizando cada ejecución $5$ veces para poder conseguir una media de los tiempos de ejecución. En cada ejecución, escribe en el fichero \textit{output.csv} (o si se prefiere \textit{output.txt}): un número del $1$ al $5$ correspondiente con la ejecución en curso, el tamaño de las filas y columnas, el área del laberinto $(filas*columnas)$, el tiempo empleado en la ejecución de la función \textsf{Visit()} y el número de iteraciones realizadas por dicha función. Se incluye a continuación el bucle principal del \textit{shell script}:
 \clearpage
 \lstset{style=mystyle}
@@ -334,15 +334,16 @@ Más concretamente, el shell script empieza ejecutando el programa con un valor 
 \end{lstlisting}
 Es importante utilizar \verb|ulimit -s unlimited| dentro del script para evitar que el sistema operativo mate el programa cuando las dimensiones sean demasiado grandes, permitiendo que la pila sea más grande de lo habitual y no llegue a llenarse. Para poder ejecutar el mismo \textit{script} en Windows ha sido necesario utilizar un emulador de Unix (\textit{Cygwin} o una consola tipo \textit{Git Bash}) y cambiar el comando anterior por \verb|/STACK:reserve[10000000]| con la misma inteción.
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 En la toma de medidas se ha observado que en el recursivo el número de iteraciones es siempre el mismo, ya que al ser constantes las dimensiones del laberinto la función \textsf{Visit()} es llamada el mismo número de veces en cada ejecución con los mismos datos. Pero, por otro lado, las 5 ejecuciones sirven para obtener la media del tiempo. 
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 En el caso del iterativo, tanto el tiempo como el número de iteraciones varían en cada ejecución. Se cree que esto es debido a la aleatoriedad del recorrido y el vaciado o llenado de la pila. Pues, en el caso recursivo el ``arbol de opciones'' es recorrido de manera sistemática.
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 A la hora de realizar pruebas, se ha dispuesto de 3 computadoras diferentes: dos  con sistemas operativos vasados en \textsc{unix}, en concreto \textit{Linux}, ambos con diferentes procesadores, y un tercer computador con sistema operativo \textit{Windows 10}. Se ha procedido extrayendo datos de la ejecución de los programas en cada uno de las tres computadores. Lo cual, supone además una manera de comprobar experimentalmente la portabilidad de los programas.
 
+\vspace{0.2cm}
 Es importante resaltar en este punto, lo conveniente que ha sido, para la ejecución del \textit{script}, implementar en ambos código el paso de parámetros a la función \textsf{main()}. Se incluye brevemente el código y el paso de parámtros a una función de dichos argumentos:
 \lstset{style=mystyle}
 %también se puede poner [firstnumber=39]
@@ -364,22 +365,26 @@ Gracias a los datos obtenido en la fase de experimentación, se ha podido elabor
 	\item Con la tabla final, se procede a elaborar los gráficos pertinentes. Para ello se hace uso del paquete \textit{ggplot} de la librería ``tidyvers''.
 \end{itemize}
  
-Los graficos obtenidos aparecen a continuación: 
+En el siguiente gráfico (ver \textsc{Fig.}~\ref{grafico1}) se ha representado la evolución del numero de veces que se llama a la función \textsf{Visit()} en función del numero de filas (o columnas) de un laberinto de matriz cuadrada. Como se aprecia, para dimensiones pequeñas (número de filas no mayor que 2500), el algoritmo iterativo y el recursivo presentan un número de iteraciones parecido. Cuando el número de filas empieza a ser elevado, las diferencias entre ambos son notables. A priori, con este gráfico podría decirse que el método iterativo es ``mejor'', pero son necesarios otros gráficos con menos sesgado para realizar conclusiones definitivas.
 
-\begin{figure}[H]
+\vspace{0.2cm}
+\begin{figure}[h]
 	\centering
-	\includegraphics[scale=1.05]{fotos/Iteraciones_vs_filas.png}
-	\caption{asfasdfsd}
-	\label{dgrafic}
+	\includegraphics[scale=0.9]{fotos/Iteraciones_vs_filas.png}
+	\caption{Comparativa de número de iteraciones frente a la dimensión de un lado (supuesto el otro igual) para el caso recursivo e iterativo}
+	\label{grafico1}
 \end{figure}
 
-Este primer gráfico representa la evolución del numero de veces que se llama a la función Visit() en función del numero de filas (o columnas) de un laberinto de matriz cuadrada. Como se aprecia, para dimensiones pequeñas (número de filas no mayor que 2500), el algoritmo iterativo y el recursivo son equivalentes el lo que a llamadas a Visit() se refiere. Cuando el número de filas empieza a ser elevado, las diferencias entre ambos son notables. Como veremos más adelante, aunque a priori con este gráfico se pueda decir que el método iterativo es mejor, otros gráficos menos sesgados otorgarán unas conclusiones muy distintas. 
+El siguiente gráfico (ver \textsc{Fig.}~\ref{grafico2}) es en esencia similar al primero. La principal diferencia radica en que ahora varía el número de elementos del laberinto, no la dimensión de sus filas o columnas. Con este cambiio podemos inferir más adecuadamente el número de llamadas a la función \textsf{Visit()} en el caso de que el laberinto no sea cuadrado. Como puede observarse, la relación entre el número de llamadas y el “área” de la matriz es absolutamente lineal de pendiente aproximada $1/5$ para el algoritmo iterativo y $1/2$ para el recursivo. La conclusión que se desprende de este gráfico y del anterior es la misma: el algoritmo iterativo es mejor. Pero esta afirmación es completamente errónea, como demostramos con los dos gráficos siguientes. 
 
- Gráfico, Gráfico de líneas
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.9]{fotos/Iteraciones_vs_numElem.png}
+	\caption{Comparativa de número de iteraciones frente a la dimensión de un lado (supuesto el otro igual) para el caso recursivo e iterativo}
+	\label{grafico2}
+\end{figure}
 
-Descripción generada automáticamenteEl siguiente gráfico es muy similar al primero. La principal diferencia radica en que ahora varía el número de elementos del laberinto, no la dimensión de sus filas o columnas, con lo que podemos inferir más adecuadamente el número de llamadas a la función Visit() en el caso de que el laberinto no sea cuadrado. Como puede observarse, la relación entre el número de llamadas y el “área” de la matriz es absolutamente lineal de pendiente aproximada 1/5 para el algoritmo iterativo y 1/2 para el recursivo. La conclusión que podría desprenderse de este gráfico y del anterior es la misma: el algoritmo iterativo es mejor. Pero esta afirmación es completamente errónea, como demostramos con los dos gráficos siguientes. 
-
-En los gráficos de la siguiente página (o de donde estén), se han comparado los tiempos reales de ejecución completa del programa para los dos algoritmos, para laberintos cuyo número de elementos es inferior a 100 millones, en tres equipos distintos, de distintas gamas y con distintos años de uso a fin de mostrar la relevancia de estas características en el desempeño de los programas. Por cuestiones de tiempo no se tienen datos del desempeño del algoritmo iterativo en un equipo con Windows 10 de gama alta (con procesador Intel® core I7). Se observa que el algoritmo recursivo es claramente mejor que el iterativo, llegando a recortar en más de dos segundos la ejecución del iterativo en el caso del laberinto más grande evaluado (9971 x 9971 elementos). Lo cual equivale a una mejora sustancial de entre el 31\% y el 33\% respecto al iterativo. Como vemos, el desempeño real es radicalmente opuesto al que pudiera predecirse a partir de los gráficos de las llamadas a la función Visit(). 
+En los gráficos de la siguiente página (o de donde estén), se han comparado los tiempos reales de ejecución completa del programa para los dos algoritmos, para laberintos cuyo número de elementos es inferior a 100 millones, en tres equipos distintos, de distintas gamas y con distintos años de uso a fin de mostrar la relevancia de estas características en el desempeño de los programas. Por cuestiones de tiempo no se tienen datos del desempeño del algoritmo iterativo en un equipo con Windows 10 de gama alta (con procesador Intel core I7). Se observa que el algoritmo recursivo es claramente mejor que el iterativo, llegando a recortar en más de dos segundos la ejecución del iterativo en el caso del laberinto más grande evaluado (9971 x 9971 elementos). Lo cual equivale a una mejora sustancial de entre el 31\% y el 33\% respecto al iterativo. Como vemos, el desempeño real es radicalmente opuesto al que pudiera predecirse a partir de los gráficos de las llamadas a la función Visit(). 
 
 Estas notables diferencias son debidas a que los dos primeros gráficos están muy sesgados, pues solo miden la llamada a la función principal de ambos algoritmos, la función Visit(). Si bien esto puede no implicar que su medida incurra en un sesgo importante para determinar cuan bueno es el algoritmo recursivo, sí se incurre en sesgos mayores cuando se trata del algoritmo iterativo. Esto es así porque el mayor peso del recursivo recae en la función Visit(), y la propia naturaleza de la recursividad impone que Visit() se llame una y otra vez a sí misma. Por lo tanto, midiendo la cantidad de veces que se llama a Visit() en el algoritmo recursivo, proporciona una medida útil. Sin embargo, los pesos computacionales del algoritmo iterativo están más repartidos (Visit() llama a otras funciones que no se están contabilizando) y por ende, la medida de la cantidad de veces que se llama a Visit() en este caso, es menos útil, porque es menos extrapolable y comparable, que la misma medida en el recursivo. 
 

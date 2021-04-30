@@ -30,7 +30,8 @@ int main(int argc, char **argv){
   char **grid = NULL;
   unsigned int t0, t1;
   double tiempo;
-  srand(time(0));    // Semilla aleatoria para la función rand().
+  // Semilla aleatoria para la función rand().
+  srand(time(0));    
 
   // Se pide al usuario el tamaño del laberinto.
   Pedir(argc, argv);

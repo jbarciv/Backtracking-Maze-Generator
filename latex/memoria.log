@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.26)  30 APR 2021 10:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.26)  30 APR 2021 13:26
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -964,14 +964,28 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
 [7
 
 ]
-<fotos/Iteraciones_vs_filas.png, id=187, 370.38374pt x 364.36125pt>
+<fotos/Iteraciones_vs_filas.png, id=188, 370.38374pt x 364.36125pt>
 File: fotos/Iteraciones_vs_filas.png Graphic file (type png)
 <use fotos/Iteraciones_vs_filas.png>
-Package pdftex.def Info: fotos/Iteraciones_vs_filas.png  used on input line 371.
-(pdftex.def)             Requested size: 388.90309pt x 382.57947pt.
- [8] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
+Package pdftex.def Info: fotos/Iteraciones_vs_filas.png  used on input line 373.
+(pdftex.def)             Requested size: 333.34227pt x 327.92209pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-) [9 <./fotos/Iteraciones_vs_filas.png>] [10] [11
+)
+<fotos/Iteraciones_vs_numElem.png, id=190, 370.38374pt x 364.36125pt>
+File: fotos/Iteraciones_vs_numElem.png Graphic file (type png)
+<use fotos/Iteraciones_vs_numElem.png>
+Package pdftex.def Info: fotos/Iteraciones_vs_numElem.png  used on input line 382.
+(pdftex.def)             Requested size: 333.34227pt x 327.92209pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8] [9 <./fotos/Iteraciones_vs_filas.png>] [10 <./fotos/Iteraciones_vs_numElem.png>] [11
 
 ] (./memoria.bbl
 Underfull \hbox (badness 1292) in paragraph at lines 9--15
@@ -979,33 +993,33 @@ Underfull \hbox (badness 1292) in paragraph at lines 9--15
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 393.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 398.
  [12
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 393.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 398.
  (./memoria.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 393.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 393.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 398.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 398.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
 (rerunfilecheck)             Checksum: 50CA528C2EA15D73A5F110A60D12D367;622.
  ) 
 Here is how much of TeX's memory you used:
- 20954 strings out of 482503
- 330442 string characters out of 5947227
- 1044862 words of memory out of 5000000
- 35491 multiletter control sequences out of 15000+600000
- 547809 words of font info for 81 fonts, out of 8000000 for 9000
+ 20959 strings out of 482503
+ 330634 string characters out of 5947227
+ 1045147 words of memory out of 5000000
+ 35495 multiletter control sequences out of 15000+600000
+ 547472 words of font info for 80 fonts, out of 8000000 for 9000
  398 hyphenation exceptions out of 8191
  48i,7n,99p,1497b,2167s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/josep/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> </home/josep/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on memoria.pdf (14 pages, 415296 bytes).
+ </home/josep/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on memoria.pdf (14 pages, 422398 bytes).
 PDF statistics:
  289 PDF objects out of 1000 (max. 8388607)
- 236 compressed objects within 3 object streams
- 68 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 235 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 500000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
