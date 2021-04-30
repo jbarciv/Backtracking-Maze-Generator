@@ -175,7 +175,8 @@ En una primera fase se busca idear un problema que se pueda ser abordado desde a
 Más tarde, después se implementan, primero algoritmo recursivo dada su sencillez y claridad y más tarde el iterativo. Una vez realizado el recursivo ya se dispone de una base bajo la cual desarrollar el iterativo, y poder adecuarlo para que coincida en estructura y funcionamiento al recursivo.
 
 \vspace{0.2cm}
-Teniendo ambos programas listos, se elabora una forma eficiente y fiable para recoger datos, analizarlos y determinar cuáles son las ventajas e inconvenientes de cada uno, las condiciones en las que mejor se desarrollan y su desempeño y portabilidad en distintos sistemas operativos. 
+Teniendo ambos programas listos, se elabora una forma eficiente y fiable para recoger datos, analizarlos y determinar cuáles son las ventajas e inconvenientes de cada uno, las condiciones en las que mejor se desarrollan y su desempeño y portabilidad en distintos sistemas operativos.
+\clearpage
 %------Índice--------------%
 {
  \hypersetup{linkcolor=black}%Fijaros que estoy cambiando el color solo localmente...es genial para mantener los liks pero que no sea muy cargante el color para el índice de contenidos!!!
@@ -203,6 +204,7 @@ La segunda fase es la de \textit{Experimentación}. Es aquí donde se exponen y 
 La tercera fase es la de \textit{Análisis}. Esta parte resulta de vital importancia y es en ella en la que se pone de manifiesto de forma gráfica los resultado obtenidos en las fases precedentes. Para la realización del análisis heurístico, se ha procedido con ayuda de la herramienta \textsc{RStudio}, a un análisis gráfico.
 En la cuarta y última fase de \textit{Conclusiones} se recapitula y enuncian las principales conclusiones obtenidas del experimento realizado.
 
+\clearpage
 \section{Ideación}
 \subsection{Primeras propuestas}
 
@@ -227,6 +229,7 @@ Finalmente se encontró otros algoritmos que diseñaban laberintos a partir de u
 	\label{back_tracker_label}
 \end{figure}
 
+\clearpage
 \subsection{Programación del algoritmo}
 \subsubsection{Recursivo}
 
@@ -312,14 +315,14 @@ En las figuras \ref{unicode} y \ref{ascii} puede verse la comparación entre la 
 
 Por motivos de portabilida se ha preferido no incluirlo directamente en el código final. Pero puede ser implementado fácilmente gracias el código anterior.
 
-% \clearpage
+\clearpage
 \section{Experimentación}
 \subsection{Toma de medidas}
 Para poder estudiar y comparar la ejecución de ambos códigos y algoritmos, ha sido necesaria una fase de toma de medidas. Los datos buscados corresponden a las diversas métricas empleadas, estas son: número de iteraciones, velocidad de ejecución y uso de memoria. Para la experimentación (esto es, ejecutar el código bajo diferentes condiciones), se ha elaborado un fichero \textit{shell script} que permite ejecutar cada programa repetidas veces y genera un archivo de salida en el que vuelca los datos de cada ejecución. Más tarde este fichero es convertido a una tabla de datos con formato \textit{.csv}. Para su estudio y análisis se ha utilizado la herramienta estadística \textsc{RStudio}.
 
 \vspace{0.2cm}
 Más concretamente, el shell script empieza ejecutando el programa con un valor inicial de $20$ tanto para filas y columnas. Y va sumando 50 unidades a filas y columnas con cada ejecución hasta llegar a $10000$, realizando cada ejecución $5$ veces para poder conseguir una media de los tiempos de ejecución. En cada ejecución, escribe en el fichero \textit{output.csv} (o si se prefiere \textit{output.txt}): un número del $1$ al $5$ correspondiente con la ejecución en curso, el tamaño de las filas y columnas, el área del laberinto $(filas*columnas)$, el tiempo empleado en la ejecución de la función \textsf{Visit()} y el número de iteraciones realizadas por dicha función. Se incluye a continuación el bucle principal del \textit{shell script}:
-\clearpage
+
 \lstset{style=mystyle}
 %también se puede poner [firstnumber=39]
 \begin{lstlisting}[language=sh, title= Variente para la función \textsf{PrintGrid()} con carácteres \textsc{unicode}, frame=single, numbers=none]
@@ -356,8 +359,10 @@ Es importante resaltar en este punto, lo conveniente que ha sido, para la ejecuc
   		Pedir(argc, argv);
 \end{lstlisting}
 
-\section{Análisis}
 
+\clearpage
+\section{Análisis}
+\subsection{Criterios de medida}
 En primer lugar, debemos definir nuestras unidades de medida para poder comparar los algoritmos:
 \begin{itemize}
 	\item El tiempo: tiempo en segundos que se tarda en completar el laberinto, de toman medidas antes y después de la llamada a visit() de cada función.
@@ -365,8 +370,10 @@ En primer lugar, debemos definir nuestras unidades de medida para poder comparar
 
 \end{itemize}
 
-El número de iteraciones es algo relativo en el caso del iterativo, pero lo hemos considerado de esta manera ya que está en desventaja frente al recursivo porque tiene el handicap de que se puede atascar. Y cada vez que se atasca, debe realizar comprobaciones en cada casilla que recorre al retroceder hasta que pueda reanudar su camino abriendo paso al laberinto. Nótese que, con unas dimensiones dadas al iniciar la función, el número de casillas a vaciar siempre estarán acotadas. Y por eso el número de iteraciones del recursivo para las mismas dimensiones es constante a pesar de que se creen caminos diferentes. Y, por ende, si para el iterativo consideráramos una iteración cada vez que encuentra una casilla válida y la vacíe. El número de iteraciones para ambos algoritmos sería el mismo. Pero no sería fiable ya que el iterativo ha tenido que realizar muchas más operaciones lógicas. 
+El número de iteraciones es algo relativo en el caso del iterativo, pero lo hemos considerado de esta manera ya que está en desventaja frente al recursivo porque tiene el handicap de que se puede atascar. Y cada vez que se atasca, debe realizar comprobaciones en cada casilla que recorre al retroceder hasta que pueda reanudar su camino abriendo paso al laberinto. Nótese que, con unas dimensiones dadas al iniciar la función, el número de casillas a vaciar siempre estarán acotadas. Y por eso el número de iteraciones del recursivo para las mismas dimensiones es constante a pesar de que se creen caminos diferentes. Y, por ende, si para el iterativo consideráramos una iteración cada vez que encuentra una casilla válida y la vacíe. El número de iteraciones para ambos algoritmos sería el mismo. Pero no sería fiable ya que el iterativo ha tenido que realizar muchas más operaciones lógicas.
 
+\vspace{0.2cm}
+\subsection{Métodología}
 Gracias a los datos obtenido en la fase de experimentación, se ha podido elaborar una base de datos de tamaño suficiente. La limpieza y el tratamiento de los datos se ha llevado a cabo utilizando \textit{Excel} y el software \textsc{R} en el entorno de desarrollo \textsc{RStudio}. Se ha realizado en varias fases: 
 \begin{itemize}
 	\item En primer lugar, se importaban los datos a \textsc{RStudio} desde el propio documento de salida, en formato \textit{.csv}, que elaboraba automáticamente el \textit{shell script}. 
@@ -376,6 +383,7 @@ Gracias a los datos obtenido en la fase de experimentación, se ha podido elabor
 	\item Con la tabla final, se procede a elaborar los gráficos pertinentes. Para ello se hace uso del paquete \textit{ggplot} de la librería ``tidyvers''.
 \end{itemize}
  
+\subsection{Resultados}
 En el siguiente gráfico (ver \textsc{Fig.}~\ref{grafico1}) se ha representado la evolución del número de veces que se llama a la función \textsf{Visit()} en función del número de filas (o columnas) de un laberinto de matriz cuadrada, para el caso recursivo. Y de la misma forma para el iterativo pero contando en número de veces que se itera dentro del bucle que revisa que la pila esté llena. Como se aprecia, para dimensiones pequeñas (número de filas no mayor que 2500), el algoritmo iterativo y el recursivo presentan un número de iteraciones parecido. Cuando el número de filas empieza a ser elevado, las diferencias entre ambos son notables. A priori, con este gráfico podría decirse que el método recursivo es ``mejor'', pero si se modifica la posición del contador para que solo se incremente su valor al guardar elementos en la pila, esto es, cuando avance una casilla hacia delante, el número de iteraciones en ambos algoritmos es el mismo. Lo cual es coherente con explicado con anterioridad respecto al número de iteraciones. En el siguiente trozo de código se incluye la modificación en la posición del contador para realizar una medida más justa.
 
 \vspace{0.2cm}
