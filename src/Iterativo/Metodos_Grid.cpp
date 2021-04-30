@@ -71,7 +71,7 @@ int SetGrid(char **grid){
 }
 
 //----MUESTRA EN CONSOLA EL LABERINTO O LOS DATOS DE EJECUCIÓN-----------
-void PrintGrid(char **grid,int argc, char **argv, double tiempo){
+void PrintGrid(char **grid, double tiempo){
 
     if (!pruebas){ // Se comprueba si se está ejecutando una prueba o no.
         printf("\n");

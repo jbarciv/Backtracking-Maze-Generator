@@ -30,7 +30,7 @@ struct Nodo{
 //----PROTOTIPOS DE FUNCIONES ITERATIVAS--------------------------------
 int Pedir(int ,char **);
 int SetGrid(char **);
-void PrintGrid(char **,int ,char **, double);
+void PrintGrid(char **, double);
 int IsInBounds( int , int );
 void Free(char **);
 void AgregarPila(struct Nodo *&, int,  int, int, bool, short int *);
