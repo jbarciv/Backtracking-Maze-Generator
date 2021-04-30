@@ -373,7 +373,29 @@ Gracias a los datos obtenido en la fase de experimentación, se ha podido elabor
 	\item Con la tabla final, se procede a elaborar los gráficos pertinentes. Para ello se hace uso del paquete \textit{ggplot} de la librería ``tidyvers''.
 \end{itemize}
  
-En el siguiente gráfico (ver \textsc{Fig.}~\ref{grafico1}) se ha representado la evolución del numero de veces que se llama a la función \textsf{Visit()} en función del numero de filas (o columnas) de un laberinto de matriz cuadrada. Como se aprecia, para dimensiones pequeñas (número de filas no mayor que 2500), el algoritmo iterativo y el recursivo presentan un número de iteraciones parecido. Cuando el número de filas empieza a ser elevado, las diferencias entre ambos son notables. A priori, con este gráfico podría decirse que el método recursivo es ``mejor'', pero con solo este gráfico no es posible realizar todavía conclusiones definitivas.
+En el siguiente gráfico (ver \textsc{Fig.}~\ref{grafico1}) se ha representado la evolución del numero de veces que se llama a la función \textsf{Visit()} en función del numero de filas (o columnas) de un laberinto de matriz cuadrada, para el caso recursivo. Y de la misma forma para el iterativo pero contando en número de veces que se itera dentro del bucle que revisa que la pila esté llena. Como se aprecia, para dimensiones pequeñas (número de filas no mayor que 2500), el algoritmo iterativo y el recursivo presentan un número de iteraciones parecido. Cuando el número de filas empieza a ser elevado, las diferencias entre ambos son notables. A priori, con este gráfico podría decirse que el método recursivo es ``mejor'', pero si se modifica la posición del contador para que solo se incremente su valor al guardar elementos en la pila, esto es, cuando avance una casilla hacia delante, el número de iteraciones en ambos algoritmos es el mismo. Lo cual es coherente con el planteamiento del problema. En el siguiente trozo de código se incluye la modificación en la posición del contador para realizar una medida más justa.
+
+\lstset{style=mystyle}
+%también se puede poner [firstnumber=39]
+\begin{lstlisting}[language=C++, title= Implementación de paso de argumentos al \textsf{main()}, frame=single, numbers=none]
+					...
+					// Se guarda la iteracion.
+    				pila->iter = i;
+    				// Se anade el nuevo nodo de la casilla a 	visitar.
+    				AgregarPila(pila, x, y, i=0, false, vect);
+						k++; // Nueva posicion del contador.
+    				break;
+    				}
+				}
+    		// En caso de haber intentado los cuatro movimientos
+    		// y no haber podido guarda la iteracion.
+    		if(i == 3) pila->iter = ++i;
+  		}
+    	//k++; //Posicion original del contador.
+	}
+	return k;
+}   
+\end{lstlisting}
 
 \vspace{0.2cm}
 \begin{figure}[h]
@@ -383,10 +405,10 @@ En el siguiente gráfico (ver \textsc{Fig.}~\ref{grafico1}) se ha representado l
 	\label{grafico1}
 \end{figure}
 
-El siguiente gráfico (ver \textsc{Fig.}~\ref{grafico2}) es en esencia similar al primero. La diferencia más importante radica en que ahora varía el número de elementos del laberinto (el producto $filas*columnas$), no la dimensión de sus filas o columnas. Con este cambio podemos estudiar más adecuadamente el número de llamadas a la función \textsf{Visit()} en el caso de que el laberinto no sea cuadrado. Como puede observarse, la relación entre el número de llamadas y el``área'' de la matriz es lineal y con pendiente aproximada $1/5$ para el algoritmo iterativo y $1/2$ para el recursivo.
+El siguiente gráfico (ver \textsc{Fig.}~\ref{grafico2}) es en esencia similar al primero. La diferencia más importante radica en que ahora varía el número de elementos del laberinto (el producto $filas*columnas$), no la dimensión de sus filas o columnas. Con este cambio podemos estudiar más adecuadamente el número de llamadas a la función \textsf{Visit()} en el caso de que el laberinto no sea cuadrado. Como puede observarse, la relación entre el número de llamadas y el``área'' de la matriz es lineal y con pendiente aproximada $1/5$ para el algoritmo iterativo y $1/2$ para el recursivo.º
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.9]{fotos/Iteraciones_vs_numElem.png}
+	\includegraphics[scale=0.9]{fotos/Iteraciones_vs_numElem1.png}
 	\caption{Comparativa de número de iteraciones frente a la dimensión de un lado (supuesto el otro igual) para el caso recursivo e iterativo}
 	\label{grafico2}
 \end{figure}
