@@ -166,16 +166,16 @@ urlcolor=purpure}
 El objetivo del presente trabajo es elaborar y comparar dos algoritmos, uno iterativo y otro recursivo, ambos resolviendo el mismo problema. El estudio se plantea como un experimento en el que se ponen a prueba ambos algoritmos al variar las condiciones o restricciones del problema a resolver. Más tarde se estudian los resultados del experimento para concluir acerca de su rendimiento y su complejidad.
 
 \vspace{0.2cm}
-De cara a la comparación de ambos métodos, se ha puesto especial cuidado en que los dos algoritmos, tanto el recursivo como el iterativo, sigan procesos análogos. Para lograrlo el esquema funcional de los algoritmos es prácticamente el mismo, los pasos que sigue el proceso son idénticos salvo por las diferencias inherentes a la naturaleza de los algoritmos.
+De cara a la comparación de ambos métodos, se ha puesto especial cuidado en que los dos algoritmos, tanto el recursivo como el iterativo, sigan procesos análogos. Para lograrlo el esquema funcional de los algoritmos es prácticamente el mismo y los pasos que sigue el proceso son idénticos salvo por las diferencias inherentes a la naturaleza de los algoritmos.
 
 \vspace{0.2cm}
 En una primera fase se busca idear un problema que se pueda ser abordado desde ambos métodos y nos proporcione libertad suficiente de cara a variar sus variables o restricciones (ya sea el tamaño o número de inputs) para realizar la valoración y luego la comparación.
 
 \vspace{0.2cm}
-Más tarde, después se implementan, primero algoritmo recursivo dada su sencillez y claridad y más tarde el iterativo. Una vez realizado el recursivo ya se dispone de una base bajo la cual desarrollar el iterativo, y poder adecuarlo para que coincida en estructura y funcionamiento al recursivo.
+Más tarde, se implementan, primero el algoritmo recursivo dada su sencillez y claridad y más tarde el iterativo. Una vez realizado el recursivo ya se dispone de una base bajo la cual desarrollar el iterativo, y poder adecuarlo para que coincida en estructura y funcionamiento del recursivo.
 
 \vspace{0.2cm}
-Teniendo ambos programas listos, se elabora una forma eficiente y fiable para recoger datos, analizarlos y determinar cuáles son las ventajas e inconvenientes de cada uno, las condiciones en las que mejor se desarrollan y su desempeño y portabilidad en distintos sistemas operativos.
+Teniendo ambos programas listos, se elabora una forma eficiente y fiable para recoger datos, analizarlos y determinar cuáles son las ventajas e inconvenientes de cada uno, las condiciones en las que mejor se desarrollan y su desempeño y portabilidad en distintos sistemas operativos.\footnote{Toda la documentación mencionada con respecto a este proyecto (y que puede ser útil para el seguimiento de su desarrollo) está disponible en el siguiente repositorio: \url{https://github.com/jbarciv/Recursividad-PS.git}}
 \clearpage
 %------Índice--------------%
 {
@@ -200,7 +200,7 @@ Los algoritmos recursivos son una potente herramienta para la algoritmia en la p
 
 La memoria se estructura en cuatro partes que corresponden a las fases seguidas en el experimento.
 La primera fase es la de \textit{Ideación}. Es la parte más importante, pues ella condiciona todas las fases posteriores. En ella se plantean las ideas propuestas y se discute la que finalmente ha sido elegida. Además, incluye la implementación sucesiva de los dos algoritmos mediante programación en C++.
-La segunda fase es la de \textit{Experimentación}. Es aquí donde se exponen y discuten los criterios de comparación utilizados y cómo se han implementado dichas métricas en el código. Por otro lado, se explica la metodología empleada para las pruebas o toma de mediadas.
+La segunda fase es la de \textit{Experimentación}. Es aquí donde se exponen y discuten los criterios de comparación utilizados y cómo se han implementado dichas métricas en el código. Por otro lado, se explica la metodología empleada para las pruebas o toma de medidas.
 La tercera fase es la de \textit{Análisis}. Esta parte resulta de vital importancia y es en ella en la que se pone de manifiesto de forma gráfica los resultado obtenidos en las fases precedentes. Para la realización del análisis heurístico, se ha procedido con ayuda de la herramienta \textsc{RStudio}, a un análisis gráfico.
 En la cuarta y última fase de \textit{Conclusiones} se recapitula y enuncian las principales conclusiones obtenidas del experimento realizado.
 
@@ -220,7 +220,10 @@ Como segunda posibilidad se valoró la implementación de \textit{juegos de estr
 
 \vspace{0.2cm}
 
-Finalmente se encontró otros algoritmos que diseñaban laberintos a partir de una malla rellena por carácteres. De entre los distintos métodos que abordaban el problema, se eligió aquel que consistía en visitar una por una las casillas, comprobando si eran válidas e ir abriéndose camino hasta rellenar toda la malla con pasillos. Esta metodología es conocida como \textit{recursive backtracker}\cite{wiki}. El cual es una versión aleatoriazada del algoritmo \textit{depht first-first search}. En la siguiente ilustración (ver \textsc{Fig.}~\ref{back_tracker_label}) puede verse un ejemplo del algoritmo implementado.
+Finalmente se encontró otros algoritmos que diseñaban laberintos a partir de una malla rellena por carácteres. De entre los distintos métodos que abordaban el problema, se eligió aquel que consistía en visitar una por una las casillas, comprobando si eran válidas e ir abriéndose camino hasta rellenar toda la malla con pasillos. Esta metodología es conocida como \textit{recursive backtracker}\cite{wiki}. La cual es una versión aleatoriazada del algoritmo \textit{depht first-first search}. En la siguiente ilustración (ver \textsc{Fig.}~\ref{back_tracker_label}) puede verse un ejemplo del algoritmo implementado.
+
+\vspace{0.2cm}
+Durante la recopilación de modelos de algoritmos para el laberinto, se dio con un \textit{pseudoproyecto} de un laberinto iterativo que implementaba el método \textit{recursive backtracker}. Éste contaba con una estructura similar a la que se estaba diseñando además de implementar prototipos de funciones que resultaron ser útiles para apoyarse en ellas y diseñar el algoritmo en cuestión. 
 
 \begin{figure}[H]
 	\centering
@@ -232,11 +235,11 @@ Finalmente se encontró otros algoritmos que diseñaban laberintos a partir de u
 \subsection{Programación del algoritmo}
 \subsubsection{Recursivo}
 
-Desde el punto de vista recursivo, esta forma de contruir un laberinto no presenta grandes problemas. El algoritmo crea una rama del laberinto hasta que le es imposible seguir porque, por ejemplo, el extremo ha quedado ``encerrado'' entre el muro exterior (el cual marca el límite y evita que el programa se salga de la memoria reservada para el laberinto evitando que el S.O. interrumpa la ejecución) y la propia rama. La naturaleza de la recursividad hace que, una vez llegado a ese punto, al no haber posibilidad de movimiento, resuelva por fin esa llamada a la función recursiva y devuelva el resultado a las casillas anteriores que aún estaban pendientes de resolución.  Esto continúa hasta que encuentra una casilla desde la que puede continuar camino, entonces abrirá desde ahí una nueva subrama del laberinto que continuará hasta que quede ``encerrada'' de nuevo y empiece a resolver hacia las casillas anteriores. Puede verse un ejemplo de dicha iteración en la figura \ref{back_tracker_label}. Finalmente, cuando ya no hay más casillas posibles por las que continuar, se volverá hacia atrás todas las casillas hasta llegar a la primera, en nuestro casi siempre la posición $(1,1)$. Este proceso asegura que el laberinto discurra por todas las casillas que sean posibles y que nunca quede encajonado" (como ya hemos dicho, la propia naturaleza de la recursividad lo garantiza).
+Desde el punto de vista recursivo, esta forma de construir un laberinto no presenta grandes problemas. El algoritmo crea una rama del laberinto hasta que le es imposible seguir porque, por ejemplo, el extremo ha quedado ``encerrado'' entre el muro exterior (el cual marca el límite y evita que el programa se salga de la memoria reservada para el laberinto evitando que el S.O. interrumpa la ejecución) y la propia rama. La naturaleza de la recursividad hace que, una vez llegado a ese punto, al no haber posibilidad de movimiento, resuelva por fin esa llamada a la función recursiva y devuelva el resultado a las casillas anteriores que aún estaban pendientes de resolución.  Esto continúa hasta que encuentra una casilla desde la que puede continuar camino, entonces abrirá desde ahí una nueva subrama del laberinto que continuará hasta que quede ``encerrada'' de nuevo y empiece a resolver hacia las casillas anteriores. Puede verse un ejemplo de dicha iteración en la figura \ref{back_tracker_label}. Finalmente, cuando ya no hay más casillas posibles por las que continuar, se volverá hacia atrás todas las casillas hasta llegar a la primera, en nuestro caso la posición $(1,1)$. Este proceso asegura que el laberinto discurra por todas las casillas que sean posibles y que nunca quede ``encajonado'' (como ya hemos dicho, la propia naturaleza de la recursividad lo garantiza).
 
 \subsubsection{Iterativo}
 
-El abordaje iterativo de este problema no es tan sencillo. Esto es debido, al hecho de que crear una rama principal de forma iterativa resulta más complejo que crearla recursivamente. Estableciendo unas condiciones lógicas de control para que la rama no se salga de los bordes y se evite a si misma para no romper el laberinto es suficiente. Pero tarde o temprano, la rama choca consigo misma y no tiene a donde ir. Solucionar este único punto es lo que más esfuerzo supone en la implementación del caso iterativo. La solución más inmedita resulta de crear un nuevo objeto o variable que almacene los lugares por los que la rama (o subrama) ya ha pasado. En esta memoria ha sido la última opción valorada, dado que su implementación significa alejarse del esquema marcado por el algoritmo recursivo. Para ello el equipo se dividió en dos: 
+El abordaje iterativo de este problema no es tan sencillo. Esto es debido, al hecho de que crear una rama principal de forma iterativa resulta más complejo que crearla recursivamente. Establecer unas condiciones lógicas de control para que la rama no se salga de los bordes y se evite a si misma para no romper el laberinto no es suficiente. Porque tarde o temprano, la rama choca consigo misma y no tiene a donde ir. Solucionar este único punto es lo que más esfuerzo supone en la implementación del caso iterativo. La solución más inmedita resulta de crear un nuevo objeto o variable que almacene los lugares por los que la rama (o subrama) ya ha pasado. Para ello el equipo se dividió en dos: 
 \begin{itemize}
 	\item Una persona intentaría resolver el problema mediante la declaración de una variable dinámica local bidimensional. Es decir, una matriz con tantas filas como elementos tuviera la matriz sobre la que se hacía el laberinto y con tantas columnas como las dimensiones del laberinto (2 por ser bidimensional). 
 	\item Otra persona intentaría la implementación de una pila dinámica tipo LIFO, que en un principio solo almacenaría los índices de las casillas por las que la rama o subrama había pasado en orden (más tarde se utilizó la pila también para almacenar más datos). 
@@ -260,7 +263,7 @@ Se incluye a continuación el diagrama de flujo utilizado para la programación 
 
 Una vez implementados ambos algoritmos, surgen algunos detalles a ajustar.
 
-Lo primero a corregir fue un ``doble borde'' que aparecía en las paredes derecha e inferior del laberinto. Dichas paredes extras eran debidas a que en la iteración aleatoria por el laberinto la última columna y fila no ``caían dentro'' de los movimientos del programa. Esto a su vez, era debido a que se comenzaba en la casilla $(1,1)$ y que las dimensiones fueran pares o impares. Si por ejemplo, las dimensiones fueran $6x6$, al comenzar en la posición $(1,1)$, y suponiendo que los dos primero movimientos son hacia la derecha, la siguiente casilla a la que moverse sería la $(1,3)$ que sería válida, pero en el siguiente movimiento la nueva casilla estudiada sería la $(1,5)$ que forma parte del borde exterior y no forma parte de los límites o casillas válidas. Por lo tanto, la solución elegida ha sido forzar a que las dimensiones sean siempre impares. Esto no supone demasiado problema, pues el usuario puede pedir dimensiones pares y es el programa quien modifica estas para que sean impares. En concreto las siguientes lineas de código:
+Lo primero a corregir fue un ``doble borde'' que aparecía en las paredes derecha e inferior del laberinto. Dichas paredes extras eran debidas a que en la iteración aleatoria por el laberinto la última columna y fila no ``caían dentro'' de los movimientos del programa. Esto a su vez, era debido a que se comenzaba en la casilla $(1,1)$ y que las dimensiones fueran pares o impares. Si por ejemplo, las dimensiones fueran $6x6$, al comenzar en la posición $(1,1)$, y suponiendo que los dos primeros movimientos son hacia la derecha, la siguiente casilla a la que moverse sería la $(1,3)$ que sería válida, pero en el siguiente movimiento la nueva casilla estudiada sería la $(1,5)$ que forma parte del borde exterior y no forma parte de los límites o casillas válidas. Por lo tanto, la solución elegida ha sido forzar a que las dimensiones sean siempre impares. Esto no supone demasiado problema, pues el usuario puede pedir dimensiones pares y es el programa quien modifica estas para que sean impares. En concreto las siguientes lineas de código:
 
 \lstset{style=mystyle}
 %también se puede poner [firstnumber=39]
@@ -419,13 +422,13 @@ El segundo gráfico (ver \textsc{Fig.}~\ref{grafico2}) es en esencia similar al 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.9]{fotos/Iteraciones_vs_numElem1.png}
-	\caption{Comparativa de número de iteraciones frente a la dimensión de un lado (supuesto el otro igual) para el caso recursivo e iterativo}
+	\caption{Comparativa de número de iteraciones frente al producto $filas*columnas$ para los algoritmos recursivo e iterativo}
 	\label{grafico2}
 \end{figure}
 \vspace{0.2cm}
 
-A la vista de ambos gráficos el algoritmo recursivo resulta más eficiente en cuanto número de iteraciones, tanto con el aumento de filas o columnas, como con el aumento del área ($filas*columnas$). En el gráfico \ref{grafico1} puede aproximarse la evolución de ambos algoritmos por exponenciales, de forma que podemos tener un valor empírico de la complejidad del problema según qué algoritmo.
-En la figura \ref{grafico3} puede verse cómo la exponencial ajusta al crecimiento en número de iteraciones (en el caso recursivo) según decrece el orden de la exponencia de $2$ a $1.85$ la cual aproxima muy bien. Podemos concluir que dicho algoritmo es del orden de $\mathcal{O}(e^{n})$ donde $n$ para el caso del recursivo se ha comprobado que corresponde muy parecidamente a $n=1.85=17/20$.
+A la vista de ambos gráficos el algoritmo recursivo resulta más eficiente en cuanto número de iteraciones, tanto con el aumento de filas o columnas, como con el aumento del área ($filas*columnas$). Esto deja de ser cierto si se cambia el criterio de iteración en el caso del iterativo. Deja de ser, por tanto, el número de iteraciones una posible métrica, pues se obtiene el mismo valor para ambos algoritmos. En el gráfico \ref{grafico1} puede aproximarse la evolución de ambos programas por exponenciales, de forma que podemos tener un valor empírico de la complejidad del problema.
+En la figura \ref{grafico3} puede verse cómo la exponencial $e^{2}$ se ajusta al crecimiento de iteraciones (en el caso recursivo) según decrece el orden de la exponencia de $2$ a $1.85$, valor para el cual la exponencial aproxima muy bien. Podemos concluir que dicho algoritmo es del orden de $\mathcal{O}(e^{n})$ donde $n$ se ha comprobado que corresponde muy parecidamente a $n=1.85=17/20$.
 
 \begin{figure}[h]
 	\centering
@@ -435,7 +438,7 @@ En la figura \ref{grafico3} puede verse cómo la exponencial ajusta al crecimien
 \end{figure}
 \vspace{0.2cm}
 
-En los gráficos \ref{grafico4} y \ref{grafico5}, se han comparado los tiempos reales de ejecución completa del programa para los dos algoritmos. Dicha comparación se ha realizado para laberintos cuyo número de elementos es inferior a 100 millones, en tres equipos distintos, de distintas gamas y con distintos años de uso, a fin de mostrar la relevancia de estas características en el desempeño de los programas. Por cuestiones de tiempo no se tienen datos del desempeño del algoritmo iterativo en un equipo con Windows 10 de gama alta (con procesador Intel core I7). Se observa que el algoritmo recursivo es claramente mejor que el iterativo, llegando a recortar en más de dos segundos la ejecución del iterativo en el caso del laberinto más grande evaluado (9971 x 9971 elementos). Lo cual equivale a una mejora sustancial de entre el 31\% y el 33\% respecto al iterativo. Como vemos, el desempeño real es radicalmente opuesto al que pudiera predecirse a partir de los gráficos de las llamadas a la función Visit(). 
+En los gráficos \ref{grafico4} y \ref{grafico5}, se han comparado los tiempos reales de ejecución completa del programa para los dos algoritmos. Dicha comparación se ha realizado para laberintos cuyo número de elementos es inferior a $100$ millones, en tres equipos distintos, de distintas gamas y con distintos años de uso, a fin de mostrar la relevancia de estas características en el desempeño de los programas. Por cuestiones de tiempo no se tienen datos del desempeño del algoritmo iterativo en un equipo con Windows 10 de gama alta (con procesador \textsc{Intel Core i7}). Se observa que el algoritmo recursivo es claramente mejor que el iterativo, llegando a recortar en más de dos segundos la ejecución del iterativo en el caso del laberinto más grande evaluado ($9971 x 9971$ elementos). Lo cual equivale a una mejora sustancial de entre el $31\%$ y el $33\%$ respecto al iterativo. Como vemos, el desempeño real es opuesto al que pudiera predecirse a partir de los gráficos de las llamadas a la función Visit(). 
 
 \begin{figure}[h]
 	\centering
@@ -455,9 +458,21 @@ En los gráficos \ref{grafico4} y \ref{grafico5}, se han comparado los tiempos r
 
 Estas notables diferencias son debidas a que los dos primeros gráficos están muy sesgados, pues solo miden la llamada a la función principal de ambos algoritmos, la función Visit(). Si bien esto puede no implicar que su medida incurra en un sesgo importante para determinar cuan bueno es el algoritmo recursivo, sí se incurre en sesgos mayores cuando se trata del algoritmo iterativo. Esto es así porque el mayor peso del recursivo recae en la función Visit(), y la propia naturaleza de la recursividad impone que Visit() se llame una y otra vez a sí misma. Por lo tanto, midiendo la cantidad de veces que se llama a Visit() en el algoritmo recursivo, proporciona una medida útil. Sin embargo, los pesos computacionales del algoritmo iterativo están más repartidos (Visit() llama a otras funciones que no se están contabilizando) y por ende, la medida de la cantidad de veces que se llama a Visit() en este caso, es menos útil, porque es menos extrapolable y comparable, que la misma medida en el recursivo. 
 
+Las comparaciones por tamaño de memoria no se han llevado a cabo por falta de tiempo, sin embargo se considera que una reflexión puede ser interesante. Sobre todo con un imprevisto surgido a la hora de tomar datos con el sostema operativo Windows. La razón por la que no contamos con datos acerca del recursivo en este computador es porque una vez alcanzadas unas dimensiones determinadas que, a escala del tamaño máximo que se espera alcanzar al final de la toma de datos, resultan extrañamente pequeños, el sistema operativo decide no ejecutar el algoritmo sin dar ningun tipo de aviso por consola. Pensamos que esto se puede deber a que el S.O. interprete un desbordamiento de la funcion recursiva Visit() y tenga algún tamaño en memoria dedicado a funciones en ejecución que se sobrepase del asignado al superar ciertas dimensiones del laberinto. De todas formas, se considera que se podría descartar un desbordamiento de pila (stack overflow), ya que el equipo desempeña tamaños hasta 180 veces más grandes en el iterativo. 
+
 \clearpage
 \section{Conclusiones}
 
+Con un simple vistazo a las tablas anteriores, se aprecia la gran diferencia que hay entre ambos algoritmos en términos de tiempo y número de iteraciones, a pesar del cuidado puesto durante su desarrolo para crear programas pares en la función a desempeñar, y que se diferencian únicamente en lo estricto y necesario marcado por sus naturalezas. 
+
+\vspace{0.2cm}
+Analizando el recursivo en los equipos Unix, vemos que a medida que aumentan las dimensiones del laberinto y la función visit se tiene que llamar más veces a si misma de forma recursiva, el procesador con menor capacidad se va alejando cada vez más del otro al tener que manejar tamaños de pila más grandes y contando con peores herramientas para gestionarlos.  
+
+\vspace{0.2cm}
+Por otro lado, en el iterativo, vemos que se repite el caso anterior entre ambos Unix. Sin embargo, vemos como, aún empleando el mismo procesador, es el sistema operativo el que marca la diferencia. Y vemos que el Unix es mucho más eficiente que el Windows a la hora de ejecutar el algoritmo. 
+
+\vspace{0.2cm}
+Comparando ambos algoritmos, podemos concluir que el recursivo es el más apropiado para abordar el problema, quedando por encima del iterativo en el tiempo de ejecución y el número de iteraciones. Y demostramos experimentalmente que, a pesar de la mejor gestión de la memoria que en teoría pueden tener los algoritmos iterativos frente a los recursivos, en este tipo de problema es mejor el recursivo; por la sencillez de la función implementada y las garantías de ejecución que ofrece que desembocan en tiempos de ejecución menores por muy grandes que sean las dimensiones iniciales aportadas. 
 \clearpage
 \bibliographystyle{abbrv}
 \bibliography{mybib}
