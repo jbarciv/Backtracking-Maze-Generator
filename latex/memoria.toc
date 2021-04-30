@@ -1,10 +1,10 @@
 \babel@toc {spanish}{}
 \contentsline {section}{\numberline {1}Ideaci\IeC {\'o}n}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Primeras propuestas}{2}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Programaci\IeC {\'o}n del algoritmo}{4}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}Recursivo}{4}{subsubsection.1.2.1}%
-\contentsline {subsubsection}{\numberline {1.2.2}Iterativo}{4}{subsubsection.1.2.2}%
-\contentsline {subsubsection}{\numberline {1.2.3}Comentarios al c\IeC {\'o}digo}{6}{subsubsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2}Programaci\IeC {\'o}n del algoritmo}{3}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Recursivo}{3}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Iterativo}{3}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Comentarios al c\IeC {\'o}digo}{5}{subsubsection.1.2.3}%
 \contentsline {section}{\numberline {2}Experimentaci\IeC {\'o}n}{8}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Toma de medidas}{8}{subsection.2.1}%
 \contentsline {section}{\numberline {3}An\IeC {\'a}lisis}{10}{section.3}%

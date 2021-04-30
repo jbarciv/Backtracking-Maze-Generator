@@ -229,7 +229,6 @@ Finalmente se encontró otros algoritmos que diseñaban laberintos a partir de u
 	\label{back_tracker_label}
 \end{figure}
 
-\clearpage
 \subsection{Programación del algoritmo}
 \subsubsection{Recursivo}
 
@@ -359,18 +358,17 @@ Es importante resaltar en este punto, lo conveniente que ha sido, para la ejecuc
   		Pedir(argc, argv);
 \end{lstlisting}
 
-
 \clearpage
 \section{Análisis}
 \subsection{Criterios de medida}
 En primer lugar, debemos definir nuestras unidades de medida para poder comparar los algoritmos:
 \begin{itemize}
-	\item El tiempo: tiempo en segundos que se tarda en completar el laberinto, de toman medidas antes y después de la llamada a visit() de cada función.
-	\item El número de iteraciones: en el caso del recursivo consideraremos una nueva iteración cada vez que se llame a la función visit(). Y en el caso del iterativo, se sumará una iteración cada vez que se compruebe una casilla, es decir, cada vez que se ejecute el bucle while(pila). 
+	\item El \textit{tiempo}: tiempo en segundos que se tarda en completar el laberinto, que toman medidas antes y después de la llamada a \textsf{Visit()} de cada algoritmo.
+	\item El \textit{número de iteraciones}: en el caso del recursivo consideraremos una nueva iteración cada vez que se llame a la función \textsf{Visit()}. Y en el caso del iterativo, se sumará una iteración cada vez que se compruebe una casilla, es decir, cada vez que se ejecute el bucle \verb|while(pila)|. 
 
 \end{itemize}
 
-El número de iteraciones es algo relativo en el caso del iterativo, pero lo hemos considerado de esta manera ya que está en desventaja frente al recursivo porque tiene el handicap de que se puede atascar. Y cada vez que se atasca, debe realizar comprobaciones en cada casilla que recorre al retroceder hasta que pueda reanudar su camino abriendo paso al laberinto. Nótese que, con unas dimensiones dadas al iniciar la función, el número de casillas a vaciar siempre estarán acotadas. Y por eso el número de iteraciones del recursivo para las mismas dimensiones es constante a pesar de que se creen caminos diferentes. Y, por ende, si para el iterativo consideráramos una iteración cada vez que encuentra una casilla válida y la vacíe. El número de iteraciones para ambos algoritmos sería el mismo. Pero no sería fiable ya que el iterativo ha tenido que realizar muchas más operaciones lógicas.
+El número de iteraciones es algo relativo en el caso del iterativo, pero se ha considerado de esta manera ya que está en desventaja frente al recursivo porque tiene el el inconveniente de que se puede atascar/encerrar. Y cada vez que se atasca, debe realizar comprobaciones en cada casilla que recorre al retroceder hasta que pueda reanudar su camino contruyendo el laberinto. Nótese que, con unas dimensiones dadas al iniciar la función, el número de casillas a vaciar siempre estarán acotadas. Y por eso el número de iteraciones del recursivo para las mismas dimensiones es constante a pesar de que se creen caminos diferentes. Y, por ende, si para el iterativo consideráramos una iteración cada vez que encuentra una casilla válida y la vacíe. El número de iteraciones para ambos algoritmos sería el mismo. Pero no sería fiable ya que el iterativo ha tenido que realizar un número mayor operaciones.
 
 \vspace{0.2cm}
 \subsection{Métodología}
