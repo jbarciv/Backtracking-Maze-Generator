@@ -223,7 +223,7 @@ Como segunda posibilidad se valoró la implementación de \textit{juegos de estr
 Finalmente se encontró otros algoritmos que diseñaban laberintos a partir de una malla rellena por carácteres. De entre los distintos métodos que abordaban el problema, se eligió aquel que consistía en visitar una por una las casillas, comprobando si eran válidas e ir abriéndose camino hasta rellenar toda la malla con pasillos. Esta metodología es conocida como \textit{recursive backtracker}\cite{wiki}. La cual es una versión aleatoriazada del algoritmo \textit{depht first-first search}. En la siguiente ilustración (ver \textsc{Fig.}~\ref{back_tracker_label}) puede verse un ejemplo del algoritmo implementado.
 
 \vspace{0.2cm}
-Durante la recopilación de modelos de algoritmos para el laberinto, se dio con un \textit{pseudoproyecto} de un laberinto iterativo que implementaba el método \textit{recursive backtracker}. Éste contaba con una estructura similar a la que se estaba diseñando además de implementar prototipos de funciones que resultaron ser útiles para apoyarse en ellas y diseñar el algoritmo en cuestión. 
+Durante la recopilación de modelos de algoritmos para el laberinto, se dio con un \textit{pseudoproyecto} de un laberinto iterativo que implementaba el método \textit{recursive backtracker}. Éste contaba con una estructura similar a la que se estaba diseñando además de implementar prototipos de funciones que resultaron ser útiles para apoyarse en ellas y diseñar el algoritmo en cuestión.
 
 \begin{figure}[H]
 	\centering
@@ -250,7 +250,7 @@ Finalmente, la opción elegida ha sido la pila.
 
 En la primera versión solo almacenaba la situación de las casillas ya ocupadas por la rama. Posteriormente se incluyó una funcionalidad extra en el código: cuando el programa se viera obligado a retroceder por la rama que acababa de construir, comprobaría cada dirección de la casilla en la que estuviera para decidir si era posible continuar en alguna otra dirección, pero de forma que se incuría en algunas ineficiencias, pues se comprobaban direcciones que ya se habían comprobado antes, cuando la rama había pasado por allí por primera vez (o por segunda, o por tercera). Se almacenó entonces en la pila el vector de direcciones aleatorizado, así como por qué iteración iba la comprobación del vector. De esta forma es posible finalizar el laberinto asegurando que todas las direcciones han sido comprobadas y todas en un orden aleatorio.
 
-Se incluye a continuación el diagrama de flujo utilizado para la programación de la función \textsf{Visit()} en el caso iterativo:
+Se incluye a continuación el diagrama de flujo utilizado para la programación de la función \textsf{Visit()} en el caso iterativo.
 
 \begin{figure}[H]
 	\hspace{-4.3cm}
@@ -279,7 +279,7 @@ Las líneas de código anterior fueron planteadas en su inicio como la \textsc{m
 
 \lstset{style=mystyle}
 %también se puede poner [firstnumber=39]
-\begin{lstlisting}[language=C++, title=Ajuste de dimensiones dentro de la función \textsf{Pedir()}, frame=single, numbers=none]
+\begin{lstlisting}[language=C++, title=Macro planteada para sustituir el ajuste de dimensiones, frame=single, numbers=none]
 	#define Arreglar_2D(x,y) (((x%2) ? x : x+=1),((y%2) ? y : y+=1))
 \end{lstlisting}
 pero finalmente se decidió no utilizar ya que no respondia totalmente a la función de lo que debe ser una \textsc{macro}.
@@ -327,7 +327,7 @@ Más concretamente, el shell script empieza ejecutando el programa con un valor 
 
 \lstset{style=mystyle}
 %también se puede poner [firstnumber=39]
-\begin{lstlisting}[language=sh, title= Variente para la función \textsf{PrintGrid()} con carácteres \textsc{unicode}, frame=single, numbers=none]
+\begin{lstlisting}[language=sh, title= Fragmento principal del shell script, frame=single, numbers=none]
 	initial=20
 	final=10000
 	step=50
@@ -351,7 +351,7 @@ Es importante utilizar \verb|ulimit -s unlimited| dentro del script para evitar 
 A la hora de realizar pruebas, se ha dispuesto de 3 computadoras diferentes: dos  con sistemas operativos vasados en \textsc{unix}, en concreto \textit{Linux}, ambos con diferentes procesadores, y un tercer computador con sistema operativo \textit{Windows 10}. Se ha procedido extrayendo datos de la ejecución de los programas en cada uno de las tres computadores. Lo cual, supone además una manera de comprobar experimentalmente la portabilidad de los programas.
 
 \vspace{0.2cm}
-Es importante resaltar en este punto, lo conveniente que ha sido, para la ejecución del \textit{script}, implementar en ambos código el paso de parámetros a la función \textsf{main()}. Se incluye brevemente el código y el paso de parámtros a una función de dichos argumentos:
+Es importante resaltar en este punto, lo conveniente que ha sido, para la ejecución del \textit{script}, implementar en ambos código el paso de parámetros a la función \textsf{main()}. Se incluye brevemente el código y el paso de parámetros a una función de dichos argumentos:
 \lstset{style=mystyle}
 %también se puede poner [firstnumber=39]
 \begin{lstlisting}[language=C++, title= Implementación de paso de argumentos al \textsf{main()}, frame=single, numbers=none]
@@ -390,7 +390,7 @@ En el siguiente gráfico (ver \textsc{Fig.}~\ref{grafico1}) se ha representado l
 \vspace{0.2cm}
 \lstset{style=mystyle}
 %también se puede poner [firstnumber=39]
-\begin{lstlisting}[language=C++, title= Implementación de paso de argumentos al \textsf{main()}, frame=single, numbers=none]
+\begin{lstlisting}[language=C++, title= Variante para el criterio en el contador de iteraciones, frame=single, numbers=none]
 					...
 					// Se guarda la iteracion.
     				pila->iter = i;
@@ -410,18 +410,18 @@ En el siguiente gráfico (ver \textsc{Fig.}~\ref{grafico1}) se ha representado l
 }   
 \end{lstlisting}
 
-\vspace{0.2cm}
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.9]{fotos/Iteraciones_vs_filas1.png}
+	\includegraphics[scale=0.9]{fotos/Iteraciones_vs_filas.png}
 	\caption{Comparativa de número de iteraciones frente a la dimensión de un lado (supuesto el otro igual) para el caso recursivo e iterativo}
 	\label{grafico1}
 \end{figure}
 
 El segundo gráfico (ver \textsc{Fig.}~\ref{grafico2}) es en esencia similar al primero. La diferencia más importante radica en que ahora varía el número de elementos del laberinto (el producto $filas*columnas$), no la dimensión de sus filas o columnas. Con este cambio podemos estudiar más adecuadamente el número de iteraciones (llamadas a la función \textsf{Visit()} para el laberinto) en el caso de que el laberinto no sea cuadrado. Como puede observarse, la relación entre el número de llamadas y el``área'' de la matriz es lineal y con pendiente aproximada $1/5$ para el algoritmo iterativo y $1/2$ para el recursivo.
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.9]{fotos/Iteraciones_vs_numElem1.png}
+	\includegraphics[scale=0.9]{fotos/Iteraciones_vs_numElem.png}
 	\caption{Comparativa de número de iteraciones frente al producto $filas*columnas$ para los algoritmos recursivo e iterativo}
 	\label{grafico2}
 \end{figure}
@@ -433,32 +433,34 @@ En la figura \ref{grafico3} puede verse cómo la exponencial $e^{2}$ se ajusta a
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.9]{fotos/iterations_rec_vs_pows}
-	\caption{Aproximación por exponenciales a la evolución en el algoritmo recursivo del número de iteraciones según el }
+	\caption{Aproximación por exponenciales a la evolución en el algoritmo recursivo del número de iteraciones según el número de filas o columnas.}
 	\label{grafico3}
 \end{figure}
-\vspace{0.2cm}
-
-En los gráficos \ref{grafico4} y \ref{grafico5}, se han comparado los tiempos reales de ejecución completa del programa para los dos algoritmos. Dicha comparación se ha realizado para laberintos cuyo número de elementos es inferior a $100$ millones, en tres equipos distintos, de distintas gamas y con distintos años de uso, a fin de mostrar la relevancia de estas características en el desempeño de los programas. Por cuestiones de tiempo no se tienen datos del desempeño del algoritmo iterativo en un equipo con Windows 10 de gama alta (con procesador \textsc{Intel Core i7}). Se observa que el algoritmo recursivo es claramente mejor que el iterativo, llegando a recortar en más de dos segundos la ejecución del iterativo en el caso del laberinto más grande evaluado ($9971 x 9971$ elementos). Lo cual equivale a una mejora sustancial de entre el $31\%$ y el $33\%$ respecto al iterativo. Como vemos, el desempeño real es opuesto al que pudiera predecirse a partir de los gráficos de las llamadas a la función Visit(). 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.9]{fotos/Tiempos_recursivo.png}
-	\caption{Aproximación por exponenciales a la evolución en el algoritmo recursivo del número de iteraciones según el }
+	\includegraphics[scale=0.9]{fotos/Tiempos_recursivo1.png}
+	\caption{Ap}
 	\label{grafico4}
 \end{figure}
 \vspace{0.2cm}
 
-\begin{figure}[h]
+En los gráficos \ref{grafico4} y \ref{grafico5}, se han comparado los tiempos reales de ejecución completa del programa para los dos algoritmos. Dicha comparación se ha realizado para laberintos cuyo número de elementos es inferior a $100$ millones, en tres equipos distintos, de distintas gamas y con distintos años de uso, a fin de mostrar la relevancia de estas características en el desempeño de los programas. Por cuestiones de tiempo no se tienen datos del desempeño del algoritmo iterativo en un equipo con Windows 10 de gama alta (con procesador \textsc{Intel Core i7}). Se observa que el algoritmo recursivo es claramente mejor que el iterativo, llegando a recortar en más de dos segundos la ejecución del iterativo en el caso del laberinto más grande evaluado ($9971\cdot9971$ elementos). Lo cual equivale a una mejora sustancial de entre el $31\%$ y el $33\%$ respecto al iterativo. Como vemos, el desempeño real es opuesto al que pudiera esperarse. 
+
+\vspace{0.2cm}
+
+\begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.9]{fotos/Tiempos_Iterativo.png}
+	\includegraphics[scale=0.9]{fotos/Tiempos_Iterativo1.png}
 	\caption{Aproximación por exponenciales a la evolución en el algoritmo recursivo del número de iteraciones según el }
 	\label{grafico5}
 \end{figure}
 \vspace{0.2cm}
 
-Estas notables diferencias son debidas a que los dos primeros gráficos están muy sesgados, pues solo miden la llamada a la función principal de ambos algoritmos, la función Visit(). Si bien esto puede no implicar que su medida incurra en un sesgo importante para determinar cuan bueno es el algoritmo recursivo, sí se incurre en sesgos mayores cuando se trata del algoritmo iterativo. Esto es así porque el mayor peso del recursivo recae en la función Visit(), y la propia naturaleza de la recursividad impone que Visit() se llame una y otra vez a sí misma. Por lo tanto, midiendo la cantidad de veces que se llama a Visit() en el algoritmo recursivo, proporciona una medida útil. Sin embargo, los pesos computacionales del algoritmo iterativo están más repartidos (Visit() llama a otras funciones que no se están contabilizando) y por ende, la medida de la cantidad de veces que se llama a Visit() en este caso, es menos útil, porque es menos extrapolable y comparable, que la misma medida en el recursivo. 
+ Si bien esto puede no implicar que su medida incurra en un sesgo importante para determinar cuanto de bueno es el algoritmo recursivo, sí se incurre en sesgos mayores cuando se trata del algoritmo iterativo. Esto es así porque el mayor peso del recursivo recae en la función \textsf{Visit()}, y la propia naturaleza de la recursividad impone que \textsf{Visit()} se llame una y otra vez a sí misma. Por lo tanto, medir la cantidad de veces que se llama a \textsf{Visit()} en el algoritmo recursivo, proporciona una medida útil. Sin embargo, los pesos computacionales del algoritmo iterativo están más repartidos (\textsf{Visit()} llama a otras funciones que no se están contabilizando) y por ende, la medida de la cantidad de veces que se itera en este caso, es menos útil, porque es menos extrapolable y comparable, que la misma medida en el recursivo. 
 
-Las comparaciones por tamaño de memoria no se han llevado a cabo por falta de tiempo, sin embargo se considera que una reflexión puede ser interesante. Sobre todo con un imprevisto surgido a la hora de tomar datos con el sostema operativo Windows. La razón por la que no contamos con datos acerca del recursivo en este computador es porque una vez alcanzadas unas dimensiones determinadas que, a escala del tamaño máximo que se espera alcanzar al final de la toma de datos, resultan extrañamente pequeños, el sistema operativo decide no ejecutar el algoritmo sin dar ningun tipo de aviso por consola. Pensamos que esto se puede deber a que el S.O. interprete un desbordamiento de la funcion recursiva Visit() y tenga algún tamaño en memoria dedicado a funciones en ejecución que se sobrepase del asignado al superar ciertas dimensiones del laberinto. De todas formas, se considera que se podría descartar un desbordamiento de pila (stack overflow), ya que el equipo desempeña tamaños hasta 180 veces más grandes en el iterativo. 
+ \vspace{0.2cm}
+Las comparaciones por tamaño de memoria no se han llevado a cabo por falta de tiempo, sin embargo se considera que una reflexión puede ser interesante. Sobre todo con un imprevisto surgido a la hora de tomar datos con el sostema operativo Windows. La razón por la que no contamos con datos acerca del recursivo en este computador es porque una vez alcanzadas unas dimensiones determinadas que, a escala del tamaño máximo que se espera alcanzar al final de la toma de datos, resultan extrañamente pequeños, el sistema operativo decide no ejecutar el algoritmo sin dar ningun tipo de aviso por consola. Pensamos que esto se puede deber a que el S.O. interprete un desbordamiento de la funcion recursiva \textsf{Visit()} y tenga algún tamaño en memoria dedicado a funciones en ejecución que se sobrepase del asignado al superar ciertas dimensiones del laberinto. De todas formas, se considera que se podría descartar un desbordamiento de pila (\verb|stack overflow|), ya que el equipo desempeña tamaños hasta 180 veces más grandes en el iterativo.
 
 \clearpage
 \section{Conclusiones}
