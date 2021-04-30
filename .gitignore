@@ -10,4 +10,5 @@ latex/*.out
 latex/*.run.xml
 latex/*.synctex.gz
 latex/*.toc
+latex/_minted-memoria
 src/otros
