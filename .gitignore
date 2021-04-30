@@ -12,3 +12,4 @@ latex/*.synctex.gz
 latex/*.toc
 latex/_minted-memoria
 src/otros
+.vs
