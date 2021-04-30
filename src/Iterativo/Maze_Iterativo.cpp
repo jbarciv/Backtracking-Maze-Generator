@@ -26,8 +26,8 @@ int main(int argc, char **argv){
     char **grid = NULL;
     unsigned int t0, t1;
     double tiempo;
-
-    srand(time(0));    // Semilla aleatoria para la función rand().
+    // Semilla aleatoria para la función rand().
+    srand(time(0));    
 
     // Se pide al usuario el tamaño del laberinto.
     Pedir(argc,argv);
@@ -41,11 +41,13 @@ int main(int argc, char **argv){
     AgregarPila(pila, 1, 1, 0, false, vect);
     
     // Empieza la iteracion. Se comienza visitando la posición (1,1).
+    // Se toma además el tiempo al entrar y salir de la función, en ticks.
     t0=clock();
     Visit(1, 1, grid, pila);
-    t1=clock(); // t1 y t0 miden el tiempo transcurrido en ticks.
-    tiempo = (double(t1-t0)/CLOCKS_PER_SEC); // Pasamos de ticks a 
-    //segundos.
+    t1=clock(); 
+    
+    // Se pasa de ticks a segundos.
+    tiempo = (double(t1-t0)/CLOCKS_PER_SEC); 
 
     // Mostramos por pantalla el laberinto
     PrintGrid(grid, argc, argv, tiempo);

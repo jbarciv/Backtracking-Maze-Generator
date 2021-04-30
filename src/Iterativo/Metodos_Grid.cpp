@@ -37,14 +37,14 @@ int Pedir(int argc, char **argv){
     }
 
     // Se ajustan las dimensiones para que sean impares siempre.
-    (filas%2)?filas:filas+=1;
-    (columnas%2)?columnas:columnas+=1;
+    (filas%2) ? filas : filas+=1;
+    (columnas%2) ? columnas : columnas+=1;
     return 0;
 }
 
 //----INICIALIZAMOS LA MATRIZ RESERVANDO MEMORIA Y RELLENANDO CON'#'-----
 int SetGrid(char **grid){
-    int i=0,j=0;
+    int i=0, j=0;
     // Se reserva memoria dinámica (del tamaño de "filas").
 	if (grid == NULL){
   	    printf("No se pudo reservar memoria\n");
@@ -79,17 +79,16 @@ void PrintGrid(char **grid,int argc, char **argv, double tiempo){
                 printf("%c",grid[i][j]);
             printf("\n");
         }
-        printf("Filas: %d\t Columnas: %d\t Area: %d", 
-            filas, columnas, filas*columnas);
-        printf("\nTiempo en generar: %2.4fs\t", tiempo);
-        printf("Iteraciones: %ld", k);
+        printf("Filas: %d, Columnas: %d, Area: %d", 
+                filas, columnas, filas*columnas);
+        printf("\nTiempo: %2.4fs, ", tiempo);
+        printf("Iteraciones: %ld\n", k);
 
     } else{
         printf("%d ", filas);
         printf("%d ", filas*columnas);
         printf("%2.4f ", tiempo);
-        printf("%ld", k);
-
+        printf("%ld\n", k);
     }
 }
 

@@ -14,5 +14,5 @@ Visit_Iterativo.o: Visit_Iterativo.cpp Maze_Iterativo.hpp
 	g++ -c Visit_Iterativo.cpp
 
 clean:
-	rm *.o 
-	rm Maze_Iterative
+	rm -f *.o 
+	rm -f Maze_Iterative

@@ -11,8 +11,6 @@
 #include <ctime>
 #include <iostream>
 
-using namespace std;
-
 //----CONSTANTES--------------------------------------------------------
 #define ARRIBA 0
 #define DERECHA 1
