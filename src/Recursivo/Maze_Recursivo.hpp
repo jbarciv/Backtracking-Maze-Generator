@@ -20,7 +20,7 @@
 //----PROTOTIPOS DE FUNCIONES-------------------------------------------
 int Pedir(int ,char **);
 int SetGrid(char **);
-void PrintGrid(char **,int ,char **, double);
+void PrintGrid(char **, double);
 int IsInBounds( int , int );
 void Free(char **);
 void Visit(int , int , char **);

@@ -275,7 +275,7 @@ Por motivos estéticos, también se buscó algún carácter en \textsc{unicode} 
 
 \lstset{style=mystyle}
 %también se puede poner [firstnumber=39]
-\begin{lstlisting}[language=C++, title=Ajuste de dimensiones dentro de la función \textsf{Pedir()}, frame=single, numbers=none]
+\begin{lstlisting}[language=C++, title= Variente para la función \textsf{PrintGrid()} con carácteres \textsc{unicode}, frame=single, numbers=none]
 for (int i=0; i<filas; i++) {
     for (int j=0; j<columnas; j++){
     	if(grid[i][j] == '#')
@@ -297,7 +297,7 @@ En las figuras \ref{unicode} y \ref{ascii} puede verse la comparación entre la 
 
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.4]{fotos/asci.png}
+	\includegraphics[scale=0.6]{fotos/ascii.png}
 	\caption{Salida por consola del programa con carácteres \textsc{ascii}}
 	\label{ascii}
 \end{figure}
@@ -307,17 +307,51 @@ Por motivos de portabilida se ha preferido no incluirlo directamente en el códi
 % \clearpage
 \section{Experimentación}
 \subsection{Toma de medidas}
-Para poder estudiar y comparar la ejecución de ambos códigos y algoritmos, ha sido necesaria una fase de toma de datos. Los datos buscados corresponden a las diversas métricas empleadas, estas son: número de iteraciones, velocidad de ejecución y uso de memoria. Para la experimentación, esto es ejecutar el código en diferentes condiciones, se ha elaborado un fichero \textit{shell script} que permite ejecutar cada programa repetidas veces y genera un archivo de salida en el que vuelca los datos de cada ejecución. Más tarde este fichero es convertido a una tabla de datos con formato \textit{.cdv} y dichos datos se han analizado mediante \textsc{Rstudio}. 
+Para poder estudiar y comparar la ejecución de ambos códigos y algoritmos, ha sido necesaria una fase de toma de medidas. Los datos buscados corresponden a las diversas métricas empleadas, estas son: número de iteraciones, velocidad de ejecución y uso de memoria. Para la experimentación (esto es, ejecutar el código bajo diferentes condiciones), se ha elaborado un fichero \textit{shell script} que permite ejecutar cada programa repetidas veces y genera un archivo de salida en el que vuelca los datos de cada ejecución. Más tarde este fichero es convertido a una tabla de datos con formato \textit{.csv}. Para su estudio y análisis se ha utilizado la herramienta estadística \textsc{RStudio}.
+
 \vspace{0.3cm}
-Más concretamente, el shell script empieza ejecutando el programa con un valor inicial de $20$ tanto para filas y columnas. Y va sumando 50 unidades a filas y columnas con cada ejecución hasta llegar a $10000$, realizando cada ejecución $5$ veces para poder conseguir una media de los tiempos de ejecución. En cada ejecución, escribe en el fichero \textit{output.csv} (o \textit{output.txt} como se prefiera): un número del $1$ al $5$ correspondiente con la ejecución en curso, el tamaño de las filas y columnas, el área del laberinto (filas*columnas), el tiempo empleado en la ejecución de la función \textsf{Visit()} y el número de iteraciones realizadas por dicha función. 
+Más concretamente, el shell script empieza ejecutando el programa con un valor inicial de $20$ tanto para filas y columnas. Y va sumando 50 unidades a filas y columnas con cada ejecución hasta llegar a $10000$, realizando cada ejecución $5$ veces para poder conseguir una media de los tiempos de ejecución. En cada ejecución, escribe en el fichero \textit{output.csv} (o si se prefiere \textit{output.txt}): un número del $1$ al $5$ correspondiente con la ejecución en curso, el tamaño de las filas y columnas, el área del laberinto $(filas*columnas)$, el tiempo empleado en la ejecución de la función \textsf{Visit()} y el número de iteraciones realizadas por dicha función. Se incluye a continuación el bucle principal del \textit{shell script}:
+\clearpage
+\lstset{style=mystyle}
+%también se puede poner [firstnumber=39]
+\begin{lstlisting}[language=sh, title= Variente para la función \textsf{PrintGrid()} con carácteres \textsc{unicode}, frame=single, numbers=none]
+	initial=20
+	final=10000
+	step=50
+	contador=1
+	
+	while [ $initial -le $final ]
+		do 
+			while [ $contador -le 5 ]
+			do
+				echo -n $contador\ >> $file
+				$mypath/Maze_Recursivo $initial $initial 1\ >> $file
+				contador=$(($contador+1))
+			done
+			initial=$(( $initial + $step ))
+			contador=$(($contador-5))
+		done
+\end{lstlisting}
+Es importante utilizar \verb|ulimit -s unlimited| dentro del script para evitar que el sistema operativo mate el programa cuando las dimensiones sean demasiado grandes, permitiendo que la pila sea más grande de lo habitual y no llegue a llenarse. Para poder ejecutar el mismo \textit{script} en Windows ha sido necesario utilizar un emulador de Unix (\textit{Cygwin} o una consola tipo \textit{Git Bash}) y cambiar el comando anterior por \verb|/STACK:reserve[10000000]| con la misma inteción.
 
-Se ha observado que en el caso del recursivo el número de iteraciones es siempre el mismo, ya que al ser constantes las dimensiones del laberinto la función \textsf{Visit()} es llamada el mismo número de veces en cada ejecución con los mismos datos. Pero las 5 ejecuciones nos sirven para obtener la media del tiempo.  
+\vspace{0.3cm}
+En la toma de medidas se ha observado que en el recursivo el número de iteraciones es siempre el mismo, ya que al ser constantes las dimensiones del laberinto la función \textsf{Visit()} es llamada el mismo número de veces en cada ejecución con los mismos datos. Pero, por otro lado, las 5 ejecuciones sirven para obtener la media del tiempo. 
 
-En el caso del iterativo, tanto el tiempo como el número de iteraciones es ligeramente diferente en cada ejecución dada la aleatoriedad del recorrido de la pila y, por tanto, cada vez se ‘atasca’ en un sitio distinto y recorre un camino distinto.\\
+\vspace{0.3cm}
+En el caso del iterativo, tanto el tiempo como el número de iteraciones varían en cada ejecución. Se cree que esto es debido a la aleatoriedad del recorrido y el vaciado o llenado de la pila. Pues, en el caso recursivo el ``arbol de opciones'' es recorrido de manera sistemática.
 
- \# \# revisar!!!!!\\
+\vspace{0.3cm}
+A la hora de realizar pruebas, se ha dispuesto de 3 computadoras diferentes: dos  con sistemas operativos vasados en \textsc{unix}, en concreto \textit{Linux}, ambos con diferentes procesadores, y un tercer computador con sistema operativo \textit{Windows 10}. Se ha procedido extrayendo datos de la ejecución de los programas en cada uno de las tres computadores. Lo cual, supone además una manera de comprobar experimentalmente la portabilidad de los programas.
 
-A la hora de realizar pruebas, disponemos de 3 sistemas operativos diferentes: dos UNIX, ambos con diferentes procesadores, y un Windows. Y nuestra intención es extraer datos de la ejecución de los programas en cada uno de los tres. Además, nos aporta una manera de comprobar experimentalmente la portabilidad de nuestro proyecto.  
+Es importante resaltar en este punto, lo conveniente que ha sido implementar en ambos código el paso de parámetros a la función \textsc{main()}. Se incluye brevemente el código y las llamadas a las funciones que reciben dichos argumentos:
+\lstset{style=mystyle}
+%también se puede poner [firstnumber=39]
+\begin{lstlisting}[language=C++, title= Variente para la función \textsf{PrintGrid()} con carácteres \textsc{unicode}, frame=single, numbers=none]
+	//----FUNCION PRINCIPAL-------------------------------------
+	int main(int argc, char **argv){
+		// Se pide al usuario el tamano del laberinto.
+  		Pedir(argc, argv);
+\end{lstlisting}
 
 \section{Análisis}
 

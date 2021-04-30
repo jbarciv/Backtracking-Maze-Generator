@@ -50,7 +50,7 @@ int main(int argc, char **argv){
   tiempo = (double(t1-t0)/CLOCKS_PER_SEC); 
 
   // Mostramos por pantalla el laberinto
-  PrintGrid(grid, argc, argv, tiempo);
+  PrintGrid(grid, tiempo);
 
   // Se libera memoria.
   Free(grid);
