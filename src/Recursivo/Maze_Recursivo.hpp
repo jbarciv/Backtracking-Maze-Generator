@@ -11,8 +11,6 @@
 #include <ctime>
 #include <iostream>
 
-using namespace std;
-
 //----CONSTANTES--------------------------------------------------------
 #define ARRIBA 0
 #define DERECHA 1
@@ -22,7 +20,7 @@ using namespace std;
 //----PROTOTIPOS DE FUNCIONES-------------------------------------------
 int Pedir(int ,char **);
 int SetGrid(char **);
-void PrintGrid(char **,int ,char **, double);
+void PrintGrid(char **, double);
 int IsInBounds( int , int );
 void Free(char **);
 void Visit(int , int , char **);

@@ -15,7 +15,7 @@ int Visit(int x, int y, char **grid, Nodo *pila){
     short int i=0;
     short int vect[4]={0,0,0,0};
     // Mientras la pila no esté vacía continua la iteración.
-    while(pila != NULL){
+    while(pila){
         // Comprueba si ya ha estado en la casilla.
         if( pila->estado ){      
             if(pila->iter < 4); // Si le falta alguna iteración la intenta.
@@ -72,7 +72,7 @@ int Visit(int x, int y, char **grid, Nodo *pila){
             }
             // En caso de haber intentado los cuatro movimientos
             // y no haber podido guarda la iteración.
-            if(i==3) pila->iter = ++i;
+            if(i == 3) pila->iter = ++i;
         }
         k++;
     }

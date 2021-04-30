@@ -1,5 +1,5 @@
 Maze_Iterative: Maze_Iterativo.o Metodos_Pila.o Metodos_Grid.o Visit_Iterativo.o
-	g++ -o Maze_Iterative Maze_Iterativo.o Metodos_Pila.o Metodos_Grid.o Visit_Iterativo.o
+	g++ -o Maze_Iterativo Maze_Iterativo.o Metodos_Pila.o Metodos_Grid.o Visit_Iterativo.o
 
 Maze_Iterativo.o: Maze_Iterativo.cpp Maze_Iterativo.hpp
 	g++ -c Maze_Iterativo.cpp
@@ -14,5 +14,5 @@ Visit_Iterativo.o: Visit_Iterativo.cpp Maze_Iterativo.hpp
 	g++ -c Visit_Iterativo.cpp
 
 clean:
-	rm *.o 
-	rm Maze_Iterative
+	rm -f *.o 
+	rm -f Maze_Iterativo

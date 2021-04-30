@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.26)  29 APR 2021 20:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.26)  30 APR 2021 19:13
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -856,7 +856,7 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<fotos/Logo_azul.png, id=40, 414.04688pt x 350.81062pt>
+<fotos/Logo_azul.png, id=56, 414.04688pt x 350.81062pt>
 File: fotos/Logo_azul.png Graphic file (type png)
 <use fotos/Logo_azul.png>
 Package pdftex.def Info: fotos/Logo_azul.png  used on input line 132.
@@ -873,70 +873,145 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 152.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./fotos/Logo_azul.png>] (./memoria.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./fotos/Logo_azul.png>]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.179 \clearpage
+                 [1] (./memoria.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@toc=\write6
 \openout6 = `memoria.toc'.
 
- [1]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+ [1
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.208 
-       [1
+l.207 \clearpage
+                 [1
 
 ]
-<fotos/back_tracker.png, id=74, 554.82281pt x 554.82281pt>
+<fotos/back_tracker.png, id=104, 554.82281pt x 554.82281pt>
 File: fotos/back_tracker.png Graphic file (type png)
 <use fotos/back_tracker.png>
-Package pdftex.def Info: fotos/back_tracker.png  used on input line 213.
+Package pdftex.def Info: fotos/back_tracker.png  used on input line 230.
 (pdftex.def)             Requested size: 221.92519pt x 221.92519pt.
- [2 <./fotos/back_tracker.png (PNG copy)>] [3] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+ [2
+
+] [3 <./fotos/back_tracker.png (PNG copy)>]
+<fotos/diagrama.pdf, id=123, 653.3208pt x 408.32549pt>
+File: fotos/diagrama.pdf Graphic file (type pdf)
+<use fotos/diagrama.pdf>
+Package pdftex.def Info: fotos/diagrama.pdf  used on input line 257.
+(pdftex.def)             Requested size: 685.98715pt x 428.74194pt.
+
+Overfull \hbox (139.45996pt too wide) in paragraph at lines 256--258
+[]  [] 
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 258.
+[4] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-)
-LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 248.
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 268.
+) [5 <./fotos/diagrama.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 294.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-<fotos/unicode.png, id=92, 482.55281pt x 529.22719pt>
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 300.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 300.
+
+<fotos/unicode.png, id=159, 482.55281pt x 529.22719pt>
 File: fotos/unicode.png Graphic file (type png)
 <use fotos/unicode.png>
-Package pdftex.def Info: fotos/unicode.png  used on input line 280.
+Package pdftex.def Info: fotos/unicode.png  used on input line 306.
 (pdftex.def)             Requested size: 193.0177pt x 211.68712pt.
 
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 281.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 281.
-
-<fotos/asci.png, id=93, 496.85625pt x 618.05907pt>
-File: fotos/asci.png Graphic file (type png)
-<use fotos/asci.png>
-Package pdftex.def Info: fotos/asci.png  used on input line 284.
-(pdftex.def)             Requested size: 198.73897pt x 247.21924pt.
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 285.
+(Font)              using `OT1/cmr/m/sc' instead on input line 307.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 285.
+(Font)              using `OT1/cmr/m/sc' instead on input line 307.
 
-[4] [5 <./fotos/unicode.png (PNG copy)> <./fotos/asci.png (PNG copy)>] [6
+<fotos/ascii.png, id=160, 310.15875pt x 387.849pt>
+File: fotos/ascii.png Graphic file (type png)
+<use fotos/ascii.png>
+Package pdftex.def Info: fotos/ascii.png  used on input line 313.
+(pdftex.def)             Requested size: 186.09668pt x 232.71118pt.
 
-] [7
+LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 314.
 
-] [8
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 314.
+
+[6 <./fotos/unicode.png (PNG copy)>] [7 <./fotos/ascii.png>] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 347.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 347.
+
+[8
+
+] [9] [10
+
+]
+<fotos/Iteraciones_vs_filas1.png, id=226, 370.38374pt x 231.86626pt>
+File: fotos/Iteraciones_vs_filas1.png Graphic file (type png)
+<use fotos/Iteraciones_vs_filas1.png>
+Package pdftex.def Info: fotos/Iteraciones_vs_filas1.png  used on input line 416.
+(pdftex.def)             Requested size: 333.34227pt x 208.67769pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<fotos/Iteraciones_vs_numElem1.png, id=228, 370.38374pt x 231.86626pt>
+File: fotos/Iteraciones_vs_numElem1.png Graphic file (type png)
+<use fotos/Iteraciones_vs_numElem1.png>
+Package pdftex.def Info: fotos/Iteraciones_vs_numElem1.png  used on input line 424.
+(pdftex.def)             Requested size: 333.34227pt x 208.67769pt.
+[11] [12 <./fotos/Iteraciones_vs_filas1.png> <./fotos/Iteraciones_vs_numElem1.png>]
+<fotos/iterations_rec_vs_pows.pdf, id=263, 273.02pt x 432.61626pt>
+File: fotos/iterations_rec_vs_pows.pdf Graphic file (type pdf)
+<use fotos/iterations_rec_vs_pows.pdf>
+Package pdftex.def Info: fotos/iterations_rec_vs_pows.pdf  used on input line 435.
+(pdftex.def)             Requested size: 245.71573pt x 389.35103pt.
+<fotos/Tiempos_recursivo.png, id=266, 455.45157pt x 231.86626pt>
+File: fotos/Tiempos_recursivo.png Graphic file (type png)
+<use fotos/Tiempos_recursivo.png>
+Package pdftex.def Info: fotos/Tiempos_recursivo.png  used on input line 445.
+(pdftex.def)             Requested size: 409.90262pt x 208.67769pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<fotos/Tiempos_Iterativo.png, id=267, 455.45157pt x 231.86626pt>
+File: fotos/Tiempos_Iterativo.png Graphic file (type png)
+<use fotos/Tiempos_Iterativo.png>
+Package pdftex.def Info: fotos/Tiempos_Iterativo.png  used on input line 453.
+(pdftex.def)             Requested size: 409.90262pt x 208.67769pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13 <./fotos/iterations_rec_vs_pows.pdf>] [14 <./fotos/Tiempos_recursivo.png>] [15 <./fotos/Tiempos_Iterativo.png>] [16
 
 ] (./memoria.bbl
 Underfull \hbox (badness 1292) in paragraph at lines 9--15
@@ -944,33 +1019,33 @@ Underfull \hbox (badness 1292) in paragraph at lines 9--15
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 302.
- [9
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 480.
+ [17
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 302.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 480.
  (./memoria.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 302.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 302.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 480.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 480.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: A457BD9D9A6186A2A9ABB76F374A33FC;557.
+(rerunfilecheck)             Checksum: A6DB0110952D69956AECD4F87A61298E;818.
  ) 
 Here is how much of TeX's memory you used:
- 20578 strings out of 482503
- 325919 string characters out of 5947227
- 1045975 words of memory out of 5000000
- 35152 multiletter control sequences out of 15000+600000
- 547472 words of font info for 80 fonts, out of 8000000 for 9000
+ 20785 strings out of 482503
+ 329123 string characters out of 5947227
+ 1059660 words of memory out of 5000000
+ 35291 multiletter control sequences out of 15000+600000
+ 548720 words of font info for 85 fonts, out of 8000000 for 9000
  398 hyphenation exceptions out of 8191
- 48i,7n,99p,1497b,1460s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/josep/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on memoria.pdf (11 pages, 590182 bytes).
+ 48i,8n,99p,1493b,2166s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/josep/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on memoria.pdf (20 pages, 508899 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 394 PDF objects out of 1000 (max. 8388607)
+ 322 compressed objects within 4 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 155 words of extra memory for PDF output out of 10000 (max. 10000000)
 
