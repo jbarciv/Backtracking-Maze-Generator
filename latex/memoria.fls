@@ -383,7 +383,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT fotos/Iteraciones_vs_filas1.png
 INPUT ./fotos/Iteraciones_vs_filas1.png
 INPUT ./fotos/Iteraciones_vs_filas1.png
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
 INPUT fotos/Iteraciones_vs_numElem1.png
 INPUT ./fotos/Iteraciones_vs_numElem1.png
 INPUT ./fotos/Iteraciones_vs_numElem1.png
@@ -401,7 +400,6 @@ INPUT memoria.bbl
 INPUT memoria.aux
 INPUT ./memoria.out
 INPUT ./memoria.out
-INPUT /home/josep/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk
 INPUT /home/josep/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1000.600pk
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

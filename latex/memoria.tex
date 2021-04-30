@@ -343,12 +343,6 @@ Más concretamente, el shell script empieza ejecutando el programa con un valor 
 Es importante utilizar \verb|ulimit -s unlimited| dentro del script para evitar que el sistema operativo mate el programa cuando las dimensiones sean demasiado grandes, permitiendo que la pila sea más grande de lo habitual y no llegue a llenarse. Para poder ejecutar el mismo \textit{script} en Windows ha sido necesario utilizar un emulador de Unix (\textit{Cygwin} o una consola tipo \textit{Git Bash}) y cambiar el comando anterior por \verb|/STACK:reserve[10000000]| con la misma inteción.
 
 \vspace{0.2cm}
-En la toma de medidas se ha observado que en el recursivo el número de iteraciones es siempre el mismo, ya que al ser constantes las dimensiones del laberinto la función \textsf{Visit()} es llamada el mismo número de veces en cada ejecución con los mismos datos. Pero, por otro lado, las 5 ejecuciones sirven para obtener la media del tiempo. 
-
-\vspace{0.2cm}
-En el caso del iterativo, tanto el tiempo como el número de iteraciones varían en cada ejecución. Se cree que esto es debido a la aleatoriedad del recorrido y el vaciado o llenado de la pila. Pues, en el caso recursivo el ``arbol de opciones'' es recorrido de manera sistemática.
-
-\vspace{0.2cm}
 A la hora de realizar pruebas, se ha dispuesto de 3 computadoras diferentes: dos  con sistemas operativos vasados en \textsc{unix}, en concreto \textit{Linux}, ambos con diferentes procesadores, y un tercer computador con sistema operativo \textit{Windows 10}. Se ha procedido extrayendo datos de la ejecución de los programas en cada uno de las tres computadores. Lo cual, supone además una manera de comprobar experimentalmente la portabilidad de los programas.
 
 \vspace{0.2cm}
@@ -364,6 +358,15 @@ Es importante resaltar en este punto, lo conveniente que ha sido, para la ejecuc
 
 \section{Análisis}
 
+En primer lugar, debemos definir nuestras unidades de medida para poder comparar los algoritmos:
+\begin{itemize}
+	\item El tiempo: tiempo en segundos que se tarda en completar el laberinto, de toman medidas antes y después de la llamada a visit() de cada función.
+	\item El número de iteraciones: en el caso del recursivo consideraremos una nueva iteración cada vez que se llame a la función visit(). Y en el caso del iterativo, se sumará una iteración cada vez que se compruebe una casilla, es decir, cada vez que se ejecute el bucle while(pila). 
+
+\end{itemize}
+
+El número de iteraciones es algo relativo en el caso del iterativo, pero lo hemos considerado de esta manera ya que está en desventaja frente al recursivo porque tiene el handicap de que se puede atascar. Y cada vez que se atasca, debe realizar comprobaciones en cada casilla que recorre al retroceder hasta que pueda reanudar su camino abriendo paso al laberinto. Nótese que, con unas dimensiones dadas al iniciar la función, el número de casillas a vaciar siempre estarán acotadas. Y por eso el número de iteraciones del recursivo para las mismas dimensiones es constante a pesar de que se creen caminos diferentes. Y, por ende, si para el iterativo consideráramos una iteración cada vez que encuentra una casilla válida y la vacíe. El número de iteraciones para ambos algoritmos sería el mismo. Pero no sería fiable ya que el iterativo ha tenido que realizar muchas más operaciones lógicas. 
+
 Gracias a los datos obtenido en la fase de experimentación, se ha podido elaborar una base de datos de tamaño suficiente. La limpieza y el tratamiento de los datos se ha llevado a cabo utilizando \textit{Excel} y el software \textsc{R} en el entorno de desarrollo \textsc{RStudio}. Se ha realizado en varias fases: 
 \begin{itemize}
 	\item En primer lugar, se importaban los datos a \textsc{RStudio} desde el propio documento de salida, en formato \textit{.csv}, que elaboraba automáticamente el \textit{shell script}. 
@@ -373,8 +376,9 @@ Gracias a los datos obtenido en la fase de experimentación, se ha podido elabor
 	\item Con la tabla final, se procede a elaborar los gráficos pertinentes. Para ello se hace uso del paquete \textit{ggplot} de la librería ``tidyvers''.
 \end{itemize}
  
-En el siguiente gráfico (ver \textsc{Fig.}~\ref{grafico1}) se ha representado la evolución del numero de veces que se llama a la función \textsf{Visit()} en función del numero de filas (o columnas) de un laberinto de matriz cuadrada, para el caso recursivo. Y de la misma forma para el iterativo pero contando en número de veces que se itera dentro del bucle que revisa que la pila esté llena. Como se aprecia, para dimensiones pequeñas (número de filas no mayor que 2500), el algoritmo iterativo y el recursivo presentan un número de iteraciones parecido. Cuando el número de filas empieza a ser elevado, las diferencias entre ambos son notables. A priori, con este gráfico podría decirse que el método recursivo es ``mejor'', pero si se modifica la posición del contador para que solo se incremente su valor al guardar elementos en la pila, esto es, cuando avance una casilla hacia delante, el número de iteraciones en ambos algoritmos es el mismo. Lo cual es coherente con el planteamiento del problema. En el siguiente trozo de código se incluye la modificación en la posición del contador para realizar una medida más justa.
+En el siguiente gráfico (ver \textsc{Fig.}~\ref{grafico1}) se ha representado la evolución del número de veces que se llama a la función \textsf{Visit()} en función del número de filas (o columnas) de un laberinto de matriz cuadrada, para el caso recursivo. Y de la misma forma para el iterativo pero contando en número de veces que se itera dentro del bucle que revisa que la pila esté llena. Como se aprecia, para dimensiones pequeñas (número de filas no mayor que 2500), el algoritmo iterativo y el recursivo presentan un número de iteraciones parecido. Cuando el número de filas empieza a ser elevado, las diferencias entre ambos son notables. A priori, con este gráfico podría decirse que el método recursivo es ``mejor'', pero si se modifica la posición del contador para que solo se incremente su valor al guardar elementos en la pila, esto es, cuando avance una casilla hacia delante, el número de iteraciones en ambos algoritmos es el mismo. Lo cual es coherente con explicado con anterioridad respecto al número de iteraciones. En el siguiente trozo de código se incluye la modificación en la posición del contador para realizar una medida más justa.
 
+\vspace{0.2cm}
 \lstset{style=mystyle}
 %también se puede poner [firstnumber=39]
 \begin{lstlisting}[language=C++, title= Implementación de paso de argumentos al \textsf{main()}, frame=single, numbers=none]
@@ -405,7 +409,7 @@ En el siguiente gráfico (ver \textsc{Fig.}~\ref{grafico1}) se ha representado l
 	\label{grafico1}
 \end{figure}
 
-El siguiente gráfico (ver \textsc{Fig.}~\ref{grafico2}) es en esencia similar al primero. La diferencia más importante radica en que ahora varía el número de elementos del laberinto (el producto $filas*columnas$), no la dimensión de sus filas o columnas. Con este cambio podemos estudiar más adecuadamente el número de llamadas a la función \textsf{Visit()} en el caso de que el laberinto no sea cuadrado. Como puede observarse, la relación entre el número de llamadas y el``área'' de la matriz es lineal y con pendiente aproximada $1/5$ para el algoritmo iterativo y $1/2$ para el recursivo.º
+El segundo gráfico (ver \textsc{Fig.}~\ref{grafico2}) es en esencia similar al primero. La diferencia más importante radica en que ahora varía el número de elementos del laberinto (el producto $filas*columnas$), no la dimensión de sus filas o columnas. Con este cambio podemos estudiar más adecuadamente el número de iteraciones (llamadas a la función \textsf{Visit()} para el laberinto) en el caso de que el laberinto no sea cuadrado. Como puede observarse, la relación entre el número de llamadas y el``área'' de la matriz es lineal y con pendiente aproximada $1/5$ para el algoritmo iterativo y $1/2$ para el recursivo.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.9]{fotos/Iteraciones_vs_numElem1.png}

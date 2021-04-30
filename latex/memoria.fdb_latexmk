@@ -1,19 +1,17 @@
 # Fdb version 3
-["bibtex memoria"] 1619798140 "memoria.aux" "memoria.bbl" "memoria" 1619798186
+["bibtex memoria"] 1619798689 "memoria.aux" "memoria.bbl" "memoria" 1619798694
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/abbrv.bst" 1292289607 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "memoria.aux" 1619798169 5912 bcf4c906159ff43102bf74a0d01ecc0d "pdflatex"
+  "memoria.aux" 1619798693 5912 b9b3044c28791a915e3f9a4d746328c6 "pdflatex"
   "mybib.bib" 1619714273 486 aaf106652cab9c802194cd1e97424b15 ""
   (generated)
   "memoria.blg"
   "memoria.bbl"
-["pdflatex"] 1619798168 "/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.tex" "memoria.pdf" "memoria" 1619798186
+["pdflatex"] 1619798692 "/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.tex" "memoria.pdf" "memoria" 1619798694
   "/dev/null" 1619789307 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1605011250 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/josep/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk" 1619712379 14040 8e16555a4122ab2a805fd4aca303ffcb ""
   "/home/josep/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1000.600pk" 1619718781 9468 411e35272c2b3fd81ce561908f0ea22b ""
-  "/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.tex" 1619798186 31724 732070327f1f831a49bef8bbbfc999e9 ""
+  "/home/josep/Practicas_Progra_Sistemas/Recursividad-PS/latex/memoria.tex" 1619798694 32621 c3a527edabfba7d2fa144ae856ac57de ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tctt1000.tfm" 1136768653 1536 c5729d01ab121276cf99b309129349a0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -216,14 +214,14 @@
   "fotos/diagrama.pdf" 1619721184 40971 a9b063f99a0403f495eaeb1fe7cebf24 ""
   "fotos/iterations_rec_vs_pows.pdf" 1619543502 19753 c61675da99672a0a3bde5f24a7be3297 ""
   "fotos/unicode.png" 1619719711 64760 89b59c77a168c96a9457bad47e2e8246 ""
-  "memoria.aux" 1619798169 5912 bcf4c906159ff43102bf74a0d01ecc0d "pdflatex"
-  "memoria.bbl" 1619798140 491 5ab765de433f0fb3ecff72d2db4a4871 "bibtex memoria"
-  "memoria.out" 1619798169 622 50ca528c2ea15d73a5f110a60d12d367 "pdflatex"
-  "memoria.tex" 1619798186 31724 732070327f1f831a49bef8bbbfc999e9 ""
-  "memoria.toc" 1619798169 861 dba7a07c4188741fd599e9efca12bf35 "pdflatex"
+  "memoria.aux" 1619798693 5912 b9b3044c28791a915e3f9a4d746328c6 "pdflatex"
+  "memoria.bbl" 1619798689 491 5ab765de433f0fb3ecff72d2db4a4871 "bibtex memoria"
+  "memoria.out" 1619798693 622 50ca528c2ea15d73a5f110a60d12d367 "pdflatex"
+  "memoria.tex" 1619798694 32621 c3a527edabfba7d2fa144ae856ac57de ""
+  "memoria.toc" 1619798693 861 e8200d6f2be0c38c8f73c3fa64250a8e "pdflatex"
   (generated)
-  "memoria.toc"
-  "memoria.aux"
+  "memoria.pdf"
   "memoria.out"
   "memoria.log"
-  "memoria.pdf"
+  "memoria.aux"
+  "memoria.toc"
