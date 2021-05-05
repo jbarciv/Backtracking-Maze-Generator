@@ -14,7 +14,7 @@
 // 2021.04.23 - Versión final
 //======================================================================
 
-#include "Maze_Iterativo.hpp"
+#include "Maze_Iterative.hpp"
 
 //----VARIABLES GLOBALES------------------------------------------------
 int columnas,filas;
