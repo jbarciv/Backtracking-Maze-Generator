@@ -14,7 +14,7 @@ $ make
 ```
 you will be using the Makefile for compiling and linking all the .cpp files.
 For running the program you have some options (we'll be using the recursive program
-### The program asks you the dimensions for the maze:
+#### The program asks you the dimensions for the maze:
 ```
 $ ./Maze_Recursive
 ```
