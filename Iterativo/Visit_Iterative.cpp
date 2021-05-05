@@ -5,7 +5,7 @@
 //
 //======================================================================
 
-#include "Maze_Iterativo.hpp"
+#include "Maze_Iterative.hpp"
 
 //----VARIABLES GLOBALES------------------------------------------------
 extern long int k;

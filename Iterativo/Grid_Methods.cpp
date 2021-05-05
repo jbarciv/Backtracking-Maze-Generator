@@ -1,11 +1,11 @@
 ///======================================================================
-// Metodos_Grid.cpp
+// Grid_Methods.cpp
 //
 // Funciones que definen la matriz del laberinto
 //
 //======================================================================
 
-#include "Maze_Iterativo.hpp"
+#include "Maze_Iterative.hpp"
 
 //----VARIABLES GLOBALES------------------------------------------------
 extern int columnas,filas;

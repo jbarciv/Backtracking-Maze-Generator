@@ -1,5 +1,5 @@
 //======================================================================
-// Maze_Iterativo.hpp
+// Maze_Iterative.hpp
 //
 // Librerías, directivas del preprocesador, prototipos de funciones y
 // definición de tipos para Maze_Iterativo.cpp, Metodos_Grid.cpp, 

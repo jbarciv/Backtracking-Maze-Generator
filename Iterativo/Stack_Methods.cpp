@@ -1,11 +1,11 @@
 ///======================================================================
-// Metodos_Pila.cpp
+// Stack_Methods.cpp
 //
 // Funciones llamadas en main y en Visit
 //
 //======================================================================
 
-#include "Maze_Iterativo.hpp"
+#include "Maze_Iterative.hpp"
 
 //----FUNCIONES DE LA PILA----------------------------------------------
 // Para agregar elementos a la pila.
