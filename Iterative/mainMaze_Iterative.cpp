@@ -1,5 +1,5 @@
 //======================================================================
-// Maze_Iterativo.cpp
+// mainMaze_Iterativo.cpp
 //
 // --> Implementación de un generador dinámico de laberintos <--
 //           en C++ mediante un algoritmo ITERATIVO 

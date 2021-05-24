@@ -2,7 +2,7 @@
 
 #-----------------------------------------------------------------------
 # -> Authors: Gonzalo Quiros, Celia Ramos and Josep Mª Barberá, 
-#    students of the Politechnical University of Madrid.
+#    students of the Technical University of Madrid.
 #
 # -> Description: Shell Script file for testing the programs on Windows.
 #    It performs 5 loops per test in order to have more data and minimize 
