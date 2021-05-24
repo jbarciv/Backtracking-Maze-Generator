@@ -1,5 +1,5 @@
 //======================================================================
-// Maze_Recursivo.cpp
+// mainMaze_Recursivo.cpp
 // 
 // Basado en el algoritmo de Abe Pralle  maze.cpp 
 //  - Creación del algoritmo   2006.03.30
