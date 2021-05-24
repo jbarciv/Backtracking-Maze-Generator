@@ -1,8 +1,8 @@
-Maze_Iterative: Maze_Iterative.o Stack_Methods.o Grid_Methods.o Visit_Iterative.o
-	g++ -o Maze_Iterative Maze_Iterative.o Stack_Methods.o Grid_Methods.o Visit_Iterative.o
+Maze_Iterative: mainMaze_Iterative.o Stack_Methods.o Grid_Methods.o Visit_Iterative.o
+	g++ -o Maze_Iterative mainMaze_Iterative.o Stack_Methods.o Grid_Methods.o Visit_Iterative.o
 
-Maze_Iterative.o: Maze_Iterative.cpp Maze_Iterative.hpp
-	g++ -c Maze_Iterative.cpp
+Maze_Iterative.o: mainMaze_Iterative.cpp Maze_Iterative.hpp
+	g++ -c mainMaze_Iterative.cpp
 
 Stack_Methods.o: Stack_Methods.cpp Maze_Iterative.hpp
 	g++ -c Stack_Methods.cpp

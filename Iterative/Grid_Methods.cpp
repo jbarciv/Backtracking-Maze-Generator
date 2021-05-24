@@ -45,7 +45,7 @@ int Pedir(int argc, char **argv){
 //----INICIALIZAMOS LA MATRIZ RESERVANDO MEMORIA Y RELLENANDO CON'#'-----
 int SetGrid(char **grid){
     int i=0, j=0;
-    // Se reserva memoria dinámica (del tamaño de "filas").
+    // Se comprueba la reserva memoria dinámica (del tamaño de "filas").
 	if (grid == NULL){
   	    printf("No se pudo reservar memoria\n");
 	    return -1;
