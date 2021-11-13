@@ -4,6 +4,16 @@
 
 The next respository has two **C++** programs. Both implement a **Dynamic Maze Generator** with a ramdomized version of the depth-first search algorithm (for more information read https://en.wikipedia.org/wiki/Maze_generation_algorithm#Recursive_division_method). One program uses a **recursive** method and the other an **iterative** method.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Acknowldegements](#acknowledgements)
+
+## Prerequisites
+
+
 ## Installation
 
 ```
@@ -17,10 +27,11 @@ $ make
 ```
 
 you will be using the Makefile for compiling and linking all the .cpp files.
-For running the program you have some options (we'll be using  as an example the **recursive** program)
+
+## Usage
 
 #### The program asks you the dimensions for the maze:
-Just type this:
+For running the program you have some options (we'll be using  as an example the **recursive** program). Just type this:
 
 ```
 $ ./Maze_Recursive
@@ -36,4 +47,6 @@ The firts number is the vertical size (number of rows) and the second one is the
 ```
 $ ./Maze_Recursive 30 45 1
 ```
-With a third parameter you can activate the testing mode. You won't see the maze.
+With a third parameter you can activate the testing mode. You won't see the maze, just the results of time and iterations.
+
+## Acknowldegements
