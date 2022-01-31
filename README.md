@@ -20,7 +20,7 @@ The next respository has two **C++** programs. Both implement a **Dynamic Maze G
 $ git clone https://github.com/jbarciv/Recursividad-PS/
 ```
 
-Change your directory to the one where you have clone the repository. Choose between the Iterative or Recursive program and move to this folder finally just type:
+Change your directory to the one where you have clone the repository. Choose between the Iterative or Recursive program and move to this folder and type:
 
 ```
 $ make
