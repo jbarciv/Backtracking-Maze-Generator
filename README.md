@@ -50,3 +50,15 @@ $ ./Maze_Recursive 30 45 1
 With a third parameter you can activate the testing mode. You won't see the maze, just the results of time and iterations.
 
 ## Acknowldegements
+## Future
+
+For the Readme: 
+* finish writing basics
+* explain in-depth some things
+  * +1 in the number of rows or columns + add the code (#macro)
+  * how to add UNICODE characters for stetic reasons (add the code)
+* Add pictures: gif
+
+For coding:
+* translate everything to english
+* unify everything to c++ -> OOP
