@@ -56,7 +56,7 @@ For the Readme:
 * finish writing basics
 * explain in-depth some things
   * +1 in the number of rows or columns + add the code (#macro)
-  * how to add UNICODE characters for stetic reasons (add the code)
+  * how to add UNICODE characters for aesthetics reasons (add the code)
 * Add pictures: gif
 
 For coding:
