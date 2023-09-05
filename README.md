@@ -4,16 +4,6 @@
 
 The next respository has two **C++** programs. Both implement a **Dynamic Maze Generator** with a ramdomized version of the depth-first search algorithm (for more information read [this](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_depth-first_search)). One program uses a **recursive** method and the other an **iterative** method.
 
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Acknowldegements](#acknowledgements)
-
-## Prerequisites
-
-
 ## Installation
 
 ```
@@ -49,16 +39,6 @@ $ ./Maze_Recursive 30 45 1
 ```
 With a third parameter you can activate the testing mode. You won't see the maze, just the results of time and iterations.
 
-## Acknowldegements
-## Future
+## Acknowledgments
 
-For the Readme: 
-* finish writing basics
-* explain in-depth some things
-  * +1 in the number of rows or columns + add the code (#macro)
-  * how to add UNICODE characters for aesthetics reasons (add the code)
-* Add pictures: gif
-
-For coding:
-* translate everything to english
-* unify everything to c++ -> OOP
+I would like to thank to Celia Ramos and Gonzalo Quirós for all his help during the completion of this work.
